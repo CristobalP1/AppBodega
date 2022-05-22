@@ -11,7 +11,17 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Holaa'),
+        title: const Text('Productos'),
+        backgroundColor: Colors.pinkAccent,
+        leading: Icon(Icons.menu_outlined),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.attach_file_rounded),
+            onPressed: () {
+              print('holaa');
+            },
+          )
+        ],
       ),
       body: Center(
         child: Column(
@@ -28,8 +38,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
