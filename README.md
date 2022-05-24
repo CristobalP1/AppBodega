@@ -5,13 +5,5 @@
 2- You must enter the following the code "flutter pub get"
 
 3- Ready, now you can star fluttering
-<<<<<<< HEAD
 
 success!!!
-=======
-
-success!!!
-
-
-
->>>>>>> developer
