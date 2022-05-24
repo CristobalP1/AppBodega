@@ -11,12 +11,13 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Productos'),
-        backgroundColor: Colors.pinkAccent,
-        leading: Icon(Icons.menu_outlined),
+        title: Text('Productos'),
+        backgroundColor: Colors.blueAccent,
+        leading: const Icon(Icons.menu_outlined),
+        elevation: 0,
         actions: [
           IconButton(
-            icon: Icon(Icons.attach_file_rounded),
+            icon: const Icon(Icons.attach_file_rounded),
             onPressed: () {
               print('holaa');
             },
@@ -28,7 +29,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Contador',
+              'Contadorrr',
               style: fontSize23,
             ),
             Text(
