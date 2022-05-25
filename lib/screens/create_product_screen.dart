@@ -7,7 +7,7 @@ class CreateProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('CreateProductScreen'),
+        child: Text('CreateProductScreen1'),
       ),
     );
   }
