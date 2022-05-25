@@ -43,8 +43,8 @@ class CreateProductScreen extends StatelessWidget {
               height: 10,
             ),
             InputForm(
-              labelText: "nombre",
-              hintText: "leche",
+              labelText: "Categoria",
+              hintText: "Lacteos",
             ),
           ],
         ),
