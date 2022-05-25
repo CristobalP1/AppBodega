@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/create_category.dart';
-import 'package:flutter_application_1/screens/home_screen.dart';
+import 'package:flutter_application_1/router/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: HomeScreen());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: ApppRoutes.initialRoute,
+        routes: ApppRoutes.routes,
+        onGenerateRoute: ApppRoutes.onGenerateRouter);
 /*         debugShowCheckedModeBanner: false, home: HomeScreen()); */
   }
 }
