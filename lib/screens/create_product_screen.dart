@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widget/input_form.dart';
 
 class CreateProductScreen extends StatelessWidget {
   const CreateProductScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('CreateProductScreen1'),
+        child: Column(
+          children: const [
+            InputForm(labelText: 'Nombre Producto', hintText: 'leche'),
+          ],
+        ),
       ),
+
     );
   }
 }
