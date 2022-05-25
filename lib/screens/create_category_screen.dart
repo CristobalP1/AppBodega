@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widget/button_save_canceller.dart';
 
-class CreateCategory extends StatelessWidget {
-  const CreateCategory({Key? key}) : super(key: key);
+import '../widget/input_form.dart';
+import '../widget/list_view_products.dart';
+
+class CreateCategoryScreen extends StatelessWidget {
+  const CreateCategoryScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +37,10 @@ class CreateCategory extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            _inputNameCategory(),
+            const InputForm(
+              labelText: 'Nombre Categoria',
+              hintText: 'Lacteos, Carnes',
+            ),
             const SizedBox(
               height: 40,
             ),
@@ -41,27 +48,39 @@ class CreateCategory extends StatelessWidget {
               child: TextButton.icon(
                 onPressed: () => {},
                 icon: const Icon(Icons.add),
-                label: const Text("Añadir Productos"),
+                label: const Text("Añadir Productoss"),
               ),
+            ),
+            const Flexible(child: ListViewProducts()),
+            const SizedBox(
+              height: 50,
+            ),
+            const ButtonSaveCanceller(
+              title1: 'Cancelar',
+              title2: 'Crear Categoria',
             )
           ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
     );
-    ;
   }
+}
 
-  Widget _inputNameCategory() {
-    return Container(
-      padding: EdgeInsets.all(1),
-      child: TextFormField(
-        decoration: const InputDecoration(
-            labelText: "Nombre de la categoria",
-            hintText: "Fiambreria, Lacteos, Aseo",
-            hintStyle: TextStyle(fontSize: 11),
-            labelStyle: TextStyle(fontSize: 20)),
-      ),
+class TextStyles extends StatelessWidget {
+  final tittle;
+
+  const TextStyles({
+    Key? key,
+    this.tittle,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      tittle,
+      style: const TextStyle(
+          fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
     );
   }
 }
