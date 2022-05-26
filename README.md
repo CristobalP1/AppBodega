@@ -4,6 +4,8 @@
 
 2- You must enter the following the code "flutter pub get"
 
-3- Ready, now you can star fluttering
+3- You must enter the following the code "flutter pub add flutter_speed_dial"
+
+4- Ready, now you can star fluttering
 
 success!!!

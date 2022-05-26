@@ -55,14 +55,13 @@ class CreateCategoryScreen extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const ButtonSaveCanceller(
-              title1: 'Cancelar',
-              title2: 'Crear Categoria',
-            )
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      bottomSheet: const ButtonSaveCanceller(
+        title1: 'Cancelar',
+        title2: 'Crear Categoria',
+      ),
     );
   }
 }
