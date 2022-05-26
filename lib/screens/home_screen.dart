@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Productos'),
+          title: const Text('Productos'),
           backgroundColor: Color.fromARGB(255, 236, 55, 137),
           leading: const Icon(Icons.menu_outlined),
           elevation: 0,
@@ -40,29 +40,34 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        floatingActionButton: SpeedDial(
-          animatedIcon: AnimatedIcons.menu_close,
-          backgroundColor: Color.fromARGB(255, 236, 55, 137),
-          overlayColor: Colors.black,
-          overlayOpacity: 0.5,
-          children: [
-            SpeedDialChild(
-                child: Icon(Icons.create),
-                label: 'Crear Producto',
-                backgroundColor: Color.fromARGB(255, 118, 170, 120)),
-            SpeedDialChild(
-                child: Icon(Icons.create),
-                label: 'Crear Categoria',
-                backgroundColor: Color.fromARGB(255, 118, 170, 120)),
-            SpeedDialChild(
-                child: Icon(Icons.block),
-                label: 'Bloquear Prodcuto',
-                backgroundColor: Color.fromARGB(255, 212, 59, 69)),
-            SpeedDialChild(
-                child: Icon(Icons.block),
-                label: 'Bloquear Categoria',
-                backgroundColor: Color.fromARGB(255, 212, 59, 69))
-          ],
-        ));
+        floatingActionButton: const FloatingButton());
+  }
+}
+
+class FloatingButton extends StatelessWidget {
+  const FloatingButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SpeedDial(
+      animatedIcon: AnimatedIcons.add_event,
+      backgroundColor: Color.fromARGB(255, 236, 55, 137),
+      overlayColor: Colors.black,
+      overlayOpacity: 0.5,
+      children: [
+        SpeedDialChild(
+            child: Icon(Icons.create),
+            label: 'Crear Producto',
+            backgroundColor: Color.fromARGB(255, 118, 170, 120),
+            onTap: () => {Navigator.pushNamed(context, 'create_product')}),
+        SpeedDialChild(
+            child: Icon(Icons.create),
+            label: 'Crear Categoria',
+            backgroundColor: Color.fromARGB(255, 118, 170, 120),
+            onTap: () => {Navigator.pushNamed(context, 'create_category')}),
+      ],
+    );
   }
 }
