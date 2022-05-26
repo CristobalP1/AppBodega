@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widget/list_view_products.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -28,16 +29,7 @@ class HomeScreen extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Contadorrr',
-                style: fontSize23,
-              ),
-              Text(
-                '0',
-                style: fontSize23,
-              ),
-            ],
+            children: const <Widget>[Flexible(child: ListViewProducts())],
           ),
         ),
         floatingActionButton: const FloatingButton());

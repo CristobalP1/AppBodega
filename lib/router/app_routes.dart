@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
 class ApppRoutes {
-  static const initialRoute = 'create_product';
+  static const initialRoute = 'home_page';
 
   static Map<String, Widget Function(BuildContext)> routes = {
     'home_page': (BuildContext context) => const HomeScreen(),

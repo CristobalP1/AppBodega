@@ -12,9 +12,7 @@ class ListViewProducts extends StatelessWidget {
               leading: const Text('leche'),
               title: const Center(child: Text('23')),
               trailing: const Text('Solicitar'),
-              onTap: () {
-                /*  Navigator.pushNamed(context, 'card'); */
-              },
+              onTap: () {},
             ),
         separatorBuilder: (_, __) => const Divider(),
         itemCount: 10);
