@@ -62,7 +62,10 @@ class EditCategoryScreen extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      bottomSheet: const ButtonSaveCanceller(
+        title1: 'Cancelar',
+        title2: 'Editar Categoria',
+      ),
     );
   }
 }

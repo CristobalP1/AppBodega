@@ -1,8 +1,7 @@
 import 'dart:ui';
-
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/list_view_products.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -12,27 +11,28 @@ class HomeScreen extends StatelessWidget {
     TextStyle fontSize23 = const TextStyle(fontSize: 23);
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Productos'),
-          backgroundColor: Color.fromARGB(255, 236, 55, 137),
-          leading: const Icon(Icons.menu_outlined),
-          elevation: 0,
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.attach_file_rounded),
-              onPressed: () {
-                print('holaa');
-              },
-            )
-          ],
+      appBar: AppBar(
+        title: const Text('Productos'),
+        backgroundColor: Color.fromARGB(255, 236, 55, 137),
+        leading: const Icon(Icons.menu_outlined),
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.attach_file_rounded),
+            onPressed: () {
+              print('holaa');
+            },
+          )
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const <Widget>[Flexible(child: ListViewProducts())],
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[Flexible(child: ListViewProducts())],
-          ),
-        ),
-        floatingActionButton: const FloatingButton());
+      ),
+      floatingActionButton: const FloatingButton(),
+    );
   }
 }
 

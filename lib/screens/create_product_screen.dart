@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widget/button_save_canceller.dart';
 import 'package:flutter_application_1/widget/input_form.dart';
 
 class CreateProductScreen extends StatelessWidget {
@@ -46,8 +47,50 @@ class CreateProductScreen extends StatelessWidget {
               labelText: "Categoria",
               hintText: "Lacteos",
             ),
+            SizedBox(
+              height: 10,
+            ),
+            InputForm(
+              labelText: "SKU",
+              hintText: "23231",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            InputForm(
+              labelText: "Codigo de barra",
+              hintText: "780231223",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            InputForm(
+              labelText: "Stock Incial",
+              hintText: "23",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            InputForm(
+              labelText: "Stock Critico",
+              hintText: "3",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            InputForm(
+              labelText: "Precio",
+              hintText: "3990",
+            ),
+            SizedBox(
+              height: 25,
+            ),
           ],
         ),
+      ),
+      bottomSheet: const ButtonSaveCanceller(
+        title1: 'Cancelar',
+        title2: 'Crear Producto',
       ),
     );
   }
