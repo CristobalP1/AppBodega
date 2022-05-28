@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/button_save_canceller.dart';
 
-import '../widget/input_form.dart';
-import '../widget/list_view_products.dart';
+import '../../widget/input_form.dart';
+import '../../widget/list_view_products.dart';
 
-class EditCategoryScreen extends StatelessWidget {
-  const EditCategoryScreen({Key? key}) : super(key: key);
+class CreateCategoryScreen extends StatelessWidget {
+  const CreateCategoryScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class EditCategoryScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Text(
-              'Editar Categoria',
+              'Crear Categoria',
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(
@@ -55,17 +55,31 @@ class EditCategoryScreen extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const ButtonSaveCanceller(
-              title1: 'Cancelar',
-              title2: 'Editar Categoria',
-            )
           ],
         ),
       ),
       bottomSheet: const ButtonSaveCanceller(
         title1: 'Cancelar',
-        title2: 'Editar Categoria',
+        title2: 'Crear Categoria',
       ),
+    );
+  }
+}
+
+class TextStyles extends StatelessWidget {
+  final tittle;
+
+  const TextStyles({
+    Key? key,
+    this.tittle,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      tittle,
+      style: const TextStyle(
+          fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
     );
   }
 }
