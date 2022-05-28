@@ -13,13 +13,13 @@ class ApppRoutes {
     'edit_product': (BuildContext context) => const EditProductScreen(),
     'info_product': (BuildContext context) => const InfoProductScreen(),
 
-    //Purchase Orders
+    //Purchase Orders Screen
     'create_order': (BuildContext context) => const CreateOrderScreen(),
     'view_state': (BuildContext context) => const ViewStateScreen(),
     'create_order_finish': (BuildContext context) =>
         const CreateOrderFinishScreen(),
 
-    //Providers
+    //Providers Screen
     'active_provider': (BuildContext context) => const ActiveProvidersScreen(),
   };
 
