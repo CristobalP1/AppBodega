@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
 class ApppRoutes {
-  static const initialRoute = 'view_state';
+  static const initialRoute = 'home_page';
 
   static Map<String, Widget Function(BuildContext)> routes = {
     //Products Screen
@@ -13,11 +13,13 @@ class ApppRoutes {
     'edit_product': (BuildContext context) => const EditProductScreen(),
     'info_product': (BuildContext context) => const InfoProductScreen(),
 
-    //Products Screen
+    //Purchase Orders
     'create_order': (BuildContext context) => const CreateOrderScreen(),
     'view_state': (BuildContext context) => const ViewStateScreen(),
+    'create_order_finish': (BuildContext context) =>
+        const CreateOrderFinishScreen(),
 
-    //Purchase Orders
+    //Providers
     'active_provider': (BuildContext context) => const ActiveProvidersScreen(),
   };
 

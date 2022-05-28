@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widget/list_view_products.dart';
+import 'package:flutter_application_1/widget/ListView/list_view_products.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[Flexible(child: ListViewProducts())],
+          children: const <Widget>[Flexible(child: ListViewProductsWidget())],
         ),
       ),
       floatingActionButton: const FloatingButton(),

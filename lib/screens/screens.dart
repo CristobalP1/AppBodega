@@ -7,3 +7,4 @@ export 'package:flutter_application_1/screens/Products/info_product_screen.dart'
 export 'package:flutter_application_1/screens/Providers/active_providers.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/create_order_screen.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/view_state_screen.dart';
+export 'package:flutter_application_1/screens/PurchaseOrders/create_order_finish_screen.dart';

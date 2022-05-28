@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ListViewProducts extends StatelessWidget {
-  const ListViewProducts({
+import '../CheckBox/check_box.dart';
+
+class ListViewCheckWidget extends StatelessWidget {
+  const ListViewCheckWidget({
     Key? key,
   }) : super(key: key);
 
@@ -9,9 +11,8 @@ class ListViewProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
         itemBuilder: (contex, i) => ListTile(
-              leading: const Text('leche'),
-              title: const Center(child: Text('23')),
-              trailing: const Text('Solicitar'),
+              leading: const CheckBoxWidget(),
+              title: const Center(child: Text('Leche semidescremada')),
               onTap: () {},
             ),
         separatorBuilder: (_, __) => const Divider(),
