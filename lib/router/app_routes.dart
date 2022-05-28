@@ -5,12 +5,20 @@ class ApppRoutes {
   static const initialRoute = 'home_page';
 
   static Map<String, Widget Function(BuildContext)> routes = {
+    //Products Screen
     'home_page': (BuildContext context) => const HomeScreen(),
     'create_category': (BuildContext context) => const CreateCategoryScreen(),
     'create_product': (BuildContext context) => const CreateProductScreen(),
     'edit_category': (BuildContext context) => const EditCategoryScreen(),
     'edit_product': (BuildContext context) => const EditProductScreen(),
     'info_product': (BuildContext context) => const InfoProductScreen(),
+
+    //Products Screen
+    'create_order': (BuildContext context) => const CreateOrderScreen(),
+    'view_state': (BuildContext context) => const ViewStateScreen(),
+
+    //Purchase Orders
+    'active_provider': (BuildContext context) => const ActiveProvidersScreen(),
   };
 
   static Route<dynamic> onGenerateRouter(RouteSettings settings) {
