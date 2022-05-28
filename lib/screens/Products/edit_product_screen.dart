@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widget/button_save_canceller.dart';
+import 'package:flutter_application_1/widget/Buttons/button_save_canceller.dart';
 
 class EditProductScreen extends StatelessWidget {
   const EditProductScreen({Key? key}) : super(key: key);
@@ -11,8 +11,8 @@ class EditProductScreen extends StatelessWidget {
         child: Text('EditProductScreen'),
       ),
       bottomSheet: ButtonSaveCanceller(
-        title1: 'Cancelar',
-        title2: 'Editar Producto',
+        next: 'Cancelar',
+        back: 'Editar Producto',
       ),
     );
   }

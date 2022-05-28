@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widget/button_save_canceller.dart';
+import 'package:flutter_application_1/widget/Buttons/button_save_canceller.dart';
 
-import '../../widget/input_form.dart';
-import '../../widget/list_view_products.dart';
+import '../../widget/Inputs/input_form.dart';
+import '../../widget/ListView/list_view_products.dart';
 
 class EditCategoryScreen extends StatelessWidget {
   const EditCategoryScreen({Key? key}) : super(key: key);
@@ -50,20 +50,20 @@ class EditCategoryScreen extends StatelessWidget {
                 label: const Text("Añadir Productoss"),
               ),
             ),
-            const Flexible(child: ListViewProducts()),
+            const Flexible(child: ListViewProductsWidget()),
             const SizedBox(
               height: 50,
             ),
             const ButtonSaveCanceller(
-              title1: 'Cancelar',
-              title2: 'Editar Categoria',
+              next: 'Cancelar',
+              back: 'Editar Categoria',
             )
           ],
         ),
       ),
       bottomSheet: const ButtonSaveCanceller(
-        title1: 'Cancelar',
-        title2: 'Editar Categoria',
+        next: 'Cancelar',
+        back: 'Editar Categoria',
       ),
     );
   }

@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 
 class ButtonSaveCanceller extends StatelessWidget {
-  final title1;
-  final title2;
+  final next;
+  final back;
+  final ruta;
+  final canceller;
 
   const ButtonSaveCanceller({
     Key? key,
-    this.title1,
-    this.title2,
+    this.next,
+    this.back,
+    this.ruta,
+    this.canceller,
   }) : super(key: key);
 
   @override
@@ -20,14 +24,14 @@ class ButtonSaveCanceller extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           TextButton(
-              onPressed: () => {},
+              onPressed: () => {Navigator.pushNamed(context, ruta)},
               child: TextStyles2(
-                tittle: title1,
+                tittle: next,
               )),
           TextButton(
-              onPressed: () => {},
+              onPressed: () => {Navigator.pushNamed(context, canceller)},
               child: TextStyles2(
-                tittle: title2,
+                tittle: back,
               ))
         ],
       ),

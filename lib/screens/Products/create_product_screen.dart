@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widget/button_save_canceller.dart';
-import 'package:flutter_application_1/widget/input_form.dart';
+import 'package:flutter_application_1/widget/Buttons/button_save_canceller.dart';
+import 'package:flutter_application_1/widget/Inputs/input_form.dart';
 
 class CreateProductScreen extends StatelessWidget {
   const CreateProductScreen({Key? key}) : super(key: key);
@@ -88,8 +88,8 @@ class CreateProductScreen extends StatelessWidget {
         ),
       ),
       bottomSheet: const ButtonSaveCanceller(
-        title1: 'Cancelar',
-        title2: 'Crear Producto',
+        next: 'Cancelar',
+        back: 'Crear Producto',
       ),
     );
   }
