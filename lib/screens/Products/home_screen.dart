@@ -13,7 +13,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Productos'),
-        backgroundColor: Color.fromARGB(255, 236, 55, 137),
         leading: const Icon(Icons.menu_outlined),
         elevation: 0,
         actions: [

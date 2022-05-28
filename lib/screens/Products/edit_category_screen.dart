@@ -12,7 +12,6 @@ class EditCategoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Productos'),
-        backgroundColor: Colors.blueAccent,
         leading: const Icon(Icons.menu_outlined),
         elevation: 0,
         actions: [
