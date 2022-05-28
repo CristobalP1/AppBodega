@@ -19,27 +19,69 @@ class ViewStateScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
-              padding: const EdgeInsets.fromLTRB(26, 5, 0, 0),
-              color: Colors.red,
+              alignment: AlignmentDirectional.centerStart,
+              padding: const EdgeInsets.fromLTRB(26, 25, 0, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    'Numero Orden de compra:',
+                  ),
+                  Text(
+                    '123323434',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    'Provedor:',
+                  ),
+                  Text(
+                    'Column',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Text(
+                    'Estado del Pedido:',
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                ],
+              )),
+
+/*               
+          Container(
+              padding: const EdgeInsets.fromLTRB(26, 25, 0, 0),
               child: const Align(
                   alignment: Alignment.centerLeft,
-                  child: Text('Numero Orden de compra:'))),
+                  child: Text(
+                    'Numero Orden de compra:',
+                  ))),
           Container(
               padding: const EdgeInsets.fromLTRB(26, 5, 0, 0),
-              color: Colors.green,
               child: const Align(
-                  alignment: Alignment.centerLeft, child: Text('234234'))),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    '234234',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ))),
           Container(
-              color: Colors.blue,
-              padding: const EdgeInsets.fromLTRB(26, 20, 0, 0),
+              padding: const EdgeInsets.fromLTRB(26, 30, 0, 0),
               child: const Align(
                   alignment: Alignment.centerLeft,
                   child: Text('Nombre Proveedor:'))),
           Container(
               padding: const EdgeInsets.fromLTRB(26, 5, 0, 0),
-              color: Colors.green,
               child: const Align(
-                  alignment: Alignment.centerLeft, child: Text('Soprole'))),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Soprole',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ))), */
           Flexible(
               child: Container(
                   margin: const EdgeInsets.fromLTRB(26, 20, 116, 90),
