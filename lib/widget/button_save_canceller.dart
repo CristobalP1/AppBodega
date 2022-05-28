@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/theme/app_theme.dart';
 
 class ButtonSaveCanceller extends StatelessWidget {
   final title1;
@@ -13,7 +14,7 @@ class ButtonSaveCanceller extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(255, 106, 114, 238),
+      color: AppTheme.primary,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         mainAxisSize: MainAxisSize.max,

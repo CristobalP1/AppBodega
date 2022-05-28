@@ -10,7 +10,6 @@ class CreateProductScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Productos'),
-        backgroundColor: Colors.pinkAccent,
         leading: const Icon(Icons.menu_outlined),
         actions: [
           IconButton(
