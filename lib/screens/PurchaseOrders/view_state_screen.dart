@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/ListView/list_check.dart';
 
-import '../../widget/Buttons/button_save_canceller.dart';
-
 class ViewStateScreen extends StatelessWidget {
   const ViewStateScreen({Key? key}) : super(key: key);
 
