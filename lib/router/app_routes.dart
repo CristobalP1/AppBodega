@@ -30,6 +30,9 @@ class ApppRoutes {
         const InactiveProvidersScreen(),
     constants.createProvider: (BuildContext context) =>
         const CreateProviderScreen(),
+    constants.seeProductsVendors: (BuildContext context) =>
+        const SeeProductsVendorsScreen(),
+    constants.seeVendors: (BuildContext context) => const SeeVendorsScreen(),
   };
 
   static Route<dynamic> onGenerateRouter(RouteSettings settings) {
