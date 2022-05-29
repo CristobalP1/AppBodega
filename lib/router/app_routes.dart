@@ -1,30 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Providers/create_provider_screen.dart';
+import 'package:flutter_application_1/screens/Providers/inactive_providers.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
-class ApppRoutes {
-  static const initialRoute = 'home_page';
+import '../utils/Constants.dart' as constants;
 
+class ApppRoutes {
   static Map<String, Widget Function(BuildContext)> routes = {
     //Products Screen
-    'home_page': (BuildContext context) => const HomeScreen(),
-    'create_category': (BuildContext context) => const CreateCategoryScreen(),
-    'create_product': (BuildContext context) => const CreateProductScreen(),
-    'edit_category': (BuildContext context) => const EditCategoryScreen(),
-    'edit_product': (BuildContext context) => const EditProductScreen(),
-    'info_product': (BuildContext context) => const InfoProductScreen(),
+    constants.homePage: (BuildContext context) => const HomeScreen(),
+    constants.createCategory: (BuildContext context) =>
+        const CreateCategoryScreen(),
+    constants.createProduct: (BuildContext context) =>
+        const CreateProductScreen(),
+    constants.editCategory: (BuildContext context) =>
+        const EditCategoryScreen(),
+    constants.editProduct: (BuildContext context) => const EditProductScreen(),
+    constants.infoProduct: (BuildContext context) => const InfoProductScreen(),
 
     //Purchase Orders Screen
-    'create_order': (BuildContext context) => const CreateOrderScreen(),
-    'view_state': (BuildContext context) => const ViewStateScreen(),
-    'create_order_finish': (BuildContext context) =>
+    constants.createOrder: (BuildContext context) => const CreateOrderScreen(),
+    constants.viewState: (BuildContext context) => const ViewStateScreen(),
+    constants.createOrderFinish: (BuildContext context) =>
         const CreateOrderFinishScreen(),
 
     //Providers Screen
-    'active_provider': (BuildContext context) => const ActiveProvidersScreen(),
-    'see_products_vendors': (BuildContext context) =>
-        const SeeProductsVendorsScreen(),
-    'see_vendors': (BuildContext context) => const SeeVendorsScreen(),
+    constants.activeProvider: (BuildContext context) =>
+        const ActiveProvidersScreen(),
+    constants.inactiveProviders: (BuildContext context) =>
+        const InactiveProvidersScreen(),
+    constants.createProvider: (BuildContext context) =>
+        const CreateProviderScreen(),
   };
 
   static Route<dynamic> onGenerateRouter(RouteSettings settings) {
