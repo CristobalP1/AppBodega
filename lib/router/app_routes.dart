@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/Providers/create_provider.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
 class ApppRoutes {
@@ -21,6 +22,7 @@ class ApppRoutes {
 
     //Providers Screen
     'active_provider': (BuildContext context) => const ActiveProvidersScreen(),
+    'create_provider': (BuildContext context) => const CreateProviderScreen(),
   };
 
   static Route<dynamic> onGenerateRouter(RouteSettings settings) {

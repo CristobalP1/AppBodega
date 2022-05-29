@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:flutter_application_1/widget/Buttons/button_save_canceller.dart';
+import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 
 import '../../widget/Inputs/input_form.dart';
 import '../../widget/ListView/list_view_products.dart';
@@ -12,8 +14,7 @@ class CreateCategoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Productos'),
-        backgroundColor: Colors.blueAccent,
-        leading: const Icon(Icons.menu_outlined),
+        backgroundColor: AppTheme.primary,
         elevation: 0,
         actions: [
           IconButton(
@@ -59,9 +60,11 @@ class CreateCategoryScreen extends StatelessWidget {
         ),
       ),
       bottomSheet: const ButtonSaveCanceller(
-        next: 'Cancelar',
-        back: 'Crear Categoria',
+        next: 'Crear Categoria',
+        back: 'Cancelar',
       ),
+      drawer: const ComplexDrawer(),
+      drawerScrimColor: Colors.transparent,
     );
   }
 }
