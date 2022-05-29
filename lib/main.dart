@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/router/app_routes.dart';
+import 'package:flutter_application_1/utils/Constants.dart';
 import 'theme/app_theme.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: AppTheme.themeData,
-        initialRoute: ApppRoutes.initialRoute,
+        initialRoute: homePage,
         routes: ApppRoutes.routes,
         onGenerateRoute: ApppRoutes.onGenerateRouter);
 /*         debugShowCheckedModeBanner: false, home: HomeScreen()); */
