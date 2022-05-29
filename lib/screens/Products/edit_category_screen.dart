@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/Buttons/button_save_canceller.dart';
+import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 
 import '../../widget/Inputs/input_form.dart';
 import '../../widget/ListView/list_view_products.dart';
@@ -12,7 +13,6 @@ class EditCategoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Productos'),
-        leading: const Icon(Icons.menu_outlined),
         elevation: 0,
         actions: [
           IconButton(
@@ -65,6 +65,8 @@ class EditCategoryScreen extends StatelessWidget {
         next: 'Cancelar',
         back: 'Editar Categoria',
       ),
+      drawer: const ComplexDrawer(),
+      drawerScrimColor: Colors.transparent,
     );
   }
 }

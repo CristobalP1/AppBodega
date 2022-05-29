@@ -11,8 +11,8 @@ class EditProductScreen extends StatelessWidget {
         child: Text('EditProductScreen'),
       ),
       bottomSheet: ButtonSaveCanceller(
-        next: 'Cancelar',
-        back: 'Editar Producto',
+        next: 'Editar Producto',
+        back: 'Cancelar',
       ),
     );
   }
