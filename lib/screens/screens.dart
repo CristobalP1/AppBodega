@@ -1,3 +1,4 @@
+export 'package:flutter_application_1/screens/Providers/create_provider_screen.dart';
 export 'package:flutter_application_1/screens/Providers/active_providers_screen.dart';
 export 'package:flutter_application_1/screens/Providers/see_products_vendors_screen.dart';
 export 'package:flutter_application_1/screens/Providers/see_vendors_screen.dart';

@@ -10,3 +10,5 @@ const String createOrderFinish = "create_order_finish";
 const String activeProvider = "active_provider";
 const String inactiveProviders = "inactive_providers";
 const String createProvider = "create_provider";
+const String seeProductsVendors = "see_products_vendors";
+const String seeVendors = "see_vendors";
