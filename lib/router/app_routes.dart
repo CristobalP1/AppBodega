@@ -3,11 +3,7 @@ import 'package:flutter_application_1/screens/Providers/create_provider.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
 class ApppRoutes {
-<<<<<<< HEAD
   static const initialRoute = 'edit_category';
-=======
-  static const initialRoute = 'home_page';
->>>>>>> developer
 
   static Map<String, Widget Function(BuildContext)> routes = {
     //Products Screen
