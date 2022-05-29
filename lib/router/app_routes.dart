@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Providers/create_provider.dart';
+import 'package:flutter_application_1/screens/Providers/create_provider_screen.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
 class ApppRoutes {
@@ -22,7 +22,9 @@ class ApppRoutes {
 
     //Providers Screen
     'active_provider': (BuildContext context) => const ActiveProvidersScreen(),
-    'create_provider': (BuildContext context) => const CreateProviderScreen(),
+    'see_products_vendors': (BuildContext context) =>
+        const SeeProductsVendorsScreen(),
+    'see_vendors': (BuildContext context) => const SeeVendorsScreen(),
   };
 
   static Route<dynamic> onGenerateRouter(RouteSettings settings) {
