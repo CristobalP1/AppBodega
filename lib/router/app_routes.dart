@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
 class ApppRoutes {
-  static const initialRoute = 'view_state';
+  static const initialRoute = 'edit_category';
 
   static Map<String, Widget Function(BuildContext)> routes = {
     //Products Screen

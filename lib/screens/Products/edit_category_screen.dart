@@ -50,14 +50,14 @@ class EditCategoryScreen extends StatelessWidget {
                 label: const Text("Añadir Productoss"),
               ),
             ),
-            const Flexible(child: ListViewProductsWidget()),
+            Flexible(
+                child: Container(
+                    margin: const EdgeInsets.fromLTRB(5, 10, 5, 10),
+                    padding: const EdgeInsets.fromLTRB(0, 15, 0, 15),
+                    child: ListViewProductsWidget())),
             const SizedBox(
               height: 50,
             ),
-            const ButtonSaveCanceller(
-              next: 'Cancelar',
-              back: 'Editar Categoria',
-            )
           ],
         ),
       ),
