@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/screens.dart';
 import 'package:flutter_application_1/widget/Buttons/button_save_canceller.dart';
+import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 import 'package:flutter_application_1/widget/Inputs/input_form.dart';
 
-class CreateProductScreen extends StatelessWidget {
+class CreateProductScreen extends StatefulWidget {
   const CreateProductScreen({Key? key}) : super(key: key);
+  @override
+  _CreateProductScreenState createState() => _CreateProductScreenState();
+}
 
+class _CreateProductScreenState extends State<CreateProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Productos'),
-        leading: const Icon(Icons.menu_outlined),
         actions: [
           IconButton(
             icon: const Icon(Icons.attach_file_rounded),
@@ -88,9 +93,11 @@ class CreateProductScreen extends StatelessWidget {
         ),
       ),
       bottomSheet: const ButtonSaveCanceller(
-        next: 'Cancelar',
-        back: 'Crear Producto',
+        next: 'Crear Producto',
+        back: 'Cancelar',
       ),
+      drawer: const ComplexDrawer(),
+      drawerScrimColor: Colors.transparent,
     );
   }
 }

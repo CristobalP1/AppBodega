@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/ListView/list_view_products.dart';
@@ -13,7 +14,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Productos'),
-        leading: const Icon(Icons.menu_outlined),
         elevation: 0,
         actions: [
           IconButton(
@@ -31,6 +31,8 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: const FloatingButton(),
+      drawer: const ComplexDrawer(),
+      drawerScrimColor: Colors.transparent,
     );
   }
 }
