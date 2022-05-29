@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/Constants.dart';
 import 'package:flutter_application_1/widget/Txt.dart';
 
 class Route {
@@ -257,11 +258,13 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
 
   static List<CDM> cdms = [
     CDM(Icons.inventory, Route("Bodega", ""),
-        [Route("Productos", "home_page"), Route("Insumos", "")]),
+        [Route("Productos", homePage), Route("Insumos", "")]),
     CDM(Icons.local_shipping, Route("Proveedores", ""), [
-      Route("activos", "active_provider"),
-      Route("inactivos", ""),
-      Route("crear proveedor", "create_provider")
+      Route("Activos", activeProvider),
+      Route("Inactivos", inactiveProviders),
+      Route("Crear proveedor", createProvider)
+    ]),CDM(Icons.local_shipping, Route("Ordenes", ""), [
+      Route("Crear orden", createOrder),
     ]),
   ];
 
