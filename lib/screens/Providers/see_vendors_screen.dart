@@ -50,15 +50,12 @@ class SeeVendorsScreen extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(top: 15),
           ),
-          const Align(
-            alignment: FractionalOffset(0.1, 0.1),
-            child: Text(
-              "Rut: 20.321.236-8",
-              style: TextStyle(
-                  fontSize: 25,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                  fontWeight: FontWeight.bold),
-            ),
+          const Text(
+            "Rut: 20.321.236-8",
+            style: TextStyle(
+                fontSize: 25,
+                color: Color.fromARGB(255, 0, 0, 0),
+                fontWeight: FontWeight.bold),
           ),
           const Padding(
             padding: EdgeInsets.only(top: 100),
@@ -137,6 +134,7 @@ class SeeVendorsScreen extends StatelessWidget {
             padding: EdgeInsets.only(top: 50),
           ),
           FloatingActionButton.extended(
+            heroTag: "btn1",
             onPressed: () {
               Navigator.push(
                   context,
@@ -158,6 +156,7 @@ class SeeVendorsScreen extends StatelessWidget {
           ),
           Container(
             child: FloatingActionButton.extended(
+              heroTag: "btn2",
               onPressed: () {
                 showDialog(
                     context: context,
