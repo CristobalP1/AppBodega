@@ -1,7 +1,9 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_declarations, prefer_const_constructors, avoid_unnecessary_containers, unused_import, prefer_const_literals_to_create_immutables, non_constant_identifier_names, unused_element, avoid_web_libraries_in_flutter, avoid_types_as_parameter_names, avoid_print, sized_box_for_whitespace
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
-import 'package:flutter_application_1/screens/screens.dart';
+import 'package:flutter_application_1/screens/Providers/see_vendors_screen.dart';
+import 'package:flutter_application_1/screens/Products/home_screen.dart';
+import 'package:flutter_application_1/utils/Constants.dart';
 
 class ActiveProvidersScreen extends StatelessWidget {
   const ActiveProvidersScreen({Key? key}) : super(key: key);

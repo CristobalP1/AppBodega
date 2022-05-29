@@ -1,13 +1,8 @@
+// ignore_for_file: unnecessary_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/screens.dart';
-
-const ff = TextStyle(
-    fontSize: 25,
-    color: Color.fromARGB(255, 0, 0, 0),
-    fontWeight: FontWeight.bold);
-const fg = TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0));
-const i = Icon(Icons.circle_outlined);
-const i2 = Icon(Icons.circle);
+import 'package:flutter_application_1/screens/Providers/active_providers_screen.dart';
 
 class SeeVendorsScreen extends StatelessWidget {
   const SeeVendorsScreen({Key? key}) : super(key: key);
@@ -58,7 +53,10 @@ class SeeVendorsScreen extends StatelessWidget {
           alignment: FractionalOffset(0.1, 0.1),
           child: Text(
             "Rut: 20.321.236-8",
-            style: ff,
+            style: TextStyle(
+                fontSize: 25,
+                color: Color.fromARGB(255, 0, 0, 0),
+                fontWeight: FontWeight.bold),
           ),
         ),
         const Padding(
@@ -88,11 +86,17 @@ class SeeVendorsScreen extends StatelessWidget {
                   children: [
                     Text(
                       ' Correo',
-                      style: ff,
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                          fontWeight: FontWeight.bold),
                     ),
                     Text(
                       ' Nombre Vendedor',
-                      style: ff,
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                          fontWeight: FontWeight.bold),
                     )
                   ]),
               TableRow(
@@ -101,11 +105,13 @@ class SeeVendorsScreen extends StatelessWidget {
                   children: [
                     Text(
                       ' colun_juan_retamales@colunchile.cl',
-                      style: fg,
+                      style: TextStyle(
+                          fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                     Text(
                       ' Juan Retamales',
-                      style: fg,
+                      style: TextStyle(
+                          fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     )
                   ]),
               TableRow(
@@ -114,11 +120,13 @@ class SeeVendorsScreen extends StatelessWidget {
                   children: [
                     Text(
                       ' colun_mario_gutierrez@colunchile.cl',
-                      style: fg,
+                      style: TextStyle(
+                          fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                     Text(
                       ' Mario Gutierrez',
-                      style: fg,
+                      style: TextStyle(
+                          fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     )
                   ])
             ],
