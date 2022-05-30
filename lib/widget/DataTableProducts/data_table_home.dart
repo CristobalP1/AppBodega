@@ -30,16 +30,16 @@ class _CreateTableProductsHomeState extends State<CreateTableProductsHome> {
               dataRowHeight: 50,
               headingRowHeight: 50,
               sortColumnIndex: 0,
-              columns: [
-                const DataColumn(
+              columns: const [
+                DataColumn(
                   label: Text('Descripcion'),
                   numeric: false,
                 ),
-                const DataColumn(
+                DataColumn(
                   label: Text('Stock'),
                   numeric: true,
                 ),
-                const DataColumn(label: Text('Info'), numeric: false),
+                DataColumn(label: Text('Info'), numeric: false),
               ],
               rows: productos
                   .map(

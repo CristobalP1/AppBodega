@@ -68,7 +68,8 @@ class CreateOrderFinishScreen extends StatelessWidget {
                 margin: const EdgeInsets.only(left: 15, top: 5),
                 alignment: Alignment.topLeft,
                 child: TextButton.icon(
-                  onPressed: () => {},
+                  onPressed: () =>
+                      {Navigator.pushNamed(context, 'create_order')},
                   icon: const Icon(Icons.add),
                   label: const Text("Añadir Productos"),
                 ),
