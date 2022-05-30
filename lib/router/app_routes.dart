@@ -16,6 +16,8 @@ class ApppRoutes {
         const EditCategoryScreen(),
     constants.editProduct: (BuildContext context) => const EditProductScreen(),
     constants.infoProduct: (BuildContext context) => const InfoProductScreen(),
+    constants.listFilterCategory: (BuildContext context) =>
+        const CategoryFilterScrenn(),
 
     //Purchase Orders Screen
     constants.createOrder: (BuildContext context) => const CreateOrderScreen(),
