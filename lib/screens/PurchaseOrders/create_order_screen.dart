@@ -36,23 +36,6 @@ class CreateOrderScreen extends StatelessWidget {
               ],
             ),
           ),
-          /* Container(
-              padding: const EdgeInsets.fromLTRB(26, 5, 0, 0),
-              color: Colors.red,
-              child: const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text('Nombre Proveedor:'))),
-          Container(
-              color: Colors.blue,
-              padding: const EdgeInsets.fromLTRB(26, 0, 0, 0),
-              child: const Align(
-                  alignment: Alignment.centerLeft, child: DropDownButton())),
-          Container(
-            child: const Align(
-                alignment: Alignment.bottomLeft, child: Text('Productos:')),
-            color: Colors.yellow,
-            padding: const EdgeInsets.fromLTRB(26, 40, 0, 0),
-          ), */
           Flexible(
             child: Container(
                 decoration: BoxDecoration(
