@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class FloatingButton extends StatelessWidget {
@@ -10,19 +11,19 @@ class FloatingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SpeedDial(
       animatedIcon: AnimatedIcons.add_event,
-      backgroundColor: Color.fromARGB(255, 236, 55, 137),
+      backgroundColor: AppTheme.primary,
       overlayColor: Colors.black,
       overlayOpacity: 0.5,
       children: [
         SpeedDialChild(
             child: Icon(Icons.create),
             label: 'Crear Producto',
-            backgroundColor: Color.fromARGB(255, 118, 170, 120),
+            backgroundColor: AppTheme.secondary,
             onTap: () => {Navigator.pushNamed(context, 'create_product')}),
         SpeedDialChild(
             child: Icon(Icons.create),
             label: 'Crear Categoria',
-            backgroundColor: Color.fromARGB(255, 118, 170, 120),
+            backgroundColor: AppTheme.secondary,
             onTap: () => {Navigator.pushNamed(context, 'create_category')}),
       ],
     );

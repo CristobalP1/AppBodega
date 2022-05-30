@@ -5,6 +5,7 @@ const String createProduct = "create_product";
 const String editCategory = "edit_category";
 const String editProduct = "edit_product";
 const String infoProduct = "info_product";
+const String listFilterCategory = 'list_filter_category';
 //PurchaseOrders Screen
 const String createOrder = "create_order";
 const String viewState = "view_state";

@@ -51,7 +51,8 @@ class FilterSearchHome extends StatelessWidget {
                               icon: Icon(Icons.filter_alt_sharp),
                               color: Colors.black,
                               onPressed: () {
-                                print('Categorias');
+                                Navigator.pushNamed(
+                                    context, 'list_filter_category');
                               },
                             ),
                             const SizedBox(

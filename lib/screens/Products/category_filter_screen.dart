@@ -1,16 +1,15 @@
-import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/screens.dart';
-import 'package:flutter_application_1/widget/filter_category.dart';
+import 'package:flutter_application_1/widget/ListView/list_view_products.dart';
 
-class CategoryFilter extends StatefulWidget {
-  const CategoryFilter({Key? key}) : super(key: key);
+class CategoryFilterScrenn extends StatefulWidget {
+  const CategoryFilterScrenn({Key? key}) : super(key: key);
 
   @override
-  _CategoryFilterState createState() => _CategoryFilterState();
+  _CategoryFilterScrennState createState() => _CategoryFilterScrennState();
 }
 
-class _CategoryFilterState extends State<CategoryFilter> {
+class _CategoryFilterScrennState extends State<CategoryFilterScrenn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,19 +48,12 @@ class _CategoryFilterState extends State<CategoryFilter> {
               height: 20,
             ),
             const Center(),
-            const Flexible(child: FilterCategory()),
+            const Flexible(child: ListViewProductsWidget()),
             const SizedBox(
               height: 50,
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
-        child: const Icon(Icons.add),
-        backgroundColor: Colors.pinkAccent,
       ),
     );
   }
