@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 import 'package:flutter_application_1/screens/Providers/see_vendors_screen.dart';
 import 'package:flutter_application_1/screens/Products/home_screen.dart';
+import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
 
 class ActiveProvidersScreen extends StatelessWidget {
@@ -14,11 +15,11 @@ class ActiveProvidersScreen extends StatelessWidget {
         title: 'Proveedores',
         home: Scaffold(
             appBar: AppBar(
-              backgroundColor: const Color.fromARGB(255, 0, 153, 255),
+              backgroundColor: AppTheme.primary,
               leading: IconButton(
                 icon: const Icon(
                   Icons.arrow_back,
-                  color: Colors.black,
+                  color: AppTheme.quaternary,
                   size: 30,
                 ),
                 onPressed: () {
@@ -30,15 +31,14 @@ class ActiveProvidersScreen extends StatelessWidget {
               ),
               title: const Text(
                 'Proveedores Activos',
-                style: TextStyle(
-                    fontSize: 25, color: Color.fromARGB(255, 0, 0, 0)),
+                style: TextStyle(fontSize: 20, color: AppTheme.quaternary),
               ), //Define el titulo del appbar
               elevation: 15.5,
               actions: <Widget>[
                 IconButton(
                   icon: const Icon(
                     Icons.more_vert,
-                    color: Color.fromARGB(255, 0, 0, 0),
+                    color: AppTheme.quaternary,
                     size: 30,
                   ),
                   onPressed: () {

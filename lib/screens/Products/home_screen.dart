@@ -5,6 +5,8 @@ import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/FliterSearch/filter_search.dart';
 
+import '../../theme/app_theme.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -18,7 +20,11 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         actions: [
           IconButton(
-            icon: const Icon(Icons.attach_file_rounded),
+            icon: const Icon(
+              Icons.more_vert,
+              color: AppTheme.quaternary,
+              size: 30,
+            ),
             onPressed: () {
               print('holaa');
             },
