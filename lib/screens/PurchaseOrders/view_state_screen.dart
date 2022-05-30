@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/ListView/list_check.dart';
-
+import 'package:flutter_application_1/widget/Search/Search_bar.dart';
 class ViewStateScreen extends StatelessWidget {
   const ViewStateScreen({Key? key}) : super(key: key);
 
@@ -15,14 +15,22 @@ class ViewStateScreen extends StatelessWidget {
         elevation: 15.5,
       ),
       body: Column(
+        
         children: [
           Container(
+            
+            padding: const EdgeInsets.fromLTRB(5,5, 5, 0),
+            
+                    
+                    child: SearchInput()),
+          Container(
+            
               alignment: AlignmentDirectional.centerStart,
-              padding: const EdgeInsets.fromLTRB(26, 25, 0, 0),
+              padding: const EdgeInsets.fromLTRB(26, 10, 0, 0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
+              crossAxisAlignment: CrossAxisAlignment.start,
+                children:  const [
+                    Text(
                     'Numero Orden de compra:',
                   ),
                   Text(
