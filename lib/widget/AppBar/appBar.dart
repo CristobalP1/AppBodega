@@ -10,7 +10,6 @@ class AppBarPesonalized extends StatelessWidget {
     return AppBar(
       title: const Text('Productos'),
       backgroundColor: AppTheme.primary,
-      leading: const Icon(Icons.menu_outlined),
       actions: [
         IconButton(
           icon: const Icon(Icons.attach_file_rounded),
