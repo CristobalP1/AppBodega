@@ -1,6 +1,6 @@
 import 'dart:html';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/table_products_home_screen.dart';
+import 'package:flutter_application_1/screens/screens.dart';
 import 'package:flutter_application_1/widget/filter_category.dart';
 
 class CategoryFilter extends StatefulWidget {
@@ -19,10 +19,8 @@ class _CategoryFilterState extends State<CategoryFilter> {
         backgroundColor: Colors.pinkAccent,
         leading: IconButton(
             icon: const Icon(Icons.menu),
-            onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const CreateTableProductsScreen()))),
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const HomeScreen()))),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
