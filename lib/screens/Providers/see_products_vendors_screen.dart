@@ -17,7 +17,7 @@ class SeeProductsVendorsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 0, 153, 255),
+        backgroundColor: const Color.fromRGBO(3, 4, 94, 1),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
