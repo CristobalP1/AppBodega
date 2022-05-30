@@ -21,7 +21,7 @@ class SeeProductsVendorsScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.black,
+            color: Colors.white,
             size: 30,
           ),
           onPressed: () {
