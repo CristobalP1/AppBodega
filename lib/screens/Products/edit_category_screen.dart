@@ -15,8 +15,13 @@ class EditCategoryScreen extends StatefulWidget {
 }
 
 class _EditCategoryScreenState extends State<EditCategoryScreen> {
+  List productos = [
+    {'nombre': 'leche soprole', 'stock': 23},
+    {'nombre': 'leche acuenta', 'stock': 23},
+    {'nombre': 'leche lider', 'stock': 23},
+  ];
+  List<String> listas = [];
   bool change = false;
-  List<String> productos = [];
   TextEditingController controller = TextEditingController();
   String getvalue = '';
   @override
@@ -66,6 +71,7 @@ class _EditCategoryScreenState extends State<EditCategoryScreen> {
                 getvalue = controller.text,
                 change = true,
                 controller.text = '',
+                print(productos[1]),
                 setState(() {})
               },
               icon: const Icon(Icons.add),
@@ -85,10 +91,18 @@ class _EditCategoryScreenState extends State<EditCategoryScreen> {
               height: 10,
             ),
             Flexible(
-                child: Container(
-                    margin: const EdgeInsets.fromLTRB(5, 10, 5, 10),
-                    padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-                    child: const ListViewProductsWidget())),
+              child: Container(
+                margin: const EdgeInsets.fromLTRB(5, 10, 5, 10),
+                padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                child: ListView.builder(
+                  itemCount: productos.length,
+                  itemBuilder: (context, position) {
+                    return Text(productos[position].toString());
+                  },
+                  //children: listas.map((elem) => Tarea(elem)).toList(),
+                ),
+              ),
+            ),
             const SizedBox(
               height: 50,
             ),
@@ -97,6 +111,20 @@ class _EditCategoryScreenState extends State<EditCategoryScreen> {
       ),
       drawer: const ComplexDrawer(),
       drawerScrimColor: Colors.transparent,
+    );
+  }
+}
+
+class Tarea2 extends StatelessWidget {
+  final String tarea;
+  Tarea2(this.tarea);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      child: Card(
+        child: Text(tarea),
+      ),
     );
   }
 }
