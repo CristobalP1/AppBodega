@@ -23,7 +23,7 @@ class _EditCategoryScreenState extends State<EditCategoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Productos'),
+        title: const Text('Productos'),
         elevation: 0,
         actions: [
           IconButton(
@@ -35,23 +35,23 @@ class _EditCategoryScreenState extends State<EditCategoryScreen> {
         ],
       ),
       body: Container(
-        margin: EdgeInsets.all(20),
+        margin: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Row(
               children: [
-                Text(
+                const Text(
                   'Categoria: ',
                   style: TextStyle(fontSize: 20),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Text(change == false ? widget.name : getvalue,
-                    style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.w500)),
               ],
             ),
             const SizedBox(
@@ -88,7 +88,7 @@ class _EditCategoryScreenState extends State<EditCategoryScreen> {
                 child: Container(
                     margin: const EdgeInsets.fromLTRB(5, 10, 5, 10),
                     padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-                    child: ListViewProductsWidget())),
+                    child: const ListViewProductsWidget())),
             const SizedBox(
               height: 50,
             ),
