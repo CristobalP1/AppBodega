@@ -16,3 +16,5 @@ const String inactiveProviders = "inactive_providers";
 const String createProvider = "create_provider";
 const String seeProductsVendors = "see_products_vendors";
 const String seeVendors = "see_vendors";
+const String vendor = "vendor";
+const String createVendor = "create_vendor";

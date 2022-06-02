@@ -13,3 +13,6 @@ export 'package:flutter_application_1/screens/Providers/active_providers_screen.
 export 'package:flutter_application_1/screens/PurchaseOrders/create_order_screen.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/view_state_screen.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/create_order_finish_screen.dart';
+export 'package:flutter_application_1/screens/Providers/create_provider_screen.dart';
+export 'package:flutter_application_1/screens/Providers/create_vendor.dart';
+export 'package:flutter_application_1/screens/Providers/vendors.dart';
