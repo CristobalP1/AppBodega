@@ -35,6 +35,8 @@ class ApppRoutes {
     constants.seeProductsVendors: (BuildContext context) =>
         const SeeProductsVendorsScreen(),
     constants.seeVendors: (BuildContext context) => const SeeVendorsScreen(),
+    constants.vendor: (BuildContext context) => const VendorScreen(),
+    constants.createVendor: (BuildContext context) => const CreateVendorScreen()
   };
 
   static Route<dynamic> onGenerateRouter(RouteSettings settings) {

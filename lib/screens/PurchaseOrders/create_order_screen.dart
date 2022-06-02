@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
+import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 import 'package:flutter_application_1/widget/ListView/list_view_check.dart';
 import 'package:flutter_application_1/widget/Buttons/button_save_canceller.dart';
 
@@ -14,7 +15,6 @@ class CreateOrderScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(titulo),
-        leading: const Icon(Icons.menu_outlined),
         elevation: 15.5,
       ),
       body: Column(
@@ -52,6 +52,8 @@ class CreateOrderScreen extends StatelessWidget {
         back: 'Cancelar',
         ruta: 'create_order_finish',
       ),
+      drawer: const ComplexDrawer(),
+      drawerScrimColor: Colors.transparent,
     );
   }
 }
