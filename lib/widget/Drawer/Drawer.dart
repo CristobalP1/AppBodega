@@ -197,6 +197,17 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
   }
 
   Widget sMenuButton(Route subMenu, bool isTitle) {
+    void navigate(bool isSameRoute, bool canPop) {
+      Navigator.of(context).pop();
+      if (subMenu.route.isNotEmpty && !isSameRoute) {
+        if (canPop) {
+          Navigator.pushReplacementNamed(context, subMenu.route);
+        } else {
+          Navigator.pushNamed(context, subMenu.route);
+        }
+      }
+    }
+
     return InkWell(
       onTap: () {
         //handle the function
@@ -206,6 +217,9 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
         if (subMenu.route.isNotEmpty && !isSameRoute) {
           Navigator.pushNamed(context, subMenu.route);
         }
+        bool canPop = Navigator.canPop(context) &&
+            ModalRoute.of(context)?.settings.name != homePage;
+        navigate(isSameRoute, canPop);
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -262,7 +276,8 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
     CDM(Icons.local_shipping, Route("Proveedores", ""), [
       Route("Activos", activeProvider),
       Route("Inactivos", inactiveProviders),
-      Route("Crear proveedor", createProvider)
+      Route("Crear proveedor", createProvider),
+      Route("vendedores", vendor)
     ]),
     CDM(Icons.local_shipping, Route("Ordenes", ""), [
       Route("Crear orden", createOrder),
