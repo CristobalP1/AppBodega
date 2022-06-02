@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/Products/edit_category_screen.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
-import 'package:flutter_application_1/widget/Buttons/button_save_canceller.dart';
 import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
+import 'package:flutter_application_1/widget/Inputs/input_field.dart';
 
-import '../../widget/Inputs/input_form.dart';
-import '../../widget/ListView/list_view_products.dart';
-
-class CreateCategoryScreen extends StatelessWidget {
+class CreateCategoryScreen extends StatefulWidget {
   const CreateCategoryScreen({Key? key}) : super(key: key);
 
+  @override
+  State<CreateCategoryScreen> createState() => _CreateCategoryScreenState();
+}
+
+class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
+  List<String> listas = [];
+  TextEditingController controller = TextEditingController();
+  String getvalue = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,37 +37,44 @@ class CreateCategoryScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              'Crear Categoria',
-              style: TextStyle(fontSize: 20),
+            InputField(
+              hint: 'Nombre de la categoria',
+              controller: controller,
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            TextButton.icon(
+              onPressed: () => {
+                getvalue = controller.text,
+                listas.add(getvalue),
+                controller.text = '',
+                setState(() {})
+              },
+              icon: const Icon(Icons.add),
+              label: const Text("Crear Categoria"),
             ),
             const SizedBox(
               height: 20,
             ),
-            const InputForm(
-              labelText: 'Nombre Categoria',
-              hintText: 'Lacteos, Carnes',
+            const Text(
+              'Lista de categorias',
+              style: TextStyle(fontSize: 20),
             ),
             const SizedBox(
-              height: 40,
+              height: 30,
             ),
-            Center(
-              child: TextButton.icon(
-                onPressed: () => {},
-                icon: const Icon(Icons.add),
-                label: const Text("Añadir Productoss"),
+            Flexible(
+              child: ListView.builder(
+                itemCount: listas.length,
+                itemBuilder: (context, position) {
+                  return Tarea(listas[position]);
+                },
+                //children: listas.map((elem) => Tarea(elem)).toList(),
               ),
-            ),
-            const Flexible(child: ListViewProductsWidget()),
-            const SizedBox(
-              height: 50,
-            ),
+            )
           ],
         ),
-      ),
-      bottomSheet: const ButtonSaveCanceller(
-        next: 'Crear Categoria',
-        back: 'Cancelar',
       ),
       drawer: const ComplexDrawer(),
       drawerScrimColor: Colors.transparent,
@@ -69,20 +82,22 @@ class CreateCategoryScreen extends StatelessWidget {
   }
 }
 
-class TextStyles extends StatelessWidget {
-  final tittle;
-
-  const TextStyles({
-    Key? key,
-    this.tittle,
-  }) : super(key: key);
+class Tarea extends StatelessWidget {
+  final String tarea;
+  Tarea(this.tarea);
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      tittle,
-      style: const TextStyle(
-          fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
+    return GestureDetector(
+      child: Card(
+        child: Text(tarea),
+      ),
+      onTap: () => {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => EditCategoryScreen(name: tarea)))
+      },
     );
   }
 }
