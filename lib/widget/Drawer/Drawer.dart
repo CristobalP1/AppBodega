@@ -212,13 +212,11 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
       onTap: () {
         //handle the function
         //if index==0? donothing: doyourlogic here
+        String? actualPage = ModalRoute.of(context)?.settings.name;
         bool isSameRoute =
-            ModalRoute.of(context)?.settings.name == subMenu.route;
-        if (subMenu.route.isNotEmpty && !isSameRoute) {
-          Navigator.pushNamed(context, subMenu.route);
-        }
+            actualPage == subMenu.route;
         bool canPop = Navigator.canPop(context) &&
-            ModalRoute.of(context)?.settings.name != homePage;
+            actualPage != homePage;
         navigate(isSameRoute, canPop);
       },
       child: Padding(
