@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter_application_1/widget/Buttons/button_save_canceller.dart';
 import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 import 'package:flutter_application_1/widget/Inputs/input_field.dart';
@@ -16,9 +19,9 @@ class EditCategoryScreen extends StatefulWidget {
 
 class _EditCategoryScreenState extends State<EditCategoryScreen> {
   List productos = [
-    {'nombre': 'leche soprole', 'stock': 23},
-    {'nombre': 'leche acuenta', 'stock': 23},
-    {'nombre': 'leche lider', 'stock': 23},
+    {"nombre": 'leche soprole', 'stock': 23},
+    {"nombre": 'leche acuenta', 'stock': 23},
+    {"nombre": 'leche lider', 'stock': 23},
   ];
   List<String> listas = [];
   bool change = false;
@@ -97,7 +100,7 @@ class _EditCategoryScreenState extends State<EditCategoryScreen> {
                 child: ListView.builder(
                   itemCount: productos.length,
                   itemBuilder: (context, position) {
-                    return Text(productos[position].toString());
+                    return Text(productos[1].toString());
                   },
                   //children: listas.map((elem) => Tarea(elem)).toList(),
                 ),
@@ -106,6 +109,7 @@ class _EditCategoryScreenState extends State<EditCategoryScreen> {
             const SizedBox(
               height: 50,
             ),
+            Test(),
           ],
         ),
       ),
@@ -125,6 +129,27 @@ class Tarea2 extends StatelessWidget {
       child: Card(
         child: Text(tarea),
       ),
+    );
+  }
+}
+
+class Test extends StatelessWidget {
+  final url = Uri.parse("https://res-api-educacion.herokuapp.com/");
+
+  Future pedirdatos() async {
+    final response = await http.get(url);
+    final lista = List.from(jsonDecode(response.body));
+
+    lista.forEach((e) => e);
+
+    print(response.body);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      child: Text('Pedir datos'),
+      onPressed: () => {pedirdatos()},
     );
   }
 }
