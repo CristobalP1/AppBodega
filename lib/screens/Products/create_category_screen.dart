@@ -14,12 +14,14 @@ class CreateCategoryScreen extends StatefulWidget {
 class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
   List<String> listas = [];
   TextEditingController controller = TextEditingController();
+  TextEditingController controller2 = TextEditingController();
   String getvalue = '';
+  String getvalue2 = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Productos'),
+        title: const Text('Productos'),
         backgroundColor: AppTheme.primary,
         elevation: 0,
         actions: [
@@ -32,7 +34,7 @@ class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
         ],
       ),
       body: Container(
-        margin: EdgeInsets.all(20),
+        margin: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,11 +57,35 @@ class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
               label: const Text("Crear Categoria"),
             ),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             const Text(
               'Lista de categorias',
               style: TextStyle(fontSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                SearchCategory(controller: controller2),
+                IconButton(
+                    //getvalue2 = controller2.text,
+                    onPressed: () => {
+                          getvalue2 = controller2.text,
+                          listas.forEach((e) => {
+                                e == getvalue2
+                                    ? Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                EditCategoryScreen(
+                                                    name: getvalue2)))
+                                    : print('no encontrado')
+                              })
+                        },
+                    icon: const Icon(Icons.search))
+              ],
             ),
             const SizedBox(
               height: 30,
@@ -72,12 +98,44 @@ class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
                 },
                 //children: listas.map((elem) => Tarea(elem)).toList(),
               ),
-            )
+            ),
           ],
         ),
       ),
       drawer: const ComplexDrawer(),
       drawerScrimColor: Colors.transparent,
+    );
+  }
+}
+
+class SearchCategory extends StatelessWidget {
+  const SearchCategory({
+    Key? key,
+    required this.controller,
+  }) : super(key: key);
+
+  final TextEditingController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GestureDetector(
+        child: Container(
+            margin: const EdgeInsets.only(right: 5),
+            decoration: const BoxDecoration(
+                color: Colors.white70,
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TextField(
+                  controller: controller,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none, hintText: 'Buscar Categoria'),
+                ),
+              ],
+            )),
+      ),
     );
   }
 }

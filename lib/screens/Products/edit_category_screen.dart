@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -90,25 +91,26 @@ class _EditCategoryScreenState extends State<EditCategoryScreen> {
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(
-              height: 10,
+              height: 50,
             ),
-            Flexible(
+            const Flexible(child: ListViewProductsWidget()),
+            /* Flexible(
               child: Container(
                 margin: const EdgeInsets.fromLTRB(5, 10, 5, 10),
                 padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
                 child: ListView.builder(
                   itemCount: productos.length,
                   itemBuilder: (context, position) {
-                    return Text(productos[1].toString());
+                    return Tarea2(productos[position]);
                   },
                   //children: listas.map((elem) => Tarea(elem)).toList(),
                 ),
               ),
-            ),
+            ), */
             const SizedBox(
-              height: 50,
+              height: 40,
             ),
-            Test(),
+            /* Test(), */
           ],
         ),
       ),
@@ -133,15 +135,40 @@ class Tarea2 extends StatelessWidget {
 }
 
 class Test extends StatelessWidget {
-  final url = Uri.parse("https://res-api-educacion.herokuapp.com/");
+  final url = Uri.parse(
+      "http://157.230.213.232:8000/productos/productos_categoria_listar/");
+
+/*   Map<String, String> requestHeaders = {
+    'Content-type': 'application/json',
+    'Accept': 'application/json',
+    'Authorization': '<Your token>',
+    'Username': 'test',
+    'Password': 'test..2022',
+  }; */
+/* 
+  factory HttpClientBasicCredentials(String username, String password) =>
+    _HttpClientBasicCredentials(username, password); */
 
   Future pedirdatos() async {
-    final response = await http.get(url);
+    final response = await http.get(
+      url,
+    );
     final lista = List.from(jsonDecode(response.body));
 
     lista.forEach((e) => e);
 
+    /*   print(response.body); */
     print(response.body);
+  }
+
+  createCategory() async {
+    var url = Uri.parse('https://example.com/whatsit/create');
+    var response =
+        await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
+
+    print(await http.read(Uri.parse('https://example.com/foobar.txt')));
   }
 
   @override
