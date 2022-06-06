@@ -213,10 +213,8 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
         //handle the function
         //if index==0? donothing: doyourlogic here
         String? actualPage = ModalRoute.of(context)?.settings.name;
-        bool isSameRoute =
-            actualPage == subMenu.route;
-        bool canPop = Navigator.canPop(context) &&
-            actualPage != homePage;
+        bool isSameRoute = actualPage == subMenu.route;
+        bool canPop = Navigator.canPop(context) && actualPage != homePage;
         navigate(isSameRoute, canPop);
       },
       child: Padding(
@@ -279,6 +277,7 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
     ]),
     CDM(Icons.local_shipping, Route("Ordenes", ""), [
       Route("Crear orden", createOrder),
+      Route("Estado de la orden", viewState),
     ]),
   ];
 
