@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/screens.dart';
 import 'package:flutter_application_1/widget/Buttons/button_save_canceller.dart';
 import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 import 'package:flutter_application_1/widget/Inputs/input_form.dart';
@@ -19,9 +18,7 @@ class _CreateProductScreenState extends State<CreateProductScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.attach_file_rounded),
-            onPressed: () {
-              print('holaa');
-            },
+            onPressed: () {},
           )
         ],
       ),
