@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Column(
-        children: const [FilterSearchHome(), CreateTableProductsHome()],
+        children: [FilterSearchHome(), CreateTableProductsHome()],
       ),
       floatingActionButton: const FloatingButton(),
       drawer: const ComplexDrawer(),
