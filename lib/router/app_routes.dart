@@ -8,6 +8,7 @@ class ApppRoutes {
   static Map<String, Widget Function(BuildContext)> routes = {
     //Products Screen
     constants.homePage: (BuildContext context) => const HomeScreen(),
+    constants.filterHome: (BuildContext context) => const FilterHomeScreen(),
     constants.createCategory: (BuildContext context) =>
         const CreateCategoryScreen(),
     constants.createProduct: (BuildContext context) =>
