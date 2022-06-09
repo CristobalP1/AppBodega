@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/Filter/filter_category.dart';
 
+import '../../screens/Providers/see_vendors_screen.dart';
+
 class FilterSearchHome extends StatelessWidget {
   const FilterSearchHome({
     Key? key,
@@ -49,12 +51,11 @@ class FilterSearchHome extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             IconButton(
-                              icon: Icon(Icons.filter_alt_sharp),
-                              color: Colors.black,
-                              onPressed: () {
-                                filterWidgetCategory();
-                              },
-                            ),
+                                icon: Icon(Icons.filter_alt_sharp),
+                                color: Colors.black,
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'filterHome');
+                                }),
                             const SizedBox(
                               width: 10,
                             ),

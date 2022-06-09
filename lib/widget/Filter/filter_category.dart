@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
-class filterWidgetCategory extends StatelessWidget {
-  const filterWidgetCategory({
+class FilterWidgetCategory extends StatefulWidget {
+  const FilterWidgetCategory({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<FilterWidgetCategory> createState() => _FilterWidgetCategoryState();
+}
+
+class _FilterWidgetCategoryState extends State<FilterWidgetCategory> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
