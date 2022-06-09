@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widget/Filter/filter_category.dart';
 
 class FilterSearchHome extends StatelessWidget {
   const FilterSearchHome({
@@ -51,8 +52,7 @@ class FilterSearchHome extends StatelessWidget {
                               icon: Icon(Icons.filter_alt_sharp),
                               color: Colors.black,
                               onPressed: () {
-                                Navigator.pushNamed(
-                                    context, 'list_filter_category');
+                                filterWidgetCategory();
                               },
                             ),
                             const SizedBox(
