@@ -15,6 +15,6 @@ class ListViewProductsWidget extends StatelessWidget {
               onTap: () {},
             ),
         separatorBuilder: (_, __) => const Divider(),
-        itemCount: 10);
+        itemCount: 5);
   }
 }

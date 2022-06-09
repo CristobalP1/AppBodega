@@ -1,79 +1,103 @@
 import 'package:flutter/material.dart';
 import 'package:filter_list/filter_list.dart';
 import 'package:flutter_application_1/screens/Products/select_list_controller.dart';
+import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:get/get.dart';
 
+import '../../widget/ListView/list_view_enter_products.dart';
+
 class FilterHomeScreen extends StatelessWidget {
-  const FilterHomeScreen({Key? key}) : super(key: key);
+  final list;
+  const FilterHomeScreen({Key? key, this.list}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyFilterPage(),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Categorias'),
+          elevation: 0,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.more_vert),
+              onPressed: () {
+                print(list);
+              },
+            )
+          ],
+        ),
+        body: Column(
+          children: [
+            Flexible(
+              child: ListView.builder(
+                itemCount: list.length,
+                itemBuilder: (context, position) {
+                  return Tarea24(list[position]);
+                },
+                //children: listas.map((elem) => Tarea(elem)).toList(),
+              ),
+            ),
+          ],
+        ));
   }
 }
 
-List<String> defaultList = [
-  'Lacteos',
-  'carnes',
-  'limpieza',
-  'test1',
-  'test2',
-  'test3',
-  'test4',
-];
-
-class MyFilterPage extends StatelessWidget {
-  var controller = Get.put(SelectedListController());
-  MyFilterPage({Key? key}) : super(key: key);
-
-  get selectedUserList => 0;
-
-  void openFilterDialog(context) async {
-    await FilterListDialog.display<String>(
-      context,
-      listData: defaultList,
-      selectedListData: controller.selectedList,
-      headlineText: 'Filtrar categorias',
-      choiceChipLabel: (item) => item,
-      validateSelectedItem: (list, val) => list!.contains(val),
-      onItemSearch: (list, text) {
-        return selectedUserList.list(
-            (element) => element.toLowerCase().contains(text.toLowerCase()));
-      },
-      onApplyButtonClick: (list) {
-        controller.selectedList.value = (List<String>.from(list!));
-        Navigator.of(context).pop();
-      },
-    );
-  }
+class Tarea24 extends StatelessWidget {
+  final String tarea;
+  Tarea24(this.tarea);
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            body: Center(
-              child: Obx(() => controller.selectedList.value.length == 0
-                  ? Text('Categorias')
-                  : Wrap(
-                      children: controller.selectedList.value
-                          .map((String e) => Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Chip(
-                                  label: Text(e),
-                                ),
-                              ))
-                          .toList(),
-                    )),
+    return GestureDetector(
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: AppTheme.primary, width: 2),
+        ),
+        margin: const EdgeInsets.only(left: 26, top: 35, right: 26),
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+        child: Column(
+          children: [
+            Card(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      tarea,
+                      style:
+                          TextStyle(fontSize: 19, fontWeight: FontWeight.w500),
+                    ),
+                    Icon(Icons.accessibility_new_outlined)
+                  ]),
             ),
-            floatingActionButton: FloatingActionButton(
-              child: const Icon(Icons.add),
-              onPressed: () => openFilterDialog(context),
-            )));
+            const SizedBox(
+              height: 10,
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Text('Leche'),
+              Text('23'),
+              Text('Solicitar'),
+            ]),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Text('Leche'),
+              Text('23'),
+              Text('Solicitar'),
+            ]),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Text('Leche'),
+              Text('23'),
+              Text('Solicitar'),
+            ]),
+            const SizedBox(
+              height: 10,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

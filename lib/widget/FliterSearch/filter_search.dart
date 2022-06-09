@@ -1,12 +1,52 @@
+import 'package:filter_list/filter_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/Products/filter_home.dart';
+import 'package:flutter_application_1/screens/Products/select_list_controller.dart';
 import 'package:flutter_application_1/widget/Filter/filter_category.dart';
+import 'package:get/get.dart';
 
 import '../../screens/Providers/see_vendors_screen.dart';
 
 class FilterSearchHome extends StatelessWidget {
-  const FilterSearchHome({
+  var controller = Get.put(SelectedListController());
+  FilterSearchHome({
     Key? key,
   }) : super(key: key);
+
+  get selectedUserList => 0;
+  List<String> defaultList = [
+    'Lacteos',
+    'carnes',
+    'limpieza',
+    'Jardin',
+    'Congelados',
+    'Juguetes',
+    'Computacion',
+    'Optica',
+  ];
+  void openFilterDialog(context) async {
+    await FilterListDialog.display<String>(
+      context,
+      listData: defaultList,
+      selectedListData: controller.selectedList,
+      headlineText: 'Filtrar categorias',
+      choiceChipLabel: (item) => item,
+      validateSelectedItem: (list, val) => list!.contains(val),
+      onItemSearch: (list, text) {
+        return selectedUserList.list(
+            (element) => element.toLowerCase().contains(text.toLowerCase()));
+      },
+      onApplyButtonClick: (list) {
+        controller.selectedList.value = (List<String>.from(list!));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => FilterHomeScreen(
+                      list: list,
+                    )));
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +94,8 @@ class FilterSearchHome extends StatelessWidget {
                                 icon: Icon(Icons.filter_alt_sharp),
                                 color: Colors.black,
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'filterHome');
+                                  print('holaa');
+                                  openFilterDialog(context);
                                 }),
                             const SizedBox(
                               width: 10,
@@ -74,7 +115,19 @@ class FilterSearchHome extends StatelessWidget {
             child: Column(
               children: [],
             ),
-          )
+          ),
+          Center(
+            child: Obx(() => Wrap(
+                  children: controller.selectedList.value
+                      .map((String e) => Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Chip(
+                              label: Text(e),
+                            ),
+                          ))
+                      .toList(),
+                )),
+          ),
         ],
       ),
     );
