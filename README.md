@@ -16,10 +16,14 @@ success!!!
 
 dependencies:
 
-flutter pub add flutter_speed_dial
-flutter pub add Get
-flutter pub add Filter_list
-flutter pub add dio
-flutter pub add http
+-flutter pub add flutter_speed_dial
+
+-flutter pub add Get
+
+-flutter pub add Filter_list
+
+-flutter pub add dio
+
+-flutter pub add http
 
 
