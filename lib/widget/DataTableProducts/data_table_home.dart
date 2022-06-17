@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/Products/info_product_screen.dart';
 import 'package:flutter_application_1/widget/DataTableProducts/products.dart';
 
-import '../../screens/Providers/see_vendors_screen.dart';
-
 class CreateTableProductsHome extends StatefulWidget {
   const CreateTableProductsHome({Key? key}) : super(key: key);
 
