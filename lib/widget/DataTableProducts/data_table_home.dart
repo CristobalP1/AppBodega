@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/Products/info_product_screen.dart';
 import 'package:flutter_application_1/widget/DataTableProducts/products.dart';
+
+import '../../screens/Providers/see_vendors_screen.dart';
 
 class CreateTableProductsHome extends StatefulWidget {
   const CreateTableProductsHome({Key? key}) : super(key: key);
@@ -46,28 +49,11 @@ class _CreateTableProductsHomeState extends State<CreateTableProductsHome> {
                     (products) => DataRow(
                       selected: products.selected,
                       onSelectChanged: (s) {
-                        showDialog(
-                            context: context,
-                            builder: (context) => AlertDialog(
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: const Text('Solicitar'),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: const Text('Cancelar'),
-                                    ),
-                                  ],
-                                  title: const Text('Alerta De Stock'),
-                                  contentPadding: const EdgeInsets.all(20.0),
-                                  content: const Text(
-                                      '¿Estas seguro que deseas solicitar mas unidades de este producto?'),
-                                ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const InfoProductScreen()));
                         setState(() {
                           products.selected = s!;
                         });
@@ -84,9 +70,33 @@ class _CreateTableProductsHomeState extends State<CreateTableProductsHome> {
                           ),
                         ),
                         DataCell(
-                          Text(
-                            products.info,
-                          ),
+                          TextButton(
+                              onPressed: () {
+                                showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: const Text('Solicitar'),
+                                            ),
+                                            TextButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: const Text('Cancelar'),
+                                            ),
+                                          ],
+                                          title: const Text('Alerta De Stock'),
+                                          contentPadding:
+                                              const EdgeInsets.all(20.0),
+                                          content: const Text(
+                                              '¿Estas seguro que deseas solicitar mas unidades de este producto?'),
+                                        ));
+                              },
+                              child: Text('Solicitar')),
                         ),
                       ],
                     ),
