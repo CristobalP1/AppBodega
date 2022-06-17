@@ -6,25 +6,31 @@ import '../utils/Constants.dart' as constants;
 
 class ApppRoutes {
   static Map<String, Widget Function(BuildContext)> routes = {
-    //Products Screen
+    //Home Screen
     constants.homePage: (BuildContext context) => const HomeScreen(),
     constants.filterHome: (BuildContext context) => const FilterHomeScreen(),
-    constants.createCategory: (BuildContext context) =>
-        const CreateCategoryScreen(),
+
+    //Products Screen
     constants.createProduct: (BuildContext context) =>
         const CreateProductScreen(),
-    constants.editCategory: (BuildContext context) =>
-        const EditCategoryScreen(),
     constants.editProduct: (BuildContext context) => const EditProductScreen(),
     constants.infoProduct: (BuildContext context) => const InfoProductScreen(),
-    constants.listFilterCategory: (BuildContext context) =>
-        const CategoryFilterScrenn(),
+
+    //Category Screen
+    constants.createCategory: (BuildContext context) =>
+        const CreateCategoryScreen(),
+    constants.editCategory: (BuildContext context) =>
+        const EditCategoryScreen(),
 
     //Purchase Orders Screen
     constants.createOrder: (BuildContext context) => const CreateOrderScreen(),
     constants.viewState: (BuildContext context) => const ViewStateScreen(),
     constants.createOrderFinish: (BuildContext context) =>
         const CreateOrderFinishScreen(),
+    constants.historyOrders: (BuildContext context) =>
+        const HistoryOrdersScreen(),
+    constants.detailsOrder: (BuildContext context) =>
+        const DetailsOrdersScreen(),
 
     //Providers Screen
     constants.activeProvider: (BuildContext context) =>
@@ -33,6 +39,8 @@ class ApppRoutes {
         const InactiveProvidersScreen(),
     constants.createProvider: (BuildContext context) =>
         const CreateProviderScreen(),
+
+    //Vendor Screen
     constants.seeProductsVendors: (BuildContext context) =>
         const SeeProductsVendorsScreen(),
     constants.seeVendors: (BuildContext context) => const SeeVendorsScreen(),

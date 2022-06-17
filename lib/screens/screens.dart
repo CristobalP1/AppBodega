@@ -1,5 +1,6 @@
+export 'package:flutter_application_1/screens/PurchaseOrders/details_orders.dart';
+export 'package:flutter_application_1/screens/PurchaseOrders/history_orders.dart';
 export 'package:flutter_application_1/screens/Home/filter_home.dart';
-export 'package:flutter_application_1/screens/Category/category_filter_screen.dart';
 export 'package:flutter_application_1/screens/Providers/create_provider_screen.dart';
 export 'package:flutter_application_1/screens/Providers/active_providers_screen.dart';
 export 'package:flutter_application_1/screens/Vendor/see_products_vendors_screen.dart';

@@ -259,7 +259,7 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
           color: Colors.white,
         ),
         subtitle: const Txt(
-          text: "Big Boss",
+          text: "Big Desayuno Boss",
           color: Colors.white70,
         ),
       ),
@@ -267,17 +267,17 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
   }
 
   static List<CDM> cdms = [
-    CDM(Icons.inventory, Route("Bodega", ""),
-        [Route("Productos", homePage), Route("Insumos", "")]),
+    CDM(Icons.warehouse, Route("Bodega", ""), [Route("Productos", homePage)]),
     CDM(Icons.local_shipping, Route("Proveedores", ""), [
       Route("Activos", activeProvider),
       Route("Inactivos", inactiveProviders),
       Route("Crear proveedor", createProvider),
-      Route("vendedores", vendor)
     ]),
-    CDM(Icons.local_shipping, Route("Ordenes", ""), [
+    CDM(Icons.badge, Route("Vendedores", ""), [Route("vendedores", vendor)]),
+    CDM(Icons.assignment_rounded, Route("Ordenes", ""), [
       Route("Crear orden", createOrder),
       Route("Estado de la orden", viewState),
+      Route("Historial", historyOrders),
     ]),
   ];
 
