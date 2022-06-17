@@ -74,6 +74,24 @@ class Products {
         stock: '1',
         info: 'Ver mas',
       ),
+      Products(
+        descripcion: 'Lonco leche',
+        selected: false,
+        stock: '1',
+        info: 'Ver mas',
+      ),
+      Products(
+        descripcion: 'Lonco leche',
+        selected: false,
+        stock: '1',
+        info: 'Ver mas',
+      ),
+      Products(
+        descripcion: 'Lonco leche',
+        selected: false,
+        stock: '1',
+        info: 'Ver mas',
+      ),
     ];
   }
 }

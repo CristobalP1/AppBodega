@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:filter_list/filter_list.dart';
-import 'package:flutter_application_1/screens/Products/select_list_controller.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
-import 'package:get/get.dart';
-
-import '../../widget/ListView/list_view_enter_products.dart';
 
 class FilterHomeScreen extends StatelessWidget {
   final list;
@@ -62,36 +57,42 @@ class Tarea24 extends StatelessWidget {
                   children: [
                     Text(
                       tarea,
-                      style:
-                          TextStyle(fontSize: 19, fontWeight: FontWeight.w500),
+                      style: const TextStyle(
+                          fontSize: 19, fontWeight: FontWeight.w500),
                     ),
-                    Icon(Icons.accessibility_new_outlined)
+                    const Icon(Icons.accessibility_new_outlined)
                   ]),
             ),
             const SizedBox(
               height: 10,
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              Text('Leche'),
-              Text('23'),
-              Text('Solicitar'),
-            ]),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Text('Leche'),
+                  Text('23'),
+                  Text('Solicitar'),
+                ]),
             const SizedBox(
               height: 20,
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              Text('Leche'),
-              Text('23'),
-              Text('Solicitar'),
-            ]),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Text('Leche'),
+                  Text('23'),
+                  Text('Solicitar'),
+                ]),
             const SizedBox(
               height: 10,
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              Text('Leche'),
-              Text('23'),
-              Text('Solicitar'),
-            ]),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Text('Leche'),
+                  Text('23'),
+                  Text('Solicitar'),
+                ]),
             const SizedBox(
               height: 10,
             ),

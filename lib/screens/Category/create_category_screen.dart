@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Products/edit_category_screen.dart';
+import 'package:flutter_application_1/screens/Category/edit_category_screen.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 import 'package:flutter_application_1/widget/Inputs/input_field.dart';

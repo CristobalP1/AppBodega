@@ -94,19 +94,6 @@ class _EditCategoryScreenState extends State<EditCategoryScreen> {
               height: 50,
             ),
             const Flexible(child: ListViewProductsWidget()),
-            /* Flexible(
-              child: Container(
-                margin: const EdgeInsets.fromLTRB(5, 10, 5, 10),
-                padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-                child: ListView.builder(
-                  itemCount: productos.length,
-                  itemBuilder: (context, position) {
-                    return Tarea2(productos[position]);
-                  },
-                  //children: listas.map((elem) => Tarea(elem)).toList(),
-                ),
-              ),
-            ), */
             const SizedBox(
               height: 40,
             ),
