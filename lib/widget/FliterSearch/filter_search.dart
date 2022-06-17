@@ -1,11 +1,9 @@
 import 'package:filter_list/filter_list.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Products/filter_home.dart';
-import 'package:flutter_application_1/screens/Products/select_list_controller.dart';
-import 'package:flutter_application_1/widget/Filter/filter_category.dart';
+import 'package:flutter_application_1/screens/Home/filter_home.dart';
+import 'package:flutter_application_1/screens/Home/select_list_controller.dart';
+import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:get/get.dart';
-
-import '../../screens/Providers/see_vendors_screen.dart';
 
 class FilterSearchHome extends StatelessWidget {
   var controller = Get.put(SelectedListController());
@@ -51,7 +49,7 @@ class FilterSearchHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       height: 60,
       child: Row(
         children: <Widget>[
@@ -59,23 +57,30 @@ class FilterSearchHome extends StatelessWidget {
           Expanded(
             child: GestureDetector(
               child: Container(
-                  margin: const EdgeInsets.only(right: 5),
-                  decoration: BoxDecoration(
+                  margin: const EdgeInsets.only(right: 5, left: 10),
+                  decoration: const BoxDecoration(
                       color: Colors.white70,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[
+                    children: <Widget>[
                       TextField(
                         decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'Buscar Producto'),
+                          border: InputBorder.none,
+                          hintText: 'Buscar Producto',
+                          suffixIcon: IconButton(
+                              onPressed: () => {},
+                              icon: const Icon(
+                                Icons.search,
+                                color: AppTheme.primary,
+                              )),
+                        ),
                       )
                     ],
                   )),
             ),
           ),
-          Container(
+          SizedBox(
             width: 125,
             child: Column(
               children: <Widget>[
@@ -87,46 +92,29 @@ class FilterSearchHome extends StatelessWidget {
                             color: Colors.white,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            IconButton(
-                                icon: Icon(Icons.filter_alt_sharp),
-                                color: Colors.black,
-                                onPressed: () {
-                                  print('holaa');
-                                  openFilterDialog(context);
-                                }),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            const Text(
-                              'Filtrar',
-                              style: TextStyle(color: Colors.black45),
-                            )
-                          ],
-                        )),
+                        child: TextButton(
+                            onPressed: () => {openFilterDialog(context)},
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const <Widget>[
+                                Text(
+                                  'Filtrar',
+                                  style: TextStyle(color: Colors.black45),
+                                ),
+                                SizedBox(width: 10),
+                                Icon(
+                                  Icons.filter_alt_sharp,
+                                  color: AppTheme.primary,
+                                )
+                              ],
+                            ))),
                   ),
                 ),
               ],
             ),
           ),
-          Container(
-            child: Column(
-              children: [],
-            ),
-          ),
-          Center(
-            child: Obx(() => Wrap(
-                  children: controller.selectedList.value
-                      .map((String e) => Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: Chip(
-                              label: Text(e),
-                            ),
-                          ))
-                      .toList(),
-                )),
+          Column(
+            children: const [],
           ),
         ],
       ),
