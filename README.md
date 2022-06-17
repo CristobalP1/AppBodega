@@ -14,7 +14,11 @@
 
 success!!!
 
+
 dependencies:
 
+flutter pub add flutter_speed_dial
+flutter pub add Get
+flutter pub add Filter_list
 
 
