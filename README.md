@@ -1,4 +1,4 @@
-#To start app you must follow the following steps
+# To start app you must follow the following steps
 
 1- Open the terminal (CTRL+ñ)
 
@@ -14,14 +14,16 @@
 
 success!!!
 
-!!!importat: always discard changes the folling 3 plugins when change or create an branch
+# !!important!!: always discard changes the folling 3 plugins when change or create an branch
 
 -generated_plugin_registrant.cc
+
 -generated_plugin_registrant.h
+
 -generated_plugins.cmake
 
 
-dependencies:
+# dependencies:
 
 -flutter pub add flutter_speed_dial
 
