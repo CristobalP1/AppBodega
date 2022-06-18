@@ -14,6 +14,13 @@
 
 success!!!
 
+!!!importat: always discard changes the folling 3 plugins when change or create an branch
+
+-generated_plugin_registrant.cc
+-generated_plugin_registrant.h
+-generated_plugins.cmake
+
+
 dependencies:
 
 -flutter pub add flutter_speed_dial
