@@ -1,5 +1,5 @@
-export 'package:flutter_application_1/screens/PurchaseOrders/details_orders.dart';
-export 'package:flutter_application_1/screens/PurchaseOrders/history_orders.dart';
+export 'package:flutter_application_1/screens/PurchaseOrders/pages/details_orders.dart';
+export 'package:flutter_application_1/screens/PurchaseOrders/pages/history_orders.dart';
 export 'package:flutter_application_1/screens/Home/filter_home.dart';
 export 'package:flutter_application_1/screens/Providers/create_provider_screen.dart';
 export 'package:flutter_application_1/screens/Providers/active_providers_screen.dart';
@@ -12,9 +12,9 @@ export 'package:flutter_application_1/screens/Products/edit_product_screen.dart'
 export 'package:flutter_application_1/screens/Home/home_screen.dart';
 export 'package:flutter_application_1/screens/Products/info_product_screen.dart';
 export 'package:flutter_application_1/screens/Providers/active_providers_screen.dart';
-export 'package:flutter_application_1/screens/PurchaseOrders/create_order_screen.dart';
-export 'package:flutter_application_1/screens/PurchaseOrders/view_state_screen.dart';
-export 'package:flutter_application_1/screens/PurchaseOrders/create_order_finish_screen.dart';
+export 'package:flutter_application_1/screens/PurchaseOrders/pages/create_order_screen.dart';
+export 'package:flutter_application_1/screens/PurchaseOrders/pages/view_state_screen.dart';
+export 'package:flutter_application_1/screens/PurchaseOrders/pages/create_order_finish_screen.dart';
 export 'package:flutter_application_1/screens/Providers/create_provider_screen.dart';
 export 'package:flutter_application_1/screens/Vendor/create_vendor.dart';
 export 'package:flutter_application_1/screens/Vendor/vendors.dart';
