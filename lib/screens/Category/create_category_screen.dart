@@ -22,6 +22,7 @@ class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Productos'),
+        leading: const Icon(Icons.menu_outlined),
         backgroundColor: AppTheme.primary,
         elevation: 0,
         actions: [
