@@ -8,6 +8,7 @@ const String infoProduct = "info_product";
 //Category Screen
 const String createCategory = "create_category";
 const String editCategory = "edit_category";
+const String lockedCategory = "locked_category";
 //PurchaseOrders Screen
 const String createOrder = "create_order";
 const String viewState = "view_state";
@@ -23,3 +24,5 @@ const String seeProductsVendors = "see_products_vendors";
 const String seeVendors = "see_vendors";
 const String vendor = "vendor";
 const String createVendor = "create_vendor";
+//Login
+const String loginUser = "login_user";
