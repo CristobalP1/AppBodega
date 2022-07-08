@@ -3,6 +3,8 @@ import 'package:flutter_application_1/screens/Category/edit_category_screen.dart
 import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 import 'package:flutter_application_1/widget/Inputs/input_field.dart';
+import 'package:provider/provider.dart';
+import '../../Providers/list_category_provider.dart';
 
 class CreateCategoryScreen extends StatefulWidget {
   const CreateCategoryScreen({Key? key}) : super(key: key);
@@ -19,6 +21,7 @@ class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
   String getvalue2 = '';
   @override
   Widget build(BuildContext context) {
+    final listado = Provider.of<ListCategoryProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Productos'),
@@ -93,11 +96,13 @@ class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
             ),
             Flexible(
               child: ListView.builder(
-                itemCount: listas.length,
-                itemBuilder: (context, position) {
-                  return Tarea(listas[position]);
-                },
-                //children: listas.map((elem) => Tarea(elem)).toList(),
+                itemCount: listado.ListCategorias.length,
+                itemBuilder: (context,  index) => ListTile( 
+leading: const Icon(Icons.people_rounded),
+title: Text(listado.ListCategorias[index].nombreCategoria),
+trailing: const Icon(Icons.arrow_forward_ios_outlined),
+onTap: (){}
+                ),
               ),
             ),
           ],
