@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/router/app_routes.dart';
+import 'package:flutter_application_1/Providers/list_category_provider.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
+import 'package:provider/provider.dart';
 import 'theme/app_theme.dart';
 
-void main() {
-  runApp(const MyApp());
+
+void main() => runApp(const ProviderState());
+
+class ProviderState extends StatelessWidget{
+  const ProviderState({Key? key}) : super(key: key);
+
+  @override
+Widget build(BuildContext context) {
+  return MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: ( _ )=> ListCategoryProvider(), lazy: 
+false,),
+],
+child: const MyApp(),
+);
+}
 }
 
-class MyApp extends StatelessWidget {
+class MyApp  extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
