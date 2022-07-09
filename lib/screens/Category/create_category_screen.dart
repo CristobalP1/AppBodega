@@ -97,12 +97,13 @@ class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
             Flexible(
               child: ListView.builder(
                 itemCount: listado.ListCategorias.length,
-                itemBuilder: (context,  index) => ListTile( 
-leading: const Icon(Icons.people_rounded),
-title: Text(listado.ListCategorias[index].nombreCategoria),
-trailing: const Icon(Icons.arrow_forward_ios_outlined),
-onTap: (){}
-                ),
+                itemBuilder: (context, index) => ListTile(
+                    title: Text(listado.ListCategorias[index].nombreCategoria),
+                    trailing: const Icon(
+                      Icons.block,
+                      color: Colors.red,
+                    ),
+                    onTap: () {}),
               ),
             ),
           ],
