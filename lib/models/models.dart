@@ -1,1 +1,1 @@
-export "package:flutter_application_1/models/proveedores.dart";
+export 'package:flutter_application_1/models/ProveedoresInc.dart';
