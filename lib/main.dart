@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/router/app_routes.dart';
+import 'package:flutter_application_1/services/providers_service.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
+import 'package:provider/provider.dart';
 import 'theme/app_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ProviderState());
+}
+
+class ProviderState extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: ( _ )=> ProviderService(),lazy: false,),
+      ],
+      child: const MyApp(),
+      );
+  }
 }
 
 class MyApp extends StatelessWidget {

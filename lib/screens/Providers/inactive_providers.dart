@@ -6,12 +6,14 @@ import 'package:flutter_application_1/screens/Home/home_screen.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
 import 'package:flutter_application_1/services/services.dart';
+import 'package:provider/provider.dart';
 
 class InactiveProvidersScreen extends StatelessWidget {
   const InactiveProvidersScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final listado = Provider.of<ProviderService>(context);
     return MaterialApp(
         title: 'Proveedores',
         home: Scaffold(
@@ -49,40 +51,13 @@ class InactiveProvidersScreen extends StatelessWidget {
               ], //define la elevación es un valor float
             ),
             backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-            body: ListView(
+            body:
+           ListView.builder(
+              itemCount: listado.providers.length,
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
-              children: [
-                Container(
-                  margin: EdgeInsets.all(10),
-                  height: 60,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: GestureDetector(
-                          child: Container(
-                            margin: EdgeInsets.only(right: 5),
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 255, 255, 255),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
-                            child: const TextField(
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                  border: UnderlineInputBorder(),
-                                  labelText: 'Buscar',
-                                  icon: Icon(Icons.search_sharp)),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 50),
-                ),
-                Container(
+              itemBuilder: (context,index)=> 
+              Container(
                     height: 70,
                     child: Card(
                         child: ListTile(
@@ -129,15 +104,14 @@ class InactiveProvidersScreen extends StatelessWidget {
                               '¿Estas seguro que quieres activar a este proveedor?'),
                         ));
               },
-                      title: Text('Sala De Ventas Colun',
+                      title: Text(listado.providers[index].prov,
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 20,
                           )),
                       subtitle: Text(
-                          'Juana de Arco 2083, Providencia, Región Metropolitana'),
-                    )))
-              ],
+                          listado.providers[index].direccion),
+                    ))),
             )));
   }
 }
