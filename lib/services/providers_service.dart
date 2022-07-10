@@ -13,15 +13,15 @@ class ProviderService{
   bool isLoading = true;
   bool isEditCreate = true;
   ProviderService(){
-    loadProveedorActivos();
+    loadProveedorInactivos();
     }
 
-  Future loadProveedorActivos() async{
+  Future loadProveedorInactivos() async{
     isLoading = true;
-    final url = Uri.http(_baseUrl, 'proveedores1/proveedores_proveedoract_list_rest/',);
+    final url = Uri.http(_baseUrl, 'proveedores1/proveedores_proveedorinac_list_rest/',);
     String basicAuth = 'Basic ' + base64Encode(utf8.encode('$_user:$_pass'));
     final response = await http.get(url,headers: {'authorization': basicAuth});
-    final providersMap = Provider.fromJson(response.body);
+    final providersMap = ProveedoresInc.fromJson(response.body);
     providers = providersMap.listado;
     isLoading = false;
      } 
