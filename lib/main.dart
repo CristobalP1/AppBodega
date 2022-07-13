@@ -14,7 +14,7 @@ class ProviderState extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: ( _ )=> ProviderService(),lazy: false,),
+        ChangeNotifierProvider(create: ( _ )=> ProviderService(),lazy: true,),
       ],
       child: const MyApp(),
       );

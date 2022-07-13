@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_declarations, prefer_const_constructors, avoid_unnecessary_containers, unused_import, prefer_const_literals_to_create_immutables, non_constant_identifier_names, unused_element, avoid_web_libraries_in_flutter, avoid_types_as_parameter_names, avoid_print, sized_box_for_whitespace
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+import 'package:flutter_application_1/models/models.dart';
 import 'package:flutter_application_1/screens/Vendor/see_vendors_screen.dart';
 import 'package:flutter_application_1/screens/Home/home_screen.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
@@ -68,6 +69,7 @@ class InactiveProvidersScreen extends StatelessWidget {
                           actions: [
                             TextButton(
                               onPressed: () {
+                                ProviderService().updateprovider(Listado(idDePorveedor: listado.providers[index].idDePorveedor, prov: listado.providers[index].prov, rut: listado.providers[index].rut, correo: listado.providers[index].correo, telefono: listado.providers[index].telefono, direccion: listado.providers[index].direccion, estado: "Activo"));
                                 Navigator.of(context).pop();
                                 showDialog(
                                     context: context,
@@ -75,7 +77,7 @@ class InactiveProvidersScreen extends StatelessWidget {
                                           actions: [
                                             TextButton(
                                               onPressed: () {
-                                                Navigator.of(context).pop();
+                                               Navigator.of(context).pop();
                                               },
                                               child: const Text('Aceptar'),
                                             ),

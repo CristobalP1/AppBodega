@@ -8,8 +8,8 @@ class ProviderService extends ChangeNotifier{
   final String _user  = 'test';
   final String _pass  = 'test..2022';
 
-  List<Listado>providers = []; //cargaremos el listado de productos
-  Listado? selectedProduct; //cargaremos el producto seleccionado
+  List<Listado>providers = []; //cargaremos el listado de provideros
+  Listado? selectedprovider; //cargaremos el providero seleccionado
   bool isLoading = true;
   bool isEditCreate = true;
   ProviderService(){
@@ -27,4 +27,16 @@ class ProviderService extends ChangeNotifier{
     isLoading = false;
     notifyListeners();
      } 
-  }
+
+  Future<String> updateprovider(Listado provider) async{
+    final url = Uri.http(_baseUrl, 'proveedores1/proveedores_update_element_rest/',);
+    String basicAuth = 'Basic ' + base64Encode(utf8.encode('$_user:$_pass'));
+    final response = await http.post(url,body:jsonEncode({"proveedor_id":provider.idDePorveedor,"estado":provider.estado}),headers: {'authorization': basicAuth,'Content-Type': 'application/json; charset=UTF-8',});
+    final decodeResp = response.body;
+    print(decodeResp);
+
+    //actualizamos el listado
+    final index = providers.indexWhere((element) => element.idDePorveedor  == provider.idDePorveedor);
+    providers[index] = provider;
+    return '';
+  }}
