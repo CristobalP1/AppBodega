@@ -72,7 +72,7 @@ class ProviderService extends ChangeNotifier {
     String basicAuth = 'Basic' + base64Encode(utf8.encode('$_user:$_pass'));
     final response = await http.get(url, headers: {'Authorization': basicAuth});
     final providersMap = ProveedoresAct.fromJson(response.body);
-    providersAct = providersMap.listado;
+    providersAct = providersMap.listadoAct;
     print(providersAct.length);
     isLoading = false;
     notifyListeners();

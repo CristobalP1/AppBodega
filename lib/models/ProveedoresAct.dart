@@ -6,11 +6,11 @@ import 'dart:convert';
 
 class ProveedoresAct {
   ProveedoresAct({
-    required this.listado,
+    required this.listadoAct,
     required this.search,
   });
 
-  List<ListadoAct> listado;
+  List<ListadoAct> listadoAct;
   List<SearchAct> search;
 
   factory ProveedoresAct.fromJson(String str) =>
@@ -19,14 +19,14 @@ class ProveedoresAct {
   String toJson() => json.encode(toMap());
 
   factory ProveedoresAct.fromMap(Map<String, dynamic> json) => ProveedoresAct(
-        listado: List<ListadoAct>.from(
+        listadoAct: List<ListadoAct>.from(
             json["ListadoAct"].map((x) => ListadoAct.fromMap(x))),
         search: List<SearchAct>.from(
             json["SearchAct"].map((x) => SearchAct.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {
-        "Listado": List<dynamic>.from(listado.map((x) => x.toMap())),
+        "Listado": List<dynamic>.from(listadoAct.map((x) => x.toMap())),
       };
 }
 
