@@ -14,9 +14,9 @@ class InactiveProvidersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final listado = Provider.of<ProviderService>(context);
+    final listado = Provider.of<ProviderService>(context,listen: true);
+    
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
         title: 'Proveedores',
         home: Scaffold(
             appBar: AppBar(
@@ -53,77 +53,71 @@ class InactiveProvidersScreen extends StatelessWidget {
               ], //define la elevación es un valor float
             ),
             backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-            body: ListView.builder(
+            body:
+           listado.providers.isEmpty ? Center(child: Text("No se encuentran Proveedores Inactivos")) :
+           ListView.builder(
               itemCount: listado.providers.length,
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
-              itemBuilder: (context, index) => Container(
-                  height: 70,
-                  child: Card(
-                      child: ListTile(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                                actions: [
-                                  TextButton(
-                                    onPressed: () {
-                                      ProviderService().updateprovider(Listado(
-                                          idDePorveedor: listado
-                                              .providers[index].idDePorveedor,
-                                          prov: listado.providers[index].prov,
-                                          rut: listado.providers[index].rut,
-                                          correo:
-                                              listado.providers[index].correo,
-                                          telefono:
-                                              listado.providers[index].telefono,
-                                          direccion: listado
-                                              .providers[index].direccion,
-                                          estado: "Activo"));
-                                      Navigator.of(context).pop();
-                                      showDialog(
-                                          context: context,
-                                          builder: (context) => AlertDialog(
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () {
-                                                      Navigator.of(context)
-                                                          .pop();
-                                                    },
-                                                    child:
-                                                        const Text('Aceptar'),
-                                                  ),
-                                                ],
-                                                title: const Text('Alerta'),
-                                                contentPadding:
-                                                    const EdgeInsets.all(20.0),
-                                                content: const Text(
-                                                  'Proveedor Activado',
-                                                ),
-                                              ));
-                                    },
-                                    child: const Text('Aceptar'),
-                                  ),
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: const Text('Cancelar'),
-                                  ),
-                                ],
-                                title: const Text('Alerta'),
-                                contentPadding: const EdgeInsets.all(20.0),
-                                content: const Text(
-                                    '¿Estas seguro que quieres activar a este proveedor?'),
-                              ));
-                    },
-                    title: Text(listado.providers[index].prov,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                        )),
-                    subtitle: Text(listado.providers[index].direccion),
-                  ))),
+              itemBuilder: (context,index)=> 
+              Container(
+                    height: 70,
+                    child: Card(
+                        child: ListTile(
+                     onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Provider.of<ProviderService>(context,listen: false).updateprovider(Listado(idDePorveedor: listado.providers[index].idDePorveedor, prov: listado.providers[index].prov, rut: listado.providers[index].rut, correo: listado.providers[index].correo, telefono: listado.providers[index].telefono, direccion: listado.providers[index].direccion, estado: "Activo"));
+                                Navigator.of(context).pop();
+                                showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () {
+                                               Navigator.of(context).pop();
+                                              },
+                                              child: const Text('Aceptar'),
+                                            ),
+                                          ],
+                                          title: const Text(
+                                              'Alerta'),
+                                          contentPadding:
+                                              const EdgeInsets.all(20.0),
+                                          content: const Text(
+                                            'Proveedor Activado',
+                                          ),
+                                        ));
+                              },
+                              child: const Text('Aceptar'),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text('Cancelar'),
+                            ),
+                          ],
+                          title: const Text('Alerta'),
+                          contentPadding: const EdgeInsets.all(20.0),
+                          content: const Text(
+                              '¿Estas seguro que quieres activar a este proveedor?'),
+                        ));
+              },
+                      title: Text(listado.providers[index].prov,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20,
+                          )),
+                      subtitle: Text(
+                          listado.providers[index].direccion),
+                    )
+                    )
+                    ),
             )));
   }
 }
