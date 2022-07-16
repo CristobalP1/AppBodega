@@ -1,8 +1,5 @@
 // ignore_for_file: unused_local_variable, avoid_web_libraries_in_flutter, avoid_print
 
-import 'dart:ffi';
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -22,7 +19,6 @@ class ProviderService extends ChangeNotifier {
   bool isEditCreate = true;
   ProviderService() {
     loadProveedorInactivos();
-    loadProveedorActivo();
   }
 
   Future loadProveedorInactivos() async {
@@ -59,9 +55,8 @@ class ProviderService extends ChangeNotifier {
     print(decodeResp);
 
     //actualizamos el listado
-    final index = providers.indexWhere(
-        (element) => element.idDePorveedor == provider.idDePorveedor);
-    providers[index] = provider;
+    providers.removeWhere((element) => element.idDePorveedor == provider.idDePorveedor);
+    notifyListeners();
     return '';
   }
 
