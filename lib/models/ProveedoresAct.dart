@@ -37,8 +37,9 @@ class SearchAct {
   String search;
   factory SearchAct.fromJson(String str) =>
       SearchAct.fromJson(json.decode(str));
+  String toJson() => json.encode(toMap());
   factory SearchAct.fromMap(Map<String, dynamic> json) => SearchAct(
-        search: json["Search"],
+        search: json["SearchAct"],
       );
   Map<String, dynamic> toMap() => {
         "Search": search,
