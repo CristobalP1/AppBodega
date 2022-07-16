@@ -1,6 +1,6 @@
 // ignore_for_file: unused_local_variable, avoid_web_libraries_in_flutter, avoid_print
 
-import 'dart:ffi' as ffi;
+import 'dart:ffi';
 import 'dart:html';
 
 import 'package:flutter/material.dart';
@@ -78,7 +78,7 @@ class ProviderService extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<String> searchProviderAct() async {
+  Future<String> searchProviderAct(SearchAct searchAct) async {
     final url = Uri.http(
       _baseUrl,
       'proveedores1/proveedores_proveedor_list_contains',
@@ -94,5 +94,6 @@ class ProviderService extends ChangeNotifier {
         });
     final decodeResp = response.body;
     print(decodeResp);
+    return '';
   }
 }
