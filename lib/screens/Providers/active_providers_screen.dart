@@ -5,6 +5,9 @@ import 'package:flutter_application_1/screens/Vendor/see_vendors_screen.dart';
 import 'package:flutter_application_1/screens/Home/home_screen.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
+import 'package:flutter_application_1/models/models.dart';
+import 'package:flutter_application_1/services/services.dart';
+import 'package:provider/provider.dart';
 
 class ActiveProvidersScreen extends StatelessWidget {
   const ActiveProvidersScreen({Key? key}) : super(key: key);
@@ -12,6 +15,7 @@ class ActiveProvidersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Proveedores',
         home: Scaffold(
             appBar: AppBar(
