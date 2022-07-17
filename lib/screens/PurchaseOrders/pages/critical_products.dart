@@ -1,35 +1,38 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/PurchaseOrders/models/datails_order.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/models/products_critics.dart';
 import '../../../theme/app_theme.dart';
 import 'package:http/http.dart' as http;
 
-class DetailsOrdersScreen extends StatefulWidget {
-  const DetailsOrdersScreen({Key? key}) : super(key: key);
+class CriticalProducts extends StatefulWidget {
+  const CriticalProducts({Key? key}) : super(key: key);
 
   @override
-  State<DetailsOrdersScreen> createState() => _DetailsOrdersScreenState();
+  State<CriticalProducts> createState() => _CriticalProductsState();
 }
 
-class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
-  late Future<List<Persona>> _ordenDetails;
+class _CriticalProductsState extends State<CriticalProducts> {
+  late Future<List<Listado>> _criticalProducts;
 
-  Future<List<Persona>> _getOrdenDetails() async {
-    final url = Uri.parse("https://res-api-educacion.herokuapp.com/");
-    final response = await http.get(url);
+  String APIUSER = 'test';
+  String APIPASS = 'test..2022';
+  String BASEURL = '157.230.213.232:8000';
 
-    List<Persona> orderDetails = [];
+  Future<List<Listado>> _getCriticalProducts() async {
+    final url = Uri.http(
+      BASEURL,
+      'productos/productos_producto_listar/',
+    );
+    String basicAuth =
+        'Basic ' + base64Encode(utf8.encode('$APIUSER:$APIPASS'));
+    final response = await http.get(url, headers: {'authorization': basicAuth});
+    List<Listado> listProductsCritical = [];
 
     if (response.statusCode == 200) {
-      String body = utf8.decode(response.bodyBytes);
-      final jsonData = jsonDecode(body);
-
-      for (var i in jsonData) {
-        orderDetails.add(Persona(i["title"], i["marca"], i["id"].toString()));
-      }
-
-      return orderDetails;
+      final listProductCritics = ListProductsCritic.fromJson(response.body);
+      listProductsCritical = listProductCritics.listado;
+      return listProductsCritical;
     } else {
       throw Exception("fallo todo perro");
     }
@@ -38,7 +41,7 @@ class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
   @override
   void initState() {
     super.initState();
-    _ordenDetails = _getOrdenDetails();
+    _criticalProducts = _getCriticalProducts();
   }
 
   @override
@@ -59,7 +62,7 @@ class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
         ],
       ),
       body: Container(
-        margin: const EdgeInsets.fromLTRB(0, 40, 0, 00),
+        margin: const EdgeInsets.fromLTRB(0, 40, 0, 40),
         child: Column(
           children: [
             const Text('Productos con stock critico'),
@@ -67,7 +70,7 @@ class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
               height: 50,
             ),
             FutureBuilder(
-                future: _ordenDetails,
+                future: _criticalProducts,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return Flexible(
@@ -92,21 +95,26 @@ class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
   List<Widget> _listDetails(data) {
     List<Widget> details = [];
 
-    details.add(Padding(
-      padding: const EdgeInsets.all(9.0),
+    details.add(Container(
+      margin: const EdgeInsets.only(
+        left: 7,
+      ),
       child: Column(
         children: [
           DataTable(
               columns: const [
                 DataColumn(label: Text('Producto')),
                 DataColumn(label: Text('Stock')),
-                DataColumn(label: Text('ProveedorR')),
+                DataColumn(label: Text('Accion')),
               ],
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
-                        DataCell(Center(child: Text(e.name.toString()))),
-                        DataCell(Center(child: Text(e.phone.toString()))),
-                        DataCell(Center(child: Text(e.phone.toString()))),
+                        DataCell(Text(e.nombre.toString())),
+                        DataCell(Text(e.sku.toString())),
+                        DataCell(TextButton(
+                          onPressed: () => {print("object")},
+                          child: Text("Crear Orden"),
+                        )),
                       ]))
                   .toList()),
           TextButton(onPressed: () => {}, child: Text("Siguiente"))

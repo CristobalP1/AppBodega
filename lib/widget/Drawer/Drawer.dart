@@ -277,7 +277,7 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
     CDM(Icons.assignment_rounded, Route("Ordenes", ""), [
       Route("Crear orden", detailsOrder),
       Route("Estado de la orden", viewState),
-      Route("Historial", historyOrders),
+      Route("Historial", criticalProducts),
     ]),
   ];
 
