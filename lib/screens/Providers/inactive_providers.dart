@@ -15,7 +15,7 @@ class InactiveProvidersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final listado = Provider.of<ProviderService>(context,listen: true);
-    
+    Provider.of<ProviderService>(context,listen: false).loadProveedorInactivos();
     return MaterialApp(
         title: 'Proveedores',
         home: Scaffold(
