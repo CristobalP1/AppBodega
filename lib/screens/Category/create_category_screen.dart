@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, avoid_function_literals_in_foreach_calls, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/Category/edit_category_screen.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';

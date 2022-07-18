@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/router/app_routes.dart';
 import 'package:flutter_application_1/services/providers_service.dart';
@@ -14,10 +16,13 @@ class ProviderState extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: ( _ )=> ProviderService(),lazy: true,),
+        ChangeNotifierProvider(
+          create: (_) => ProviderService(),
+          lazy: true,
+        ),
       ],
       child: const MyApp(),
-      );
+    );
   }
 }
 

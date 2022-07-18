@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, unused_local_variable, avoid_print
+
 import 'dart:ui';
 import 'package:flutter_application_1/widget/Buttons/speed_dial_button.dart';
 import 'package:flutter_application_1/widget/DataTableProducts/data_table_home.dart';

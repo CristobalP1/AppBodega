@@ -5,33 +5,28 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_application_1/models/models.dart';
 
-class ProviderService extends ChangeNotifier {
+class ProviderServiceAct extends ChangeNotifier {
   final String _baseUrl = '157.230.213.232:8000';
   final String _user = 'test';
   final String _pass = 'test..2022';
 
-  List<Listado> providers = []; //cargaremos el listado de provideros
   List<ListadoAct> providersAct =
       []; //cargaremos el listado de proveedores Activos
-  Listado? selectedprovider; //cargaremos el providero seleccionado
   ListadoAct? selectedproviderAct; //cargaremos el proveedor Activo
   bool isLoading = true;
   bool isEditCreate = true;
-  ProviderService() {
-    loadProveedorInactivos();
+  ProviderServiceAct() {
+    loadProveedorActivo();
   }
-
-  Future loadProveedorInactivos() async {
+  Future loadProveedorActivo() async {
     isLoading = true;
-    final url = Uri.http(
-      _baseUrl,
-      'proveedores1/proveedores_proveedorinac_list_rest/',
-    );
-    String basicAuth = 'Basic ' + base64Encode(utf8.encode('$_user:$_pass'));
-    final response = await http.get(url, headers: {'authorization': basicAuth});
-    final providersMap = ProveedoresInc.fromJson(response.body);
-    providers = providersMap.listado;
-    print(providers.length);
+    final url =
+        Uri.http(_baseUrl, 'proveedores1/proveedores_proveedoract_list_rest/');
+    String basicAuth = 'Basic' + base64Encode(utf8.encode('$_user:$_pass'));
+    final response = await http.get(url, headers: {'Authorization': basicAuth});
+    final providersMapAct = ProveedoresAct.fromJson(response.body);
+    providersAct = providersMapAct.listadoAct;
+    print(providersAct.length);
     isLoading = false;
     notifyListeners();
   }
@@ -55,23 +50,10 @@ class ProviderService extends ChangeNotifier {
     print(decodeResp);
 
     //actualizamos el listado
-    providers.removeWhere(
+    providersAct.removeWhere(
         (element) => element.idDePorveedor == provider.idDePorveedor);
     notifyListeners();
     return '';
-  }
-
-  Future loadProveedorActivo() async {
-    isLoading = true;
-    final url =
-        Uri.http(_baseUrl, 'proveedores1/proveedores_proveedoract_list_rest/');
-    String basicAuth = 'Basic' + base64Encode(utf8.encode('$_user:$_pass'));
-    final response = await http.get(url, headers: {'Authorization': basicAuth});
-    final providersMapAct = ProveedoresAct.fromJson(response.body);
-    providersAct = providersMapAct.listadoAct;
-    print(providersAct.length);
-    isLoading = false;
-    notifyListeners();
   }
 
   Future<String> searchProviderAct(SearchAct searchAct) async {
@@ -92,4 +74,29 @@ class ProviderService extends ChangeNotifier {
     print(decodeResp);
     return '';
   }
+
+  // Future<String> updateproviderAct(ListadoAct providerAct) async {
+  //   final url = Uri.http(
+  //     _baseUrl,
+  //     'proveedores1/proveedores_update_element_rest/',
+  //   );
+  //   String basicAuth = 'Basic ' + base64Encode(utf8.encode('$_user:$_pass'));
+  //   final response = await http.post(url,
+  //       body: jsonEncode({
+  //         "proveedor_id": providerAct.idDePorveedor,
+  //         "estado": providerAct.estado
+  //       }),
+  //       headers: {
+  //         'authorization': basicAuth,
+  //         'Content-Type': 'application/json; charset=UTF-8',
+  //       });
+  //   final decodeResp = response.body;
+  //   print(decodeResp);
+
+  //   //actualizamos el listado
+  //   providersAct.removeWhere(
+  //       (element) => element.idDePorveedor == providerAct.idDePorveedor);
+  //   notifyListeners();
+  //   return '';
+  // }
 }

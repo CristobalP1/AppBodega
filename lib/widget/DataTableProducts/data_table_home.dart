@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, dead_code, empty_statements
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/Products/info_product_screen.dart';
 import 'package:flutter_application_1/widget/DataTableProducts/products.dart';

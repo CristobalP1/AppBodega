@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';

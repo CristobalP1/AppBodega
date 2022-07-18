@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 import '../../theme/app_theme.dart';

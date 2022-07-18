@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, prefer_typing_uninitialized_variables, avoid_print, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, avoid_function_literals_in_foreach_calls, prefer_const_constructors
+
 import 'dart:convert';
 import 'dart:io';
 

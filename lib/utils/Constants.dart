@@ -1,4 +1,6 @@
 //Home Screen
+// ignore_for_file: file_names
+
 const String homePage = "home_page";
 const String filterHome = "filterHome";
 //Products Screen

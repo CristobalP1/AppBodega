@@ -14,6 +14,7 @@ class ActiveProvidersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final listadoAct = Provider.of<ProviderServiceAct>(context, listen: true);
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Proveedores',
@@ -52,9 +53,96 @@ class ActiveProvidersScreen extends StatelessWidget {
               ], //define la elevación es un valor float
             ),
             backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-            body: ListView.builder(
-              itemCount: listadoAct.providersAct.lenght,
-            )));
+            body: listadoAct.providersAct.isEmpty
+                ? Center(child: Text("No se encuentran Proveedores Activos"))
+                : ListView.builder(
+                    itemCount: listadoAct.providersAct.length,
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) => Container(
+                        height: 70,
+                        child: Card(
+                            child: ListTile(
+                          onTap: () {
+                            showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Provider.of<ProviderService>(
+                                                    context,
+                                                    listen: false)
+                                                .updateprovider(Listado(
+                                                    idDePorveedor: listadoAct
+                                                        .providersAct[index]
+                                                        .idDePorveedor,
+                                                    prov: listadoAct
+                                                        .providersAct[index]
+                                                        .prov,
+                                                    rut: listadoAct
+                                                        .providersAct[index]
+                                                        .rut,
+                                                    correo: listadoAct
+                                                        .providersAct[index]
+                                                        .correo,
+                                                    telefono: listadoAct
+                                                        .providersAct[index]
+                                                        .telefono,
+                                                    direccion: listadoAct
+                                                        .providersAct[index]
+                                                        .direccion,
+                                                    estado: "Inactivo"));
+                                            Navigator.of(context).pop();
+                                            showDialog(
+                                                context: context,
+                                                builder: (context) =>
+                                                    AlertDialog(
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () {
+                                                            Navigator.of(
+                                                                    context)
+                                                                .pop();
+                                                          },
+                                                          child: const Text(
+                                                              'Aceptar'),
+                                                        ),
+                                                      ],
+                                                      title:
+                                                          const Text('Alerta'),
+                                                      contentPadding:
+                                                          const EdgeInsets.all(
+                                                              20.0),
+                                                      content: const Text(
+                                                        'Proveedor Desactivado',
+                                                      ),
+                                                    ));
+                                          },
+                                          child: const Text('Aceptar'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: const Text('Cancelar'),
+                                        ),
+                                      ],
+                                      title: const Text('Alerta'),
+                                      contentPadding:
+                                          const EdgeInsets.all(20.0),
+                                      content: const Text(
+                                          '¿Estas seguro que quieres desactivar a este proveedor?'),
+                                    ));
+                          },
+                          title: Text(listadoAct.providersAct[index].prov,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                              )),
+                          subtitle:
+                              Text(listadoAct.providersAct[index].direccion),
+                        ))))));
   }
 }
 

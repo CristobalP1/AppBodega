@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: file_names, prefer_typing_uninitialized_variables
 
+import 'package:flutter/material.dart';
 
 class CustomDropDown extends StatefulWidget {
   final List<String> options;
-  final onChange ;
-  const CustomDropDown({Key? key,required this.options,this.onChange})
+  final onChange;
+  const CustomDropDown({Key? key, required this.options, this.onChange})
       : super(key: key);
 
   @override
@@ -35,8 +36,7 @@ class CustomDropDownState extends State<CustomDropDown> {
             dropdownValue = newValue!;
           });
         },
-        items: widget.options
-            .map<DropdownMenuItem<String>>((String value) {
+        items: widget.options.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(value),
