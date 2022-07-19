@@ -25,7 +25,7 @@ class ProviderService extends ChangeNotifier {
     isLoading = true;
     final url = Uri.http(
       _baseUrl,
-      'proveedores1/proveedores_proveedorinac_list_rest/',
+      'proveedor/proveedores_proveedorinac_list_rest/',
     );
     String basicAuth = 'Basic ' + base64Encode(utf8.encode('$_user:$_pass'));
     final response = await http.get(url, headers: {'authorization': basicAuth});
@@ -39,7 +39,7 @@ class ProviderService extends ChangeNotifier {
   Future<String> updateprovider(Listado provider) async {
     final url = Uri.http(
       _baseUrl,
-      'proveedores1/proveedores_update_element_rest/',
+      'proveedor/proveedores_update_element_rest/',
     );
     String basicAuth = 'Basic ' + base64Encode(utf8.encode('$_user:$_pass'));
     final response = await http.post(url,
@@ -64,7 +64,7 @@ class ProviderService extends ChangeNotifier {
   Future loadProveedorActivo() async {
     isLoading = true;
     final url =
-        Uri.http(_baseUrl, 'proveedores1/proveedores_proveedoract_list_rest/');
+        Uri.http(_baseUrl, 'proveedor/proveedores_proveedoract_list_rest/');
     String basicAuth = 'Basic' + base64Encode(utf8.encode('$_user:$_pass'));
     final response = await http.get(url, headers: {'Authorization': basicAuth});
     final providersMapAct = ProveedoresAct.fromJson(response.body);
@@ -77,7 +77,7 @@ class ProviderService extends ChangeNotifier {
   Future<String> searchProviderAct(SearchAct searchAct) async {
     final url = Uri.http(
       _baseUrl,
-      'proveedores1/proveedores_proveedor_list_contains',
+      'proveedor/proveedores_proveedor_list_contains',
     );
     String basicAuth = 'Basic ' + base64Encode(utf8.encode('$_user:$_pass'));
     final response = await http.post(url,
