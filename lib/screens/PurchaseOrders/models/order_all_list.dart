@@ -27,7 +27,7 @@ class OrderAll {
   int vendedor;
   int producto;
 
-  factory OrderAll.fromJson(String str) => OrderAll.fromMap(json.decode(str));
+  factory OrderAll.fromJson(String str) => OrderAll.fromMap(json.decode(str).toList());
 
   String toJson() => json.encode(toMap());
 
