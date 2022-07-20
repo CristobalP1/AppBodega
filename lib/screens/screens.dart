@@ -6,11 +6,11 @@ export 'package:flutter_application_1/screens/Providers/active_providers_screen.
 export 'package:flutter_application_1/screens/Vendor/see_products_vendors_screen.dart';
 export 'package:flutter_application_1/screens/Vendor/see_vendors_screen.dart';
 export 'package:flutter_application_1/screens/Category/create_category_screen.dart';
-export 'package:flutter_application_1/screens/Products/create_product_screen.dart';
+export 'package:flutter_application_1/screens/Products/pages/create_product_screen.dart';
 export 'package:flutter_application_1/screens/Category/edit_category_screen.dart';
-export 'package:flutter_application_1/screens/Products/edit_product_screen.dart';
+export 'package:flutter_application_1/screens/Products/pages/edit_product_screen.dart';
 export 'package:flutter_application_1/screens/Home/home_screen.dart';
-export 'package:flutter_application_1/screens/Products/info_product_screen.dart';
+export 'package:flutter_application_1/screens/Products/pages/info_product_screen.dart';
 export 'package:flutter_application_1/screens/Providers/active_providers_screen.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/pages/create_order_screen.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/pages/view_state_screen.dart';

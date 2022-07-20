@@ -38,6 +38,10 @@ class InfoProductScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    const SizedBox(
+                      width: 960,
+                      height: 50,
+                    ),
                     IconButton(
                       icon: const Icon(Icons.create_sharp),
                       color: const Color.fromARGB(255, 3, 4, 94),
@@ -45,11 +49,6 @@ class InfoProductScreen extends StatelessWidget {
                         Navigator.pushNamed(context, editProduct);
                       },
                       iconSize: 30,
-                    ),
-                    const Icon(
-                      Icons.block,
-                      color: Colors.red,
-                      size: 30.0,
                     ),
                   ],
                 ),
@@ -59,7 +58,7 @@ class InfoProductScreen extends StatelessWidget {
               child: Column(children: [
                 const ListTile(
                   title: Text(
-                    "Informacion",
+                    "Información",
                     style: TextStyle(fontSize: 20),
                   ),
                 ),
@@ -68,15 +67,19 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text(
-                      'Categoria',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'Categoria',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
-                    Text(
-                      'Refrigerados',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'Refrigerados',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                   ],
                 ),
@@ -85,18 +88,19 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text(
-                      'Stock',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'Stock',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                     SizedBox(
-                      height: 12,
-                    ),
-                    Text(
-                      '23',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                      child: Text(
+                        '23',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                   ],
                 ),
@@ -105,18 +109,19 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text(
-                      'Alert',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'Alert',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                     SizedBox(
-                      height: 12,
-                    ),
-                    Text(
-                      '3',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                      child: Text(
+                        '3',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                   ],
                 ),
@@ -125,18 +130,19 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text(
-                      'SKU',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'SKU         ',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                     SizedBox(
-                      height: 12,
-                    ),
-                    Text(
-                      '23231',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                      child: Text(
+                        '  23231',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                   ],
                 ),
@@ -145,18 +151,19 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text(
-                      'Codigo de barra',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'Codigo de barra',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                     SizedBox(
-                      height: 12,
-                    ),
-                    Text(
-                      '780231223',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                      child: Text(
+                        '780231223',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                   ],
                 ),
@@ -179,18 +186,19 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text(
-                      'Costo',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'Costo',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                     SizedBox(
-                      height: 12,
-                    ),
-                    Text(
-                      '300',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                      child: Text(
+                        '300',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                   ],
                 ),
@@ -199,18 +207,19 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text(
-                      'Precio',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'Precio',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                     SizedBox(
-                      height: 12,
-                    ),
-                    Text(
-                      '900',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                      child: Text(
+                        '900',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                   ],
                 ),
@@ -219,18 +228,19 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text(
-                      'Utilidad',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'Utilidad',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                     SizedBox(
-                      height: 12,
-                    ),
-                    Text(
-                      '600',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                      child: Text(
+                        '600  ',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                   ],
                 ),
@@ -239,18 +249,19 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text(
-                      'Unidades Vendidas',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'Unidades Vendidas',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                     SizedBox(
-                      height: 12,
-                    ),
-                    Text(
-                      '120',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                      child: Text(
+                        '120                       ',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                   ],
                 ),
@@ -259,18 +270,19 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text(
-                      'Ganancias Totales',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                    SizedBox(
+                      child: Text(
+                        'Ganancias Totales',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                     SizedBox(
-                      height: 12,
-                    ),
-                    Text(
-                      '72000',
-                      style: TextStyle(fontSize: 15),
-                      textAlign: (TextAlign.center),
+                      child: Text(
+                        '72000                      ',
+                        style: TextStyle(fontSize: 15),
+                        textAlign: (TextAlign.center),
+                      ),
                     ),
                   ],
                 ),

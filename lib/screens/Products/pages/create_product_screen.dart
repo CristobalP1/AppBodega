@@ -38,8 +38,8 @@ class _CreateProductScreenState extends State<CreateProductScreen> {
               height: 20,
             ),
             InputForm(
-              labelText: "nombre",
-              hintText: "leche",
+              labelText: "Nombre",
+              hintText: "Leche",
             ),
             SizedBox(
               height: 10,
