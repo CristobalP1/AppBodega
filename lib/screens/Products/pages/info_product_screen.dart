@@ -39,7 +39,7 @@ class InfoProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const SizedBox(
-                      width: 960,
+                      width: 60,
                       height: 50,
                     ),
                     IconButton(

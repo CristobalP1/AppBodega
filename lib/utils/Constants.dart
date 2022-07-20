@@ -6,6 +6,7 @@ const String createProduct = "create_product";
 const String editProduct = "edit_product";
 const String infoProduct = "info_product";
 const String infoProducts = "info_products";
+const String productsLocked = "products_locked";
 //Category Screen
 const String createCategory = "create_category";
 const String editCategory = "edit_category";

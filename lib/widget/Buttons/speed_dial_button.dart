@@ -29,7 +29,7 @@ class FloatingButton extends StatelessWidget {
             child: const Icon(Icons.disabled_visible),
             label: 'Productos Bloqueados',
             backgroundColor: AppTheme.secondary,
-            onTap: () => {Navigator.pushNamed(context, 'products_blocked')}),
+            onTap: () => {Navigator.pushNamed(context, 'products_locked')}),
       ],
     );
   }

@@ -15,6 +15,7 @@ class ApppRoutes {
         const CreateProductScreen(),
     constants.editProduct: (BuildContext context) => const EditProductScreen(),
     constants.infoProduct: (BuildContext context) => const InfoProductScreen(),
+    constants.productsLocked: (BuildContext context) => const ProductsBlocked(),
 
     //Category Screen
     constants.createCategory: (BuildContext context) =>

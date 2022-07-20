@@ -1,3 +1,4 @@
+export 'package:flutter_application_1/screens/Products/pages/products_blocked.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/pages/details_orders.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/pages/history_orders.dart';
 export 'package:flutter_application_1/screens/Home/filter_home.dart';
