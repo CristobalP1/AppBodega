@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/ListView/list_check.dart';
 import 'package:flutter_application_1/widget/Search/Search_bar.dart';
 
-class ViewStateScreen extends StatelessWidget {
-  const ViewStateScreen({Key? key}) : super(key: key);
+class OrderPurchaseOpcion2 extends StatelessWidget {
+  const OrderPurchaseOpcion2({Key? key}) : super(key: key);
 
   static const String titulo = 'Ver Estado Pedido';
 

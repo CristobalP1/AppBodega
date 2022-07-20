@@ -1,49 +1,47 @@
 import 'dart:convert';
-
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/global/environment.dart';
-import 'package:flutter_application_1/screens/PurchaseOrders/models/cafe_products.dart';
-import 'package:flutter_application_1/screens/PurchaseOrders/models/datails_order.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/models/products_critics.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriticsModule/create_order.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriticsModule/info_orders.dart';
 import '../../../theme/app_theme.dart';
 import 'package:http/http.dart' as http;
 
-class DetailsOrdersScreen extends StatefulWidget {
-  const DetailsOrdersScreen({Key? key}) : super(key: key);
+class CriticalProducts extends StatefulWidget {
+  const CriticalProducts({Key? key}) : super(key: key);
 
   @override
-  State<DetailsOrdersScreen> createState() => _DetailsOrdersScreenState();
+  State<CriticalProducts> createState() => _CriticalProductsState();
 }
 
-class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
-  late Future<List<Producto>> _ordenDetails;
+class _CriticalProductsState extends State<CriticalProducts> {
+  late Future<List<Listado>> _criticalProducts;
 
-  Future<List<Producto>> _getOrdenDetails() async {
+  Future<List<Listado>> _getCriticalProducts() async {
     final url = Uri.http(
       Environment.baseURL,
-      'sucursales/sucursales_sucursal_list_rest/',
+      'productos/productos_producto_listar/',
     );
 
     String basicAuth = 'Basic ' +
         base64Encode(
             utf8.encode('${Environment.apiUser}:${Environment.apiPass}'));
     final response = await http.get(url, headers: {'authorization': basicAuth});
-
-    List<Producto> orderDetails = [];
+    List<Listado> listProductsCritical = [];
 
     if (response.statusCode == 200) {
-      final listProductCritics = ListProduct.fromJson(response.body);
-      orderDetails = listProductCritics.listado;
-      return orderDetails;
+      final listProductCritics = ListProductsCritic.fromJson(response.body);
+      listProductsCritical = listProductCritics.listado;
+      return listProductsCritical;
     }
-    print(orderDetails);
     return [];
   }
 
   @override
   void initState() {
     super.initState();
-    _ordenDetails = _getOrdenDetails();
+    _criticalProducts = _getCriticalProducts();
   }
 
   @override
@@ -64,15 +62,15 @@ class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
         ],
       ),
       body: Container(
-        margin: const EdgeInsets.fromLTRB(0, 40, 0, 00),
+        margin: const EdgeInsets.fromLTRB(0, 40, 0, 40),
         child: Column(
           children: [
-            const Text('Productos con stock critico 2'),
+            const Text('Productos con stock critico'),
             const SizedBox(
               height: 50,
             ),
             FutureBuilder(
-                future: _ordenDetails,
+                future: _criticalProducts,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return Flexible(
@@ -97,27 +95,29 @@ class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
   List<Widget> _listDetails(data) {
     List<Widget> details = [];
 
-    details.add(Padding(
-      padding: const EdgeInsets.all(9.0),
+    details.add(Container(
+      margin: const EdgeInsets.only(
+        left: 7,
+      ),
       child: Column(
         children: [
           DataTable(
               columns: const [
                 DataColumn(label: Text('Producto')),
                 DataColumn(label: Text('Stock')),
-                DataColumn(label: Text('ProveedorR')),
+                DataColumn(label: Text('Accion')),
               ],
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
-                        DataCell(Center(child: Text(e.sucursal.toString()))),
-                        DataCell(Center(child: Text(e.direccion.toString()))),
+                        DataCell(Text(e.nombre.toString())),
+                        DataCell(Text(e.sku.toString())),
                         DataCell(TextButton(
                           onPressed: () => {
-                            Navigator.push(
+                            /*    Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        CreateOrderProductScreen()))
+                                        CreateOrderProductScreen2())) */
                           },
                           child: Text("Crear Orden"),
                         )),

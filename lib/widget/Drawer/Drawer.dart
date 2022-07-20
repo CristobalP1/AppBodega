@@ -267,9 +267,10 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
   }
 
   static List<CDM> cdms = [
-    CDM(Icons.warehouse, Route("Productos", ""), [
-      Route("Listado Productos", homePage),
+    CDM(Icons.account_circle_sharp, Route("Login", ""), [
+      Route("Cerrar Sesion", loginUser),
     ]),
+    CDM(Icons.warehouse, Route("Bodega", ""), [Route("Productos", homePage)]),
     CDM(Icons.local_shipping, Route("Proveedores", ""), [
       Route("Activos", activeProvider),
       Route("Inactivos", inactiveProviders),
@@ -277,9 +278,9 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
     ]),
     CDM(Icons.badge, Route("Vendedores", ""), [Route("vendedores", vendor)]),
     CDM(Icons.assignment_rounded, Route("Ordenes", ""), [
-      Route("Crear orden", detailsOrder),
-      Route("Estado de la orden", viewState),
-      Route("Historial", historyOrders),
+      Route("Crear orden", criticalProducts),
+      Route("Ordenes De Compra", viewState),
+      Route("Test", detailsOrder),
     ]),
   ];
 
