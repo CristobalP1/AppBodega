@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/router/app_routes.dart';
 import 'package:flutter_application_1/services/providers_service.dart';
+import 'package:flutter_application_1/services/providers_service_act.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
 import 'package:provider/provider.dart';
 import 'theme/app_theme.dart';
@@ -18,6 +19,10 @@ class ProviderState extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) => ProviderService(),
+          lazy: true,
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ProviderServiceAct(),
           lazy: true,
         ),
       ],

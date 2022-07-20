@@ -15,6 +15,8 @@ class ActiveProvidersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final listadoAct = Provider.of<ProviderServiceAct>(context, listen: true);
+    Provider.of<ProviderServiceAct>(context, listen: false)
+        .loadProveedorActivo();
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Proveedores',
@@ -76,22 +78,22 @@ class ActiveProvidersScreen extends StatelessWidget {
                                                 .updateprovider(Listado(
                                                     idDePorveedor: listadoAct
                                                         .providersAct[index]
-                                                        .idDePorveedor,
+                                                        .idDePorveedorAct,
                                                     prov: listadoAct
                                                         .providersAct[index]
-                                                        .prov,
+                                                        .provAct,
                                                     rut: listadoAct
                                                         .providersAct[index]
-                                                        .rut,
+                                                        .rutAct,
                                                     correo: listadoAct
                                                         .providersAct[index]
-                                                        .correo,
+                                                        .correoAct,
                                                     telefono: listadoAct
                                                         .providersAct[index]
-                                                        .telefono,
+                                                        .telefonoAct,
                                                     direccion: listadoAct
                                                         .providersAct[index]
-                                                        .direccion,
+                                                        .direccionAct,
                                                     estado: "Inactivo"));
                                             Navigator.of(context).pop();
                                             showDialog(
@@ -135,13 +137,13 @@ class ActiveProvidersScreen extends StatelessWidget {
                                           '¿Estas seguro que quieres desactivar a este proveedor?'),
                                     ));
                           },
-                          title: Text(listadoAct.providersAct[index].prov,
+                          title: Text(listadoAct.providersAct[index].provAct,
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 20,
                               )),
                           subtitle:
-                              Text(listadoAct.providersAct[index].direccion),
+                              Text(listadoAct.providersAct[index].direccionAct),
                         ))))));
   }
 }

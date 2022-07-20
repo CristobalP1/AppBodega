@@ -21,7 +21,7 @@ class ProviderServiceAct extends ChangeNotifier {
   Future loadProveedorActivo() async {
     isLoading = true;
     final url =
-        Uri.http(_baseUrl, 'proveedores1/proveedores_proveedoract_list_rest/');
+        Uri.http(_baseUrl, 'proveedor/proveedores_proveedoract_list_rest/');
     String basicAuth = 'Basic' + base64Encode(utf8.encode('$_user:$_pass'));
     final response = await http.get(url, headers: {'Authorization': basicAuth});
     final providersMapAct = ProveedoresAct.fromJson(response.body);
@@ -31,7 +31,7 @@ class ProviderServiceAct extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<String> updateprovider(Listado provider) async {
+  Future<String> updateprovider(ListadoAct providerAct) async {
     final url = Uri.http(
       _baseUrl,
       'proveedores1/proveedores_update_element_rest/',
@@ -39,8 +39,8 @@ class ProviderServiceAct extends ChangeNotifier {
     String basicAuth = 'Basic ' + base64Encode(utf8.encode('$_user:$_pass'));
     final response = await http.post(url,
         body: jsonEncode({
-          "proveedor_id": provider.idDePorveedor,
-          "estado": provider.estado
+          "proveedor_id": providerAct.idDePorveedorAct,
+          "estado": providerAct.estadoAct
         }),
         headers: {
           'authorization': basicAuth,
@@ -51,7 +51,7 @@ class ProviderServiceAct extends ChangeNotifier {
 
     //actualizamos el listado
     providersAct.removeWhere(
-        (element) => element.idDePorveedor == provider.idDePorveedor);
+        (element) => element.idDePorveedorAct == providerAct.idDePorveedorAct);
     notifyListeners();
     return '';
   }
@@ -59,7 +59,7 @@ class ProviderServiceAct extends ChangeNotifier {
   Future<String> searchProviderAct(SearchAct searchAct) async {
     final url = Uri.http(
       _baseUrl,
-      'proveedores1/proveedores_proveedor_list_contains',
+      'proveedor/proveedores_proveedor_list_contains',
     );
     String basicAuth = 'Basic ' + base64Encode(utf8.encode('$_user:$_pass'));
     final response = await http.post(url,

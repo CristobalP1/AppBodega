@@ -23,8 +23,6 @@ class ProveedoresAct {
   factory ProveedoresAct.fromMap(Map<String, dynamic> json) => ProveedoresAct(
         listadoAct: List<ListadoAct>.from(
             json["ListadoAct"].map((x) => ListadoAct.fromMap(x))),
-        // search: List<SearchAct>.from(
-        //     json["SearchAct"].map((x) => SearchAct.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {
