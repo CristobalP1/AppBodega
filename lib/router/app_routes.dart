@@ -3,6 +3,7 @@ import 'package:flutter_application_1/screens/Providers/inactive_providers.dart'
 import 'package:flutter_application_1/screens/PurchaseOrders/pages/critical_products.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
+import '../screens/Products/pages/products_blocked.dart';
 import '../utils/Constants.dart' as constants;
 
 class ApppRoutes {
