@@ -25,11 +25,11 @@ class ApppRoutes {
 
     //Purchase Orders Screen
     constants.createOrder: (BuildContext context) => const CreateOrderScreen(),
-    constants.viewState: (BuildContext context) => const ViewStateScreen(),
+    constants.viewState: (BuildContext context) => const OrderPurchaseOpcion(),
     constants.createOrderFinish: (BuildContext context) =>
         const CreateOrderFinishScreen(),
     constants.criticalProducts: (BuildContext context) =>
-        const CriticalProducts(),
+        const CreateOrderProductScreen(),
     constants.detailsOrder: (BuildContext context) =>
         const DetailsOrdersScreen(),
 

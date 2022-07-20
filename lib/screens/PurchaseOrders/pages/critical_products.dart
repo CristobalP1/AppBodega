@@ -1,7 +1,10 @@
 import 'dart:convert';
-
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/global/environment.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/models/products_critics.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriticsModule/create_order.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/pages/create_order2.dart';
 import '../../../theme/app_theme.dart';
 import 'package:http/http.dart' as http;
 
@@ -15,17 +18,15 @@ class CriticalProducts extends StatefulWidget {
 class _CriticalProductsState extends State<CriticalProducts> {
   late Future<List<Listado>> _criticalProducts;
 
-  String APIUSER = 'test';
-  String APIPASS = 'test..2022';
-  String BASEURL = '157.230.213.232:8000';
-
   Future<List<Listado>> _getCriticalProducts() async {
     final url = Uri.http(
-      BASEURL,
+      Environment.baseURL,
       'productos/productos_producto_listar/',
     );
-    String basicAuth =
-        'Basic ' + base64Encode(utf8.encode('$APIUSER:$APIPASS'));
+
+    String basicAuth = 'Basic ' +
+        base64Encode(
+            utf8.encode('${Environment.apiUser}:${Environment.apiPass}'));
     final response = await http.get(url, headers: {'authorization': basicAuth});
     List<Listado> listProductsCritical = [];
 
@@ -33,9 +34,8 @@ class _CriticalProductsState extends State<CriticalProducts> {
       final listProductCritics = ListProductsCritic.fromJson(response.body);
       listProductsCritical = listProductCritics.listado;
       return listProductsCritical;
-    } else {
-      throw Exception("fallo todo perro");
     }
+    return [];
   }
 
   @override
@@ -112,7 +112,13 @@ class _CriticalProductsState extends State<CriticalProducts> {
                         DataCell(Text(e.nombre.toString())),
                         DataCell(Text(e.sku.toString())),
                         DataCell(TextButton(
-                          onPressed: () => {print("object")},
+                          onPressed: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        CreateOrderProductScreen2()))
+                          },
                           child: Text("Crear Orden"),
                         )),
                       ]))

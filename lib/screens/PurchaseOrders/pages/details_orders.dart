@@ -1,7 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/global/environment.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/models/cafe_products.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/models/datails_order.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriticsModule/create_order.dart';
 import '../../../theme/app_theme.dart';
 import 'package:http/http.dart' as http;
 
@@ -13,26 +16,28 @@ class DetailsOrdersScreen extends StatefulWidget {
 }
 
 class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
-  late Future<List<Persona>> _ordenDetails;
+  late Future<List<Producto>> _ordenDetails;
 
-  Future<List<Persona>> _getOrdenDetails() async {
-    final url = Uri.parse("https://res-api-educacion.herokuapp.com/");
-    final response = await http.get(url);
+  Future<List<Producto>> _getOrdenDetails() async {
+    final url = Uri.http(
+      Environment.baseURL,
+      'sucursales/sucursales_sucursal_list_rest/',
+    );
 
-    List<Persona> orderDetails = [];
+    String basicAuth = 'Basic ' +
+        base64Encode(
+            utf8.encode('${Environment.apiUser}:${Environment.apiPass}'));
+    final response = await http.get(url, headers: {'authorization': basicAuth});
+
+    List<Producto> orderDetails = [];
 
     if (response.statusCode == 200) {
-      String body = utf8.decode(response.bodyBytes);
-      final jsonData = jsonDecode(body);
-
-      for (var i in jsonData) {
-        orderDetails.add(Persona(i["title"], i["marca"], i["id"].toString()));
-      }
-
+      final listProductCritics = ListProduct.fromJson(response.body);
+      orderDetails = listProductCritics.listado;
       return orderDetails;
-    } else {
-      throw Exception("fallo todo perro");
     }
+    print(orderDetails);
+    return [];
   }
 
   @override
@@ -62,7 +67,7 @@ class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
         margin: const EdgeInsets.fromLTRB(0, 40, 0, 00),
         child: Column(
           children: [
-            const Text('Productos con stock critico'),
+            const Text('Productos con stock critico 2'),
             const SizedBox(
               height: 50,
             ),
@@ -104,9 +109,18 @@ class _DetailsOrdersScreenState extends State<DetailsOrdersScreen> {
               ],
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
-                        DataCell(Center(child: Text(e.name.toString()))),
-                        DataCell(Center(child: Text(e.phone.toString()))),
-                        DataCell(Center(child: Text(e.phone.toString()))),
+                        DataCell(Center(child: Text(e.sucursal.toString()))),
+                        DataCell(Center(child: Text(e.direccion.toString()))),
+                        DataCell(TextButton(
+                          onPressed: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        CreateOrderProductScreen()))
+                          },
+                          child: Text("Crear Orden"),
+                        )),
                       ]))
                   .toList()),
           TextButton(onPressed: () => {}, child: Text("Siguiente"))
