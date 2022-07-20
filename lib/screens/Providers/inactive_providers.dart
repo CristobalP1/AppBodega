@@ -38,19 +38,7 @@ class InactiveProvidersScreen extends StatelessWidget {
                 'Proveedores Inactivos',
                 style: TextStyle(fontSize: 20, color: AppTheme.quaternary),
               ), //Define el titulo del appbar
-              elevation: 15.5,
-              actions: <Widget>[
-                IconButton(
-                  icon: const Icon(
-                    Icons.more_vert,
-                    color: AppTheme.quaternary,
-                    size: 30,
-                  ),
-                  onPressed: () {
-                    // do something
-                  },
-                )
-              ], //define la elevación es un valor float
+              elevation: 15.5, //define la elevación es un valor float
             ),
             backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             body:
@@ -111,10 +99,16 @@ class InactiveProvidersScreen extends StatelessWidget {
                       title: Text(listado.providers[index].prov,
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            fontSize: 20,
+                            fontSize: 18,
                           )),
                       subtitle: Text(
                           listado.providers[index].direccion),
+                        leading: Column(mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                            Text('Rut'),
+                            Text(listado.providers[index].rut)
+                          ],)
+                          ,
                     )
                     )
                     ),
