@@ -7,7 +7,7 @@ import 'package:flutter_application_1/widget/Search/Search_bar.dart';
 class OrderPurchaseOpcion extends StatefulWidget {
   const OrderPurchaseOpcion({Key? key}) : super(key: key);
 
-  static const String titulo = 'Ver Estado Pedido';
+  static const String titulo = 'Modulo Orden de Compra';
 
   @override
   State<OrderPurchaseOpcion> createState() => _OrderPurchaseOpcionState();
@@ -61,7 +61,7 @@ class _OrderPurchaseOpcionState extends State<OrderPurchaseOpcion> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => CriticalProducts()))
+                                  builder: (context) => OrderCancellerScreen()))
                         },
                         child: Text("Ordendes Pendientes"),
                       )),

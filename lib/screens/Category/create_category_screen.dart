@@ -4,7 +4,7 @@ import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:flutter_application_1/widget/Drawer/Drawer.dart';
 import 'package:flutter_application_1/widget/Inputs/input_field.dart';
 import 'package:provider/provider.dart';
-import '../../Providers/list_category_provider.dart';
+import '../../Provider/list_category_provider.dart';
 
 class CreateCategoryScreen extends StatefulWidget {
   const CreateCategoryScreen({Key? key}) : super(key: key);

@@ -77,7 +77,14 @@ class _OrderAllScreenState extends State<OrderAllScreen> {
             const SizedBox(
               height: 40,
             ),
-            const Text('Productos con stock critico Alerta!!!!'),
+            const Text(
+              'Todas Las Ordenes de Compra',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: AppTheme.primary,
+              ),
+            ),
             const SizedBox(
               height: 30,
             ),

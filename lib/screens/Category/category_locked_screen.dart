@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/Category/create_category_screen.dart';
 import 'package:provider/provider.dart';
-import '../../Providers/list_category_provider.dart';
+import '../../Provider/list_category_provider.dart';
 
 import '../../theme/app_theme.dart';
 
