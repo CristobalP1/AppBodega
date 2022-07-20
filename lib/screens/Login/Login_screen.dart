@@ -1,6 +1,4 @@
 
-// ignore_for_file: unnecessary_const
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
 import 'package:flutter_application_1/widget/Inputs/input_form.dart';
@@ -32,14 +30,13 @@ class LoginScreen extends StatelessWidget {
               height: 20,
             ),
              InputField(
-              hint: 'Nombre de la categoria',
+              hint: 'Usuario',
             ),
             const SizedBox(
               height: 10,
             ),
-            const InputForm(
-              labelText: "Contraseña",
-              hintText: "********",
+            InputField(
+              hint: 'Contraseña',
             ),
            const SizedBox(height:30),
           Row(children: [
@@ -48,12 +45,12 @@ class LoginScreen extends StatelessWidget {
            child: const Text('Iniciar Sesion')),
          const SizedBox(width:155),
            TextButton(
-                onPressed:() => Navigator.pushNamed(context, homePage),
+               onPressed:() => Navigator.pushNamed(context, loginUser),
            child: const Text('Olvidé mi contraseña'))
-          ],)           
           ],
         ),
-      ),
+      ])
+    )
     );
   }
 }
