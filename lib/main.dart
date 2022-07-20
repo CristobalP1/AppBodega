@@ -31,7 +31,7 @@ class MyApp  extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeData,
-      initialRoute: homePage,
+      initialRoute: loginUser,
       routes: ApppRoutes.routes,
     );
 /*         debugShowCheckedModeBanner: false, home: HomeScreen()); */
