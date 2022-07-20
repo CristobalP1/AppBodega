@@ -5,7 +5,7 @@ import 'package:flutter_application_1/screens/Vendor/see_vendors_screen.dart';
 import 'package:flutter_application_1/screens/Home/home_screen.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
-import 'package:flutter_application_1/models/models.dart';
+import 'package:flutter_application_1/models/ProveedoresAct.dart';
 import 'package:flutter_application_1/services/services.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +16,7 @@ class ActiveProvidersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final listadoAct = Provider.of<ProviderServiceAct>(context, listen: true);
     Provider.of<ProviderServiceAct>(context, listen: false)
-        .loadProveedorActivo();
+        .loadProveedorActivos();
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Proveedores',
@@ -72,29 +72,7 @@ class ActiveProvidersScreen extends StatelessWidget {
                                       actions: [
                                         TextButton(
                                           onPressed: () {
-                                            Provider.of<ProviderService>(
-                                                    context,
-                                                    listen: false)
-                                                .updateprovider(Listado(
-                                                    idDePorveedor: listadoAct
-                                                        .providersAct[index]
-                                                        .idDePorveedorAct,
-                                                    prov: listadoAct
-                                                        .providersAct[index]
-                                                        .provAct,
-                                                    rut: listadoAct
-                                                        .providersAct[index]
-                                                        .rutAct,
-                                                    correo: listadoAct
-                                                        .providersAct[index]
-                                                        .correoAct,
-                                                    telefono: listadoAct
-                                                        .providersAct[index]
-                                                        .telefonoAct,
-                                                    direccion: listadoAct
-                                                        .providersAct[index]
-                                                        .direccionAct,
-                                                    estado: "Inactivo"));
+                                            Provider.of<ProviderServiceAct>(context,listen: false).updateprovider(Listado(idDeProv: listadoAct.providersAct[index].idDeProv, prov: listadoAct.providersAct[index].prov, rut: listadoAct.providersAct[index].rut, correo: listadoAct.providersAct[index].correo, telefono: listadoAct.providersAct[index].telefono, direccion: listadoAct.providersAct[index].direccion, estado: "Inactivo"));
                                             Navigator.of(context).pop();
                                             showDialog(
                                                 context: context,
@@ -137,13 +115,13 @@ class ActiveProvidersScreen extends StatelessWidget {
                                           '¿Estas seguro que quieres desactivar a este proveedor?'),
                                     ));
                           },
-                          title: Text(listadoAct.providersAct[index].provAct,
+                          title: Text(listadoAct.providersAct[index].prov,
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 20,
                               )),
                           subtitle:
-                              Text(listadoAct.providersAct[index].direccionAct),
+                              Text(listadoAct.providersAct[index].direccion),
                         ))))));
   }
 }

@@ -2,93 +2,68 @@
 //
 //     final proveedoresAct = proveedoresActFromMap(jsonString);
 
-// ignore_for_file: file_names
-
 import 'dart:convert';
 
 class ProveedoresAct {
-  ProveedoresAct({
-    required this.listadoAct,
-    // required this.search,
-  });
+    ProveedoresAct({
+         required this.listado,
+    });
 
-  List<ListadoAct> listadoAct;
-  // List<SearchAct> search;
+    List<Listado> listado;
 
-  factory ProveedoresAct.fromJson(String str) =>
-      ProveedoresAct.fromMap(json.decode(str));
+    factory ProveedoresAct.fromJson(String str) => ProveedoresAct.fromMap(json.decode(str));
 
-  String toJson() => json.encode(toMap());
+    String toJson() => json.encode(toMap());
 
-  factory ProveedoresAct.fromMap(Map<String, dynamic> json) => ProveedoresAct(
-        listadoAct: List<ListadoAct>.from(
-            json["ListadoAct"].map((x) => ListadoAct.fromMap(x))),
-        // search: List<SearchAct>.from(
-        //     json["SearchAct"].map((x) => SearchAct.fromMap(x))),
-      );
+    factory ProveedoresAct.fromMap(Map<String, dynamic> json) => ProveedoresAct(
+        listado: json["Listado"]!= null ? List<Listado>.from(json["Listado"].map((x) => Listado.fromMap(x))) : [],
+    );
 
-  Map<String, dynamic> toMap() => {
-        "ListadoAct": List<dynamic>.from(listadoAct.map((x) => x.toMap())),
-      };
+    Map<String, dynamic> toMap() => {
+        "Listado": List<dynamic>.from(listado.map((x) => x.toMap())),
+    };
 }
 
-class ListadoAct {
-  ListadoAct({
-    required this.idDePorveedorAct,
-    required this.provAct,
-    required this.rutAct,
-    required this.correoAct,
-    required this.telefonoAct,
-    required this.direccionAct,
-    required this.estadoAct,
-  });
+class Listado {
+    Listado({
+        required this.idDeProv,
+        required this.prov,
+        required this.rut,
+        required this.correo,
+        required this.telefono,
+        required this.direccion,
+        required this.estado,
+    });
 
-  int idDePorveedorAct;
-  String provAct;
-  String rutAct;
-  String correoAct;
-  String telefonoAct;
-  String direccionAct;
-  String estadoAct;
+    int idDeProv;
+    String prov;
+    String rut;
+    String correo;
+    String telefono;
+    String direccion;
+    String estado;
 
-  factory ListadoAct.fromJson(String str) =>
-      ListadoAct.fromMap(json.decode(str));
+    factory Listado.fromJson(String str) => Listado.fromMap(json.decode(str));
 
-  String toJson() => json.encode(toMap());
+    String toJson() => json.encode(toMap());
 
-  factory ListadoAct.fromMap(Map<String, dynamic> json) => ListadoAct(
-        idDePorveedorAct: json["id de Porveedor"],
-        provAct: json["Prov"],
-        rutAct: json["RUT"],
-        correoAct: json["Correo"],
-        telefonoAct: json["Telefono"],
-        direccionAct: json["Direccion"],
-        estadoAct: json["Estado"],
-      );
+    factory Listado.fromMap(Map<String, dynamic> json) => Listado(
+        idDeProv: json["id de Prov"],
+        prov: json["Prov"],
+        rut: json["RUT"],
+        correo: json["Correo"],
+        telefono: json["Telefono"],
+        direccion: json["Direccion"],
+        estado: json["Estado"],
+    );
 
-  Map<String, dynamic> toMap() => {
-        "id de Porveedor": idDePorveedorAct,
-        "Prov": provAct,
-        "RUT": rutAct,
-        "Correo": correoAct,
-        "Telefono": telefonoAct,
-        "Direccion": direccionAct,
-        "Estado": estadoAct,
-      };
-}
-
-class SearchAct {
-  SearchAct({
-    required this.search,
-  });
-  String search;
-  factory SearchAct.fromJson(String str) =>
-      SearchAct.fromJson(json.decode(str));
-  String toJson() => json.encode(toMap());
-  factory SearchAct.fromMap(Map<String, dynamic> json) => SearchAct(
-        search: json["SearchAct"],
-      );
-  Map<String, dynamic> toMap() => {
-        "Search": search,
-      };
+    Map<String, dynamic> toMap() => {
+        "id de Prov": idDeProv,
+        "Prov": prov,
+        "RUT": rut,
+        "Correo": correo,
+        "Telefono": telefono,
+        "Direccion": direccion,
+        "Estado": estado,
+    };
 }
