@@ -7,6 +7,8 @@ export 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriti
 export 'package:flutter_application_1/screens/PurchaseOrders/pages/critical_products.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/pages/details_orders.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/pages/history_orders.dart';
+export 'package:flutter_application_1/screens/Login/Login_screen.dart';
+export 'package:flutter_application_1/screens/Category/category_locked_screen.dart';
 export 'package:flutter_application_1/screens/Home/filter_home.dart';
 export 'package:flutter_application_1/screens/Providers/create_provider_screen.dart';
 export 'package:flutter_application_1/screens/Providers/active_providers_screen.dart';
