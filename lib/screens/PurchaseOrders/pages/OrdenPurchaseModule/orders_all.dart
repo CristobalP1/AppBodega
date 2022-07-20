@@ -57,7 +57,7 @@ class _OrderAllScreenState extends State<OrderAllScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Productos'),
+        title: const Text('Ordenes De Compra'),
         elevation: 0,
         actions: [
           IconButton(
@@ -71,12 +71,15 @@ class _OrderAllScreenState extends State<OrderAllScreen> {
         ],
       ),
       body: Container(
-        margin: const EdgeInsets.fromLTRB(0, 40, 0, 00),
+        margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         child: Column(
           children: [
+            const SizedBox(
+              height: 40,
+            ),
             const Text('Productos con stock critico Alerta!!!!'),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
             FutureBuilder(
                 future: _ordenDetails,
