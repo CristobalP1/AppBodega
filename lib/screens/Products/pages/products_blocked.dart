@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widget/DataTableProducts/products_blocked.dart';
 import 'package:flutter_application_1/screens/Products/pages/info_product_screen.dart';
+import 'package:flutter_application_1/screens/screens.dart';
+import 'package:flutter_application_1/widget/DataTableProducts/products_blocked.dart';
 
 class ProductsBlocked extends StatefulWidget {
   const ProductsBlocked({Key? key}) : super(key: key);
@@ -20,17 +21,27 @@ class _ProductsBlockedState extends State<ProductsBlocked> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Center(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Productos Bloqueados'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.more_vert),
+            onPressed: () {},
+          )
+        ],
+      ),
+      body: Align(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             DataTable(
               dividerThickness: 2,
               dataRowHeight: 50,
               headingRowHeight: 50,
               sortColumnIndex: 0,
-              showCheckboxColumn: false,
+              columnSpacing: 150,
               columns: const [
                 DataColumn(
                   label: Center(

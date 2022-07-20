@@ -267,7 +267,9 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
   }
 
   static List<CDM> cdms = [
-    CDM(Icons.warehouse, Route("Bodega", ""), [Route("Productos", homePage)]),
+    CDM(Icons.warehouse, Route("Productos", ""), [
+      Route("Listado Productos", homePage),
+    ]),
     CDM(Icons.local_shipping, Route("Proveedores", ""), [
       Route("Activos", activeProvider),
       Route("Inactivos", inactiveProviders),

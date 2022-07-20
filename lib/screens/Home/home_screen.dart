@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(
-              Icons.attach_file_rounded,
+              Icons.more_vert,
               color: AppTheme.quaternary,
               size: 30,
             ),

@@ -14,7 +14,7 @@ class EditProductScreen extends StatelessWidget {
         title: const Text('Productos'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.attach_file_rounded),
+            icon: const Icon(Icons.more_vert),
             onPressed: () {},
           )
         ],
