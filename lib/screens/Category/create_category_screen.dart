@@ -103,7 +103,14 @@ class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
                       Icons.block,
                       color: Colors.red,
                     ),
-                    onTap: () {}),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EditCategoryScreen(
+                                  name: listado
+                                      .ListCategorias[index].nombreCategoria)));
+                    }),
               ),
             ),
           ],
