@@ -1,13 +1,13 @@
 // To parse this JSON data, do
 //
-//     final proveedoresAct = proveedoresActFromMap(jsonString);
+//     final proveedoresCreate = proveedoresCreateFromMap(jsonString);
 
 // ignore_for_file: file_names
 
 import 'dart:convert';
 
-class ProveedoresAct {
-  ProveedoresAct({
+class ProveedoresCreate {
+  ProveedoresCreate({
     required this.listadoAct,
     // required this.search,
   });
@@ -15,12 +15,13 @@ class ProveedoresAct {
   List<ListadoAct> listadoAct;
   // List<SearchAct> search;
 
-  factory ProveedoresAct.fromJson(String str) =>
-      ProveedoresAct.fromMap(json.decode(str));
+  factory ProveedoresCreate.fromJson(String str) =>
+      ProveedoresCreate.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory ProveedoresAct.fromMap(Map<String, dynamic> json) => ProveedoresAct(
+  factory ProveedoresCreate.fromMap(Map<String, dynamic> json) =>
+      ProveedoresCreate(
         listadoAct: List<ListadoAct>.from(
             json["ListadoAct"].map((x) => ListadoAct.fromMap(x))),
       );
