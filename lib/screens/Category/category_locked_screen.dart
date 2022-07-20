@@ -13,7 +13,7 @@ class CategoryLockedScreen extends StatelessWidget {
     final listado = Provider.of<ListCategoryProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Productos'),
+        title: const Text('Categorias Bloqueadas'),
         elevation: 0,
         actions: [
           IconButton(
@@ -34,12 +34,15 @@ class CategoryLockedScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            SizedBox(
+              height: 20,
+            ),
             const Text(
-              'Lista de categorias bloqueadas',
+              'Lista de categorias bloqueadas: ',
               style: TextStyle(fontSize: 20),
             ),
-            Row(
-              children: <Widget>[],
+            SizedBox(
+              height: 40,
             ),
             Flexible(
               child: ListView.builder(
