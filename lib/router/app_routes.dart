@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/Providers/inactive_providers.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/pages/critical_products.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
 import '../utils/Constants.dart' as constants;
@@ -26,11 +27,11 @@ class ApppRoutes {
 
     //Purchase Orders Screen
     constants.createOrder: (BuildContext context) => const CreateOrderScreen(),
-    constants.viewState: (BuildContext context) => const ViewStateScreen(),
+    constants.viewState: (BuildContext context) => const OrderPurchaseOpcion(),
     constants.createOrderFinish: (BuildContext context) =>
         const CreateOrderFinishScreen(),
-    constants.historyOrders: (BuildContext context) =>
-        const HistoryOrdersScreen(),
+    constants.criticalProducts: (BuildContext context) =>
+        const CreateOrderProductScreen(),
     constants.detailsOrder: (BuildContext context) =>
         const DetailsOrdersScreen(),
 
