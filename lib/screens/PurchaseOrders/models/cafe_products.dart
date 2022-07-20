@@ -2,10 +2,6 @@
 //
 //     final welcome = welcomeFromMap(jsonString);
 
-// To parse this JSON data, do
-//
-//     final welcome = welcomeFromMap(jsonString);
-
 import 'dart:convert';
 
 class ListProduct {
@@ -32,32 +28,40 @@ class ListProduct {
 
 class Producto {
   Producto({
-    required this.sucursal,
-    required this.estado,
-    required this.direccion,
-    required this.contacto,
+    required this.nombre,
+    required this.sku,
+    required this.codigo,
+    required this.precio,
+    required this.costo,
+    required this.stock,
   });
 
-  String sucursal;
-  String estado;
-  String direccion;
-  String contacto;
+  String nombre;
+  String sku;
+  String codigo;
+  int precio;
+  int costo;
+  dynamic stock;
 
   factory Producto.fromJson(String str) => Producto.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
   factory Producto.fromMap(Map<String, dynamic> json) => Producto(
-        sucursal: json["Sucursal"],
-        estado: json["Estado"] == null ? null : json["Estado"],
-        direccion: json["Direccion"],
-        contacto: json["Contacto"],
+        nombre: json["Nombre"],
+        sku: json["SKU"],
+        codigo: json["Codigo"],
+        precio: json["Precio"],
+        costo: json["Costo"],
+        stock: json["Stock"],
       );
 
   Map<String, dynamic> toMap() => {
-        "Sucursal": sucursal,
-        "Estado": estado == null ? null : estado,
-        "Direccion": direccion,
-        "Contacto": contacto,
+        "Nombre": nombre,
+        "SKU": sku,
+        "Codigo": codigo,
+        "Precio": precio,
+        "Costo": costo,
+        "Stock": stock,
       };
 }

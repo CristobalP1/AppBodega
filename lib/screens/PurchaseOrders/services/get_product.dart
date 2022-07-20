@@ -9,7 +9,7 @@ class GetCriticalProductsService {
   Future<List<Producto>> getCriticalProducts() async {
     final url = Uri.http(
       Environment.baseURL,
-      'sucursales/sucursales_sucursal_list_rest/',
+      'producto/productos_producto_listar/',
     );
 
     String basicAuth = 'Basic ' +

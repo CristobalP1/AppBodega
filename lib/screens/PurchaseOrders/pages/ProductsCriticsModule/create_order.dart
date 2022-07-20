@@ -82,8 +82,8 @@ List<Widget> _listDetails(data) {
             ],
             rows: data
                 .map<DataRow>((e) => DataRow(cells: [
-                      DataCell(Text(e.sucursal.toString())),
-                      DataCell(Text(e.direccion.toString())),
+                      DataCell(Text(e.nombre.toString())),
+                      DataCell(Text(e.sku.toString())),
                       DataCell(TextButton(
                         onPressed: () => {},
                         child: Text("Crear Orden"),
