@@ -17,10 +17,9 @@ class GetOrderAllService {
 
     if (response.statusCode == 200) {
       final listProductCritics = OrderAll.fromJson(response.body);
-      return [
-        for (final item in jsonDecode(response.body))
-          OrderAll.fromJson(item.toString()),
-      ];
+      orderDetails = listProductCritics as List<OrderAll>;
+      return orderDetails;
+
 /*       for (final item in jsonDecode(response.body)) OrderAll.fromJson(item);
       final listProductCritics = OrderAll.fromJson(response.body);
       orderDetails = listProductCritics as List<OrderAll>;
