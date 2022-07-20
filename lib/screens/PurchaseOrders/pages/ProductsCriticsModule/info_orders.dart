@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 
-import '../../../theme/app_theme.dart';
+import '../../../../theme/app_theme.dart';
 
 class CreateOrderProductScreen2 extends StatefulWidget {
-  final nombre;
-  final sku;
-  final codigo;
-  final precio;
-  final costo;
-  final stock;
+  final id;
+  final numeroPedido;
+  final precioOrden;
+  final cantidadOrden;
+  final proveedor;
+  final vendedor;
+  final producto;
+  final estadoPedido;
 
   const CreateOrderProductScreen2({
     Key? key,
-    this.nombre,
-    this.sku,
-    this.codigo,
-    this.precio,
-    this.costo,
-    this.stock,
+    this.id,
+    this.numeroPedido,
+    this.precioOrden,
+    this.cantidadOrden,
+    this.proveedor,
+    this.vendedor,
+    this.producto,
+    this.estadoPedido,
   }) : super(key: key);
 
   @override
@@ -30,7 +34,7 @@ class _CreateOrderProductScreen2State extends State<CreateOrderProductScreen2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Productos'),
+        title: const Text('Productos acaaa'),
         elevation: 0,
         actions: [
           IconButton(
@@ -46,12 +50,13 @@ class _CreateOrderProductScreen2State extends State<CreateOrderProductScreen2> {
       body: Center(
         child: Column(
           children: [
-            Text(widget.nombre),
-            Text(widget.sku),
-            Text(widget.stock),
-            Text(widget.codigo),
-            Text(widget.costo),
-            Text(widget.precio),
+            Text(widget.id),
+            Text(widget.numeroPedido),
+            Text(widget.precioOrden),
+            Text(widget.cantidadOrden),
+            Text(widget.proveedor),
+            Text(widget.vendedor),
+            Text(widget.estadoPedido)
           ],
         ),
       ),

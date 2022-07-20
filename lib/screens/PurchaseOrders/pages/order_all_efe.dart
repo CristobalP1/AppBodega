@@ -1,4 +1,14 @@
 import 'dart:convert';
+import 'dart:math';
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/global/environment.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/models/order_all_models.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/models/products_critics.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriticsModule/create_order.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriticsModule/info_orders.dart';
+import '../../../theme/app_theme.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/models/order_all_list.dart';
@@ -8,16 +18,15 @@ import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import '../../../../global/environment.dart';
 import '../../../../theme/app_theme.dart';
-import '../../models/order_all_models.dart';
 
-class OrderAllScreen extends StatefulWidget {
-  const OrderAllScreen({Key? key}) : super(key: key);
+class CriticalProducts extends StatefulWidget {
+  const CriticalProducts({Key? key}) : super(key: key);
 
   @override
-  State<OrderAllScreen> createState() => _OrderAllScreenState();
+  State<CriticalProducts> createState() => _CriticalProductsState();
 }
 
-class _OrderAllScreenState extends State<OrderAllScreen> {
+class _CriticalProductsState extends State<CriticalProducts> {
   late Future<List<Producto1>> _ordenDetails;
 
   Future<List<Producto1>> _getOrdenDetails() async {
@@ -34,13 +43,21 @@ class _OrderAllScreenState extends State<OrderAllScreen> {
     List<Producto1> orderDetails = [];
 
     if (response.statusCode == 200) {
-      final lista = List.from(jsonDecode(response.body));
+      String body = utf8.decode(response.bodyBytes);
+      final jsonData = jsonDecode(body);
 
-      lista.forEach((element) {
-        final Producto1 orderList = Producto1.fromJson(element);
-        orderDetails.add(orderList);
-      });
-      print(orderDetails);
+/*       for (var i in jsonData) {
+        orderDetails.add(Producto1(
+          i["id"],
+          i["cantidadOrden"],
+          i["numeroPedido"],
+          i["precioOrden"],
+          i["producto"],
+          i["proveedor"],
+          i["vendedor"],
+          i["estadoPedido"],
+        ));
+      } */
       return orderDetails;
     } else {
       throw Exception("fallo todo perro");
@@ -80,8 +97,9 @@ class _OrderAllScreenState extends State<OrderAllScreen> {
             ),
             FutureBuilder(
                 future: _ordenDetails,
-                builder: (context, AsyncSnapshot<List<Producto1>?> snapshot) {
+                builder: (context, snapshot) {
                   if (snapshot.hasData) {
+                    print(snapshot.data);
                     return Flexible(
                       child: ListView(
                         children: _listDetails(snapshot.data),
@@ -104,44 +122,35 @@ class _OrderAllScreenState extends State<OrderAllScreen> {
   List<Widget> _listDetails(data) {
     List<Widget> details = [];
 
-    details.add(Padding(
-      padding: const EdgeInsets.all(9.0),
+    details.add(Container(
+      margin: const EdgeInsets.only(
+        left: 7,
+      ),
       child: Column(
         children: [
           DataTable(
               columns: const [
                 DataColumn(label: Text('Producto')),
-                DataColumn(label: Text('Proveedor')),
+                DataColumn(label: Text('Stock')),
                 DataColumn(label: Text('Accion')),
               ],
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
                         DataCell(Text(e.producto.toString())),
-                        DataCell(Text(e.vendedor.toString())),
+                        DataCell(Text(e.precioOrden.toString())),
                         DataCell(TextButton(
                           onPressed: () => {
-                            Navigator.push(
+                            /*   Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        CreateOrderProductScreen2(
-                                          id: e.id.toString(),
-                                          numeroPedido:
-                                              e.numeroPedido.toString(),
-                                          precioOrden: e.precioOrden.toString(),
-                                          cantidadOrden:
-                                              e.cantidadOrden.toString(),
-                                          proveedor: e.proveedor.toString(),
-                                          vendedor: e.vendedor.toString(),
-                                          producto: e.producto.toString(),
-                                          estadoPedido:
-                                              e.estadoPedido.toString(),
-                                        )))
+                                        CreateOrderProductScreen2())) */
                           },
                           child: Text("Crear Orden"),
                         )),
                       ]))
-                  .toList())
+                  .toList()),
+          TextButton(onPressed: () => {}, child: Text("Siguiente"))
         ],
       ),
     ));

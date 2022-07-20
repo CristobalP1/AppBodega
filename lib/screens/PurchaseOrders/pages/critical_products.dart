@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/global/environment.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/models/products_critics.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriticsModule/create_order.dart';
-import 'package:flutter_application_1/screens/PurchaseOrders/pages/create_order2.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriticsModule/info_orders.dart';
 import '../../../theme/app_theme.dart';
 import 'package:http/http.dart' as http;
 
@@ -113,11 +113,11 @@ class _CriticalProductsState extends State<CriticalProducts> {
                         DataCell(Text(e.sku.toString())),
                         DataCell(TextButton(
                           onPressed: () => {
-                            Navigator.push(
+                            /*    Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        CreateOrderProductScreen2()))
+                                        CreateOrderProductScreen2())) */
                           },
                           child: Text("Crear Orden"),
                         )),

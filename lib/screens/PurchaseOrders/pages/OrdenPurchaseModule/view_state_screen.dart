@@ -61,7 +61,7 @@ class _OrderPurchaseOpcionState extends State<OrderPurchaseOpcion> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => OrderPendingScreen()))
+                                  builder: (context) => CriticalProducts()))
                         },
                         child: Text("Ordendes Pendientes"),
                       )),
