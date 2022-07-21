@@ -1,95 +1,98 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Products/pages/info_product_screen.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/models/cafe_products.dart';
+import 'package:flutter_application_1/screens/PurchaseOrders/providers/get_critical_products.dart';
 import 'package:flutter_application_1/screens/screens.dart';
-import 'package:flutter_application_1/widget/DataTableProducts/products_blocked.dart';
+import 'package:provider/provider.dart';
+
+import '../../../../theme/app_theme.dart';
 
 class ProductsBlocked extends StatefulWidget {
-  const ProductsBlocked({Key? key}) : super(key: key);
+  const ProductsBlocked({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  _ProductsBlockedState createState() => _ProductsBlockedState();
+  State<ProductsBlocked> createState() => _ProductsBlockedState();
 }
 
 class _ProductsBlockedState extends State<ProductsBlocked> {
-  late List<Products> productos;
-
-  @override
-  void initState() {
-    super.initState();
-    productos = Products.getProductos();
-  }
-
   @override
   Widget build(BuildContext context) {
+    final productProvider = Provider.of<GetCriticalProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Productos Bloqueados'),
+        title: const Text('Productos'),
+        elevation: 0,
         actions: [
           IconButton(
-            icon: const Icon(Icons.more_vert),
+            icon: const Icon(
+              Icons.more_vert,
+              color: AppTheme.quaternary,
+              size: 30,
+            ),
             onPressed: () {},
           )
         ],
       ),
-      body: Align(
+      body: Container(
+        margin: const EdgeInsets.fromLTRB(0, 40, 0, 00),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            DataTable(
-              dividerThickness: 2,
-              dataRowHeight: 50,
-              headingRowHeight: 50,
-              sortColumnIndex: 0,
-              columnSpacing: 150,
-              columns: const [
-                DataColumn(
-                  label: Center(
-                    child: Text('Descripción'),
-                  ),
-                  numeric: false,
-                ),
-                DataColumn(
-                  label: Center(
-                    child: Text('Stock'),
-                  ),
-                  numeric: false,
-                ),
-              ],
-              rows: productos
-                  .map(
-                    (products) => DataRow(
-                      cells: [
-                        DataCell(GestureDetector(
-                          child: Text(
-                            products.descripcion,
-                            textAlign: TextAlign.center,
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        const InfoProductScreen()));
-                          },
-                          onLongPressEnd: (LongPressEndDetails details) {
-                            null;
-                          },
-                        )),
-                        DataCell(
-                          Text(
-                            products.stock,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                  .toList(),
+            const Text('Productos con stock critico Alerta!!!!'),
+            const SizedBox(
+              height: 50,
             ),
+            FutureBuilder(
+                future: productProvider.getProductsCritics(),
+                builder: (_, AsyncSnapshot<List<Producto>?> snapshot) {
+                  if (snapshot.hasData) {
+                    return Flexible(
+                      child: ListView(
+                        children: _listDetails(snapshot.data),
+                      ),
+                    );
+                  } else if (snapshot.hasError) {
+                    print(snapshot.error);
+                    return const Text("Error");
+                  }
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }),
           ],
         ),
       ),
     );
   }
+}
+
+List<Widget> _listDetails(data) {
+  List<Widget> details = [];
+
+  details.add(Padding(
+    padding: const EdgeInsets.all(9.0),
+    child: Column(
+      children: [
+        DataTable(
+            columns: const [
+              DataColumn(label: Text('Producto')),
+              DataColumn(label: Text('Stock')),
+              DataColumn(label: Text('ProveedorR')),
+            ],
+            rows: data
+                .map<DataRow>((e) => DataRow(cells: [
+                      DataCell(Text(e.nombre.toString())),
+                      DataCell(Text(e.sku.toString())),
+                      DataCell(TextButton(
+                        onPressed: () => {},
+                        child: Text("Crear Orden"),
+                      )),
+                    ]))
+                .toList())
+      ],
+    ),
+  ));
+
+  return details;
 }

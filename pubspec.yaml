@@ -29,6 +29,7 @@ environment:
 dependencies:
   dio: ^4.0.6
   http: ^0.13.4
+  animate_do:
   flutter:
     sdk: flutter
 

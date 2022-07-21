@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/providers/get_critical_products.dart';
 import 'package:flutter_application_1/widget/Buttons/speed_dial_button.dart';
 import 'package:flutter_application_1/widget/DataTableProducts/data_table_home.dart';
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final productProvider = Provider.of<GetCriticalProductsProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Productos'),
+        title: const Text('AppBodega'),
         elevation: 0,
         actions: [
           IconButton(
@@ -86,23 +87,30 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
-                        DataCell(Text(e.nombre.toString())),
-                        DataCell(Text(e.sku.toString())),
-                        DataCell(TextButton(
-                          onPressed: () => {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => InfoProductScreen(
-                                          nombre: e.nombre.toString(),
-                                          sku: e.sku.toString(),
-                                          codigo: e.codigo.toString(),
-                                          precio: e.precio.toString(),
-                                          costo: e.costo.toString(),
-                                          stock: e.stock.toString(),
-                                        )))
-                          },
-                          child: Text("Ver Mas"),
+                        DataCell(FadeInDown(
+                            delay: Duration(milliseconds: 300),
+                            child: Text(e.nombre.toString()))),
+                        DataCell(FadeInLeft(
+                            delay: Duration(milliseconds: 200),
+                            child: Text(e.sku.toString()))),
+                        DataCell(FadeInRight(
+                          delay: Duration(milliseconds: 300),
+                          child: TextButton(
+                            onPressed: () => {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => InfoProductScreen(
+                                            nombre: e.nombre.toString(),
+                                            sku: e.sku.toString(),
+                                            codigo: e.codigo.toString(),
+                                            precio: e.precio.toString(),
+                                            costo: e.costo.toString(),
+                                            stock: e.stock.toString(),
+                                          )))
+                            },
+                            child: Text("Ver Mas"),
+                          ),
                         )),
                       ]))
                   .toList())
