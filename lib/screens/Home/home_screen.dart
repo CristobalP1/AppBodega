@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/FliterSearch/filter_search.dart';
 import 'package:provider/provider.dart';
 
+import '../../Provider/list_category_provider.dart';
 import '../../theme/app_theme.dart';
 import '../Products/pages/info_product_screen.dart';
 import '../PurchaseOrders/models/cafe_products.dart';
@@ -23,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     TextStyle fontSize23 = const TextStyle(fontSize: 23);
+    final listado = Provider.of<ListCategoryProvider>(context);
     final productProvider = Provider.of<GetCriticalProductsProvider>(context);
     return Scaffold(
       appBar: AppBar(
@@ -45,7 +47,19 @@ class _HomeScreenState extends State<HomeScreen> {
         margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: Column(
           children: [
-            FilterSearchHome(),
+            FilterSearchHome(
+              n1: listado.ListCategorias[0].nombreCategoria.toString(),
+              n2: listado.ListCategorias[1].nombreCategoria.toString(),
+              n3: listado.ListCategorias[2].nombreCategoria.toString(),
+              n4: listado.ListCategorias[3].nombreCategoria.toString(),
+              n5: listado.ListCategorias[4].nombreCategoria.toString(),
+              n6: listado.ListCategorias[5].nombreCategoria.toString(),
+              n7: listado.ListCategorias[6].nombreCategoria.toString(),
+              n8: listado.ListCategorias[7].nombreCategoria.toString(),
+              n9: listado.ListCategorias[8].nombreCategoria.toString(),
+              n10: listado.ListCategorias[9].nombreCategoria.toString(),
+              n11: listado.ListCategorias[10].nombreCategoria.toString(),
+            ),
             FutureBuilder(
                 future: productProvider.getProductsCritics(),
                 builder: (_, AsyncSnapshot<List<Producto>?> snapshot) {
