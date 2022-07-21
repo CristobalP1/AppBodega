@@ -22,7 +22,7 @@ class _ProductsBlockedState extends State<ProductsBlocked> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Productos'),
+        title: const Text('Productos Bloqueados'),
         elevation: 0,
         actions: [
           IconButton(
@@ -36,13 +36,9 @@ class _ProductsBlockedState extends State<ProductsBlocked> {
         ],
       ),
       body: Container(
-        margin: const EdgeInsets.fromLTRB(0, 40, 0, 00),
+        margin: const EdgeInsets.fromLTRB(0, 0, 0, 00),
         child: Column(
           children: [
-            const Text('Productos con stock critico Alerta!!!!'),
-            const SizedBox(
-              height: 50,
-            ),
             FutureBuilder(
                 future: productProvider.getProductsCritics(),
                 builder: (_, AsyncSnapshot<List<Producto>?> snapshot) {
@@ -77,7 +73,7 @@ class _ProductsBlockedState extends State<ProductsBlocked> {
               columns: const [
                 DataColumn(label: Text('Producto')),
                 DataColumn(label: Text('Stock')),
-                DataColumn(label: Text('ProveedorR')),
+                DataColumn(label: Text('Info')),
               ],
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
@@ -99,7 +95,7 @@ class _ProductsBlockedState extends State<ProductsBlocked> {
                                           )))
                             }
                           },
-                          child: Text("Crear Orden"),
+                          child: Text("Ver Mas"),
                         )),
                       ]))
                   .toList())
