@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../theme/app_theme.dart';
@@ -42,45 +43,62 @@ class _FormOrder23State extends State<FormOrder23> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sizedBoxSpace,
-              ListTile(
-                leading: Icon(Icons.toll),
-                title: Text("Producto:"),
-                subtitle: Text(widget.nombre),
+              FadeInLeft(
+                duration: Duration(milliseconds: 300),
+                child: ListTile(
+                  leading: Icon(Icons.toll),
+                  title: Text("Producto:"),
+                  subtitle: Text(widget.nombre),
+                ),
               ),
-              ListTile(
-                leading: Icon(Icons.production_quantity_limits),
-                title: Text("Stock:"),
-                subtitle: Text(widget.stock),
+              FadeInLeft(
+                duration: Duration(milliseconds: 400),
+                child: ListTile(
+                  leading: Icon(Icons.production_quantity_limits),
+                  title: Text("Stock:"),
+                  subtitle: Text(widget.stock),
+                ),
               ),
-              TextFormField(
-                textInputAction: TextInputAction.next,
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.person),
-                  labelText: "Proveedor",
+              FadeInLeft(
+                duration: Duration(milliseconds: 500),
+                child: TextFormField(
+                  textInputAction: TextInputAction.next,
+                  decoration: const InputDecoration(
+                    icon: Icon(Icons.person),
+                    labelText: "Proveedor",
+                  ),
                 ),
               ),
               sizedBoxSpace,
-              TextFormField(
-                textInputAction: TextInputAction.next,
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.person_outline),
-                  labelText: "Vendedor",
+              FadeInLeft(
+                duration: Duration(milliseconds: 600),
+                child: TextFormField(
+                  textInputAction: TextInputAction.next,
+                  decoration: const InputDecoration(
+                    icon: Icon(Icons.person_outline),
+                    labelText: "Vendedor",
+                  ),
                 ),
               ),
               sizedBoxSpace,
-              TextFormField(
-                textInputAction: TextInputAction.next,
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.scatter_plot),
-                  labelText: "Cantidad",
+              FadeInLeft(
+                duration: Duration(milliseconds: 700),
+                child: TextFormField(
+                  textInputAction: TextInputAction.next,
+                  decoration: const InputDecoration(
+                    icon: Icon(Icons.scatter_plot),
+                    labelText: "Cantidad",
+                  ),
                 ),
               ),
               sizedBoxSpace,
-              TextFormField(
-                textInputAction: TextInputAction.next,
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.attach_money),
-                  labelText: "Precio",
+              FadeInLeft(
+                child: TextFormField(
+                  textInputAction: TextInputAction.next,
+                  decoration: const InputDecoration(
+                    icon: Icon(Icons.attach_money),
+                    labelText: "Precio",
+                  ),
                 ),
               ),
               sizedBoxSpace,

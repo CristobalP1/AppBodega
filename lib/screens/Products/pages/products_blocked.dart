@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/models/cafe_products.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/providers/get_critical_products.dart';
@@ -39,6 +40,20 @@ class _ProductsBlockedState extends State<ProductsBlocked> {
         margin: const EdgeInsets.fromLTRB(0, 0, 0, 00),
         child: Column(
           children: [
+            SizedBox(
+              height: 30,
+            ),
+            const Text(
+              'Lista de productos Bloqueados',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Color.fromARGB(255, 29, 0, 82),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
             FutureBuilder(
                 future: productProvider.getProductsCritics(),
                 builder: (_, AsyncSnapshot<List<Producto>?> snapshot) {
@@ -77,25 +92,32 @@ class _ProductsBlockedState extends State<ProductsBlocked> {
               ],
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
-                        DataCell(Text(e.nombre.toString())),
-                        DataCell(Text(e.sku.toString())),
-                        DataCell(TextButton(
-                          onPressed: () => {
-                            {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => InfoProductScreen(
-                                            nombre: e.nombre.toString(),
-                                            sku: e.sku.toString(),
-                                            codigo: e.codigo.toString(),
-                                            precio: e.precio.toString(),
-                                            costo: e.costo.toString(),
-                                            stock: e.stock.toString(),
-                                          )))
-                            }
-                          },
-                          child: Text("Ver Mas"),
+                        DataCell(ZoomIn(
+                            duration: Duration(milliseconds: 600),
+                            child: Text(e.nombre.toString()))),
+                        DataCell(ZoomIn(
+                            duration: Duration(milliseconds: 600),
+                            child: Text(e.sku.toString()))),
+                        DataCell(ZoomIn(
+                          duration: Duration(milliseconds: 600),
+                          child: TextButton(
+                            onPressed: () => {
+                              {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => InfoProductScreen(
+                                              nombre: e.nombre.toString(),
+                                              sku: e.sku.toString(),
+                                              codigo: e.codigo.toString(),
+                                              precio: e.precio.toString(),
+                                              costo: e.costo.toString(),
+                                              stock: e.stock.toString(),
+                                            )))
+                              }
+                            },
+                            child: Text("Ver Mas"),
+                          ),
                         )),
                       ]))
                   .toList())

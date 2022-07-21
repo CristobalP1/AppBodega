@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
 
@@ -76,148 +77,154 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
                 ),
               ],
             ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)),
-              margin: const EdgeInsets.all(15),
-              elevation: 8,
-              child: Column(children: [
-                const ListTile(
-                  title: Text(
-                    "Información",
-                    style: TextStyle(
-                        fontSize: 20, color: Color.fromRGBO(3, 4, 94, 1)),
+            FadeInRightBig(
+              duration: Duration(milliseconds: 600),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                margin: const EdgeInsets.all(15),
+                elevation: 8,
+                child: Column(children: [
+                  const ListTile(
+                    title: Text(
+                      "Información",
+                      style: TextStyle(
+                          fontSize: 20, color: Color.fromRGBO(3, 4, 94, 1)),
+                    ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    const SizedBox(
-                      child: Text(
-                        'Codigo Barra',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const SizedBox(
+                        child: Text(
+                          'Codigo Barra',
+                          style: TextStyle(fontSize: 15),
+                          textAlign: (TextAlign.center),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      child: Text(
-                        widget.codigo,
-                        style: const TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
+                      SizedBox(
+                        child: Text(
+                          widget.codigo,
+                          style: const TextStyle(fontSize: 15),
+                          textAlign: (TextAlign.center),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    const SizedBox(
-                      child: Text(
-                        'Stock',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const SizedBox(
+                        child: Text(
+                          'Stock',
+                          style: TextStyle(fontSize: 15),
+                          textAlign: (TextAlign.center),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      child: Text(
-                        widget.stock,
-                        style: const TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
+                      SizedBox(
+                        child: Text(
+                          widget.stock,
+                          style: const TextStyle(fontSize: 15),
+                          textAlign: (TextAlign.center),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    const SizedBox(
-                      child: Text(
-                        'SKU         ',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const SizedBox(
+                        child: Text(
+                          'SKU         ',
+                          style: TextStyle(fontSize: 15),
+                          textAlign: (TextAlign.center),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      child: Text(
-                        widget.sku,
-                        style: const TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
+                      SizedBox(
+                        child: Text(
+                          widget.sku,
+                          style: const TextStyle(fontSize: 15),
+                          textAlign: (TextAlign.center),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                const Text(
-                  ' ',
-                  style: TextStyle(fontSize: 15),
-                ),
-              ]),
+                    ],
+                  ),
+                  const Text(
+                    ' ',
+                    style: TextStyle(fontSize: 15),
+                  ),
+                ]),
+              ),
             ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)),
-              margin: const EdgeInsets.all(15),
-              elevation: 8,
-              child: Column(children: [
-                const ListTile(
-                  title: Text(
-                    "Finanzas",
-                    style: TextStyle(
-                        fontSize: 20, color: Color.fromRGBO(3, 4, 94, 1)),
+            FadeInLeftBig(
+              duration: Duration(milliseconds: 600),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                margin: const EdgeInsets.all(15),
+                elevation: 8,
+                child: Column(children: [
+                  const ListTile(
+                    title: Text(
+                      "Finanzas",
+                      style: TextStyle(
+                          fontSize: 20, color: Color.fromRGBO(3, 4, 94, 1)),
+                    ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    const SizedBox(
-                      child: Text(
-                        'Precio',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const SizedBox(
+                        child: Text(
+                          'Precio',
+                          style: TextStyle(fontSize: 15),
+                          textAlign: (TextAlign.center),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      child: Text(
-                        widget.precio,
-                        style: const TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
+                      SizedBox(
+                        child: Text(
+                          widget.precio,
+                          style: const TextStyle(fontSize: 15),
+                          textAlign: (TextAlign.center),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    const SizedBox(
-                      child: Text(
-                        'Costo',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const SizedBox(
+                        child: Text(
+                          'Costo',
+                          style: TextStyle(fontSize: 15),
+                          textAlign: (TextAlign.center),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      child: Text(
-                        widget.costo,
-                        style: const TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
+                      SizedBox(
+                        child: Text(
+                          widget.costo,
+                          style: const TextStyle(fontSize: 15),
+                          textAlign: (TextAlign.center),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                const Text(
-                  '                                 ',
-                  style: TextStyle(fontSize: 15),
-                ),
-              ]),
+                    ],
+                  ),
+                  const Text(
+                    '                                 ',
+                    style: TextStyle(fontSize: 15),
+                  ),
+                ]),
+              ),
             ),
           ],
         ),

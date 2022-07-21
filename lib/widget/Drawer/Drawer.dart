@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
 import 'package:flutter_application_1/widget/Txt.dart';
@@ -230,20 +231,23 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
   }
 
   Widget accountButton({bool usePadding = true}) {
-    return Padding(
-      padding: EdgeInsets.all(usePadding ? 8 : 0),
-      child: AnimatedContainer(
-        duration: const Duration(seconds: 1),
-        height: 45,
-        width: 45,
-        decoration: BoxDecoration(
-          color: Colors.white70,
-          image: const DecorationImage(
-            image: NetworkImage(
-                "https://cdn.discordapp.com/attachments/502691312261136384/980655098474668103/unknown.png"),
-            fit: BoxFit.cover,
+    return Roulette(
+      infinite: true,
+      child: Padding(
+        padding: EdgeInsets.all(usePadding ? 8 : 0),
+        child: AnimatedContainer(
+          duration: const Duration(seconds: 1),
+          height: 45,
+          width: 45,
+          decoration: BoxDecoration(
+            color: Colors.white70,
+            image: const DecorationImage(
+              image: NetworkImage(
+                  "https://cdn.discordapp.com/attachments/502691312261136384/980655098474668103/unknown.png"),
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadius.circular(6),
           ),
-          borderRadius: BorderRadius.circular(6),
         ),
       ),
     );

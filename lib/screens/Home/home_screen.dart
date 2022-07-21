@@ -47,18 +47,21 @@ class _HomeScreenState extends State<HomeScreen> {
         margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: Column(
           children: [
-            FilterSearchHome(
-              n1: listado.ListCategorias[0].nombreCategoria.toString(),
-              n2: listado.ListCategorias[1].nombreCategoria.toString(),
-              n3: listado.ListCategorias[2].nombreCategoria.toString(),
-              n4: listado.ListCategorias[3].nombreCategoria.toString(),
-              n5: listado.ListCategorias[4].nombreCategoria.toString(),
-              n6: listado.ListCategorias[5].nombreCategoria.toString(),
-              n7: listado.ListCategorias[6].nombreCategoria.toString(),
-              n8: listado.ListCategorias[7].nombreCategoria.toString(),
-              n9: listado.ListCategorias[8].nombreCategoria.toString(),
-              n10: listado.ListCategorias[9].nombreCategoria.toString(),
-              n11: listado.ListCategorias[10].nombreCategoria.toString(),
+            FadeInLeftBig(
+              duration: Duration(milliseconds: 500),
+              child: FilterSearchHome(
+                n1: listado.ListCategorias[0].nombreCategoria.toString(),
+                n2: listado.ListCategorias[1].nombreCategoria.toString(),
+                n3: listado.ListCategorias[2].nombreCategoria.toString(),
+                n4: listado.ListCategorias[3].nombreCategoria.toString(),
+                n5: listado.ListCategorias[4].nombreCategoria.toString(),
+                n6: listado.ListCategorias[5].nombreCategoria.toString(),
+                n7: listado.ListCategorias[6].nombreCategoria.toString(),
+                n8: listado.ListCategorias[7].nombreCategoria.toString(),
+                n9: listado.ListCategorias[8].nombreCategoria.toString(),
+                n10: listado.ListCategorias[9].nombreCategoria.toString(),
+                n11: listado.ListCategorias[10].nombreCategoria.toString(),
+              ),
             ),
             FutureBuilder(
                 future: productProvider.getProductsCritics(),

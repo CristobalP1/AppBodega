@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 
@@ -26,7 +27,9 @@ class FilterHomeScreen extends StatelessWidget {
               child: ListView.builder(
                 itemCount: list.length,
                 itemBuilder: (context, position) {
-                  return Tarea24(list[position]);
+                  return FadeInLeftBig(
+                      duration: Duration(milliseconds: 700 * position),
+                      child: Tarea24(list[position]));
                 },
                 //children: listas.map((elem) => Tarea(elem)).toList(),
               ),

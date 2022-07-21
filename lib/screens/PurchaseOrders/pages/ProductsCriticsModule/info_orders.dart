@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../theme/app_theme.dart';
@@ -49,40 +50,61 @@ class _CreateOrderProductScreen2State extends State<CreateOrderProductScreen2> {
       ),
       body: ListView(
         children: [
-          ListTile(
-            leading: Icon(Icons.toll),
-            title: Text("ID:"),
-            subtitle: Text(widget.id),
+          FadeInLeft(
+            duration: Duration(milliseconds: 300),
+            child: ListTile(
+              leading: Icon(Icons.toll),
+              title: Text("ID:"),
+              subtitle: Text(widget.id),
+            ),
           ),
-          ListTile(
-            leading: Icon(Icons.scatter_plot),
-            title: Text("Numero Pedido:"),
-            subtitle: Text(widget.numeroPedido),
+          FadeInLeft(
+            duration: Duration(milliseconds: 400),
+            child: ListTile(
+              leading: Icon(Icons.scatter_plot),
+              title: Text("Numero Pedido:"),
+              subtitle: Text(widget.numeroPedido),
+            ),
           ),
-          ListTile(
-            leading: Icon(Icons.attach_money),
-            title: Text("Precio:"),
-            subtitle: Text(widget.precioOrden),
+          FadeInLeft(
+            duration: Duration(milliseconds: 500),
+            child: ListTile(
+              leading: Icon(Icons.attach_money),
+              title: Text("Precio:"),
+              subtitle: Text(widget.precioOrden),
+            ),
           ),
-          ListTile(
-            leading: Icon(Icons.production_quantity_limits),
-            title: Text("Cantidad:"),
-            subtitle: Text(widget.cantidadOrden),
+          FadeInLeft(
+            duration: Duration(milliseconds: 600),
+            child: ListTile(
+              leading: Icon(Icons.production_quantity_limits),
+              title: Text("Cantidad:"),
+              subtitle: Text(widget.cantidadOrden),
+            ),
           ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text("Proveedor:"),
-            subtitle: Text(widget.proveedor),
+          FadeInLeft(
+            duration: Duration(milliseconds: 700),
+            child: ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Proveedor:"),
+              subtitle: Text(widget.proveedor),
+            ),
           ),
-          ListTile(
-            leading: Icon(Icons.person_outline),
-            title: Text("Vendedor:"),
-            subtitle: Text(widget.vendedor),
+          FadeInLeft(
+            duration: Duration(milliseconds: 800),
+            child: ListTile(
+              leading: Icon(Icons.person_outline),
+              title: Text("Vendedor:"),
+              subtitle: Text(widget.vendedor),
+            ),
           ),
-          ListTile(
-            leading: Icon(Icons.donut_large),
-            title: Text("Estado del Pedido:"),
-            subtitle: Text(widget.estadoPedido),
+          FadeInLeft(
+            duration: Duration(milliseconds: 900),
+            child: ListTile(
+              leading: Icon(Icons.donut_large),
+              title: Text("Estado del Pedido:"),
+              subtitle: Text(widget.estadoPedido),
+            ),
           ),
         ],
       ),

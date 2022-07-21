@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/Category/edit_category_screen.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
@@ -97,20 +98,24 @@ class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
             Flexible(
               child: ListView.builder(
                 itemCount: listado.ListCategorias.length,
-                itemBuilder: (context, index) => ListTile(
-                    title: Text(listado.ListCategorias[index].nombreCategoria),
-                    trailing: const Icon(
-                      Icons.block,
-                      color: Colors.red,
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => EditCategoryScreen(
-                                  name: listado
-                                      .ListCategorias[index].nombreCategoria)));
-                    }),
+                itemBuilder: (context, index) => FadeInLeft(
+                  duration: Duration(milliseconds: 200 * index),
+                  child: ListTile(
+                      title:
+                          Text(listado.ListCategorias[index].nombreCategoria),
+                      trailing: const Icon(
+                        Icons.block,
+                        color: Colors.red,
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EditCategoryScreen(
+                                    name: listado.ListCategorias[index]
+                                        .nombreCategoria)));
+                      }),
+                ),
               ),
             ),
           ],

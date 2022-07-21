@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/models/cafe_products.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriticsModule/form_order.dart';
@@ -44,7 +45,7 @@ class _ProductsCritics23State extends State<ProductsCritics23> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
-                color: Color.fromARGB(255, 142, 0, 0),
+                color: Color.fromARGB(255, 29, 0, 82),
               ),
             ),
             SizedBox(
@@ -88,19 +89,21 @@ class _ProductsCritics23State extends State<ProductsCritics23> {
               ],
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
-                        DataCell(Text(e.nombre.toString())),
-                        DataCell(Text(e.sku.toString())),
-                        DataCell(TextButton(
-                          onPressed: () => {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => FormOrder23(
-                                          nombre: e.nombre.toString(),
-                                          stock: e.stock.toString(),
-                                        )))
-                          },
-                          child: Text("Crear Orden"),
+                        DataCell(FlipInY(child: Text(e.nombre.toString()))),
+                        DataCell(FlipInY(child: Text(e.sku.toString()))),
+                        DataCell(FlipInY(
+                          child: TextButton(
+                            onPressed: () => {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => FormOrder23(
+                                            nombre: e.nombre.toString(),
+                                            stock: e.stock.toString(),
+                                          )))
+                            },
+                            child: Text("Crear Orden"),
+                          ),
                         )),
                       ]))
                   .toList())
