@@ -1,9 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
 
-class InfoProductScreen extends StatelessWidget {
-  const InfoProductScreen({Key? key}) : super(key: key);
+class InfoProductScreen extends StatefulWidget {
+  final nombre;
+  final sku;
+  final codigo;
+  final precio;
+  final costo;
+  final stock;
 
+  const InfoProductScreen(
+      {Key? key,
+      this.nombre,
+      this.sku,
+      this.codigo,
+      this.precio,
+      this.costo,
+      this.stock})
+      : super(key: key);
+
+  @override
+  State<InfoProductScreen> createState() => _InfoProductScreenState();
+}
+
+class _InfoProductScreenState extends State<InfoProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +47,10 @@ class InfoProductScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
-                  'Leche',
-                  style: TextStyle(fontSize: 25),
+                Text(
+                  widget.nombre,
+                  style: TextStyle(fontSize: 105),
+                  textAlign: (TextAlign.center),
                 ),
                 const SizedBox(
                   height: 50,
@@ -66,17 +87,17 @@ class InfoProductScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
-                  children: const [
+                  children: [
                     SizedBox(
                       child: Text(
-                        'Categoria',
+                        'Nombre del producto',
                         style: TextStyle(fontSize: 15),
                         textAlign: (TextAlign.center),
                       ),
                     ),
                     SizedBox(
                       child: Text(
-                        'Refrigerados',
+                        widget.nombre,
                         style: TextStyle(fontSize: 15),
                         textAlign: (TextAlign.center),
                       ),
@@ -291,6 +312,36 @@ class InfoProductScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 15),
                 ),
               ]),
+            ),
+            Text(
+              widget.nombre,
+              style: TextStyle(fontSize: 15),
+              textAlign: (TextAlign.center),
+            ),
+            Text(
+              widget.codigo,
+              style: TextStyle(fontSize: 15),
+              textAlign: (TextAlign.center),
+            ),
+            Text(
+              widget.costo,
+              style: TextStyle(fontSize: 15),
+              textAlign: (TextAlign.center),
+            ),
+            Text(
+              widget.precio,
+              style: TextStyle(fontSize: 15),
+              textAlign: (TextAlign.center),
+            ),
+            Text(
+              widget.stock,
+              style: TextStyle(fontSize: 15),
+              textAlign: (TextAlign.center),
+            ),
+            Text(
+              widget.sku,
+              style: TextStyle(fontSize: 15),
+              textAlign: (TextAlign.center),
             ),
           ],
         ),
