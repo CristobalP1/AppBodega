@@ -49,7 +49,7 @@ class CategoryLockedScreen extends StatelessWidget {
               child: ListView.builder(
                 itemCount: listado.ListCategorias.length,
                 itemBuilder: (context, index) => FadeInRightBig(
-                  duration: Duration(milliseconds: 200 * index),
+                  duration: Duration(milliseconds: 100 * index),
                   child: ListTile(
                     leading: const Icon(Icons.archive_outlined),
                     title: Text(listado.ListCategorias[index].nombreCategoria),

@@ -93,13 +93,13 @@ class _ProductsBlockedState extends State<ProductsBlocked> {
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
                         DataCell(ZoomIn(
-                            duration: Duration(milliseconds: 600),
+                            duration: Duration(milliseconds: 400),
                             child: Text(e.nombre.toString()))),
                         DataCell(ZoomIn(
-                            duration: Duration(milliseconds: 600),
+                            duration: Duration(milliseconds: 400),
                             child: Text(e.sku.toString()))),
                         DataCell(ZoomIn(
-                          duration: Duration(milliseconds: 600),
+                          duration: Duration(milliseconds: 400),
                           child: TextButton(
                             onPressed: () => {
                               {

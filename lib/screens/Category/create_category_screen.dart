@@ -99,7 +99,7 @@ class _CreateCategoryScreenState extends State<CreateCategoryScreen> {
               child: ListView.builder(
                 itemCount: listado.ListCategorias.length,
                 itemBuilder: (context, index) => FadeInLeft(
-                  duration: Duration(milliseconds: 200 * index),
+                  duration: Duration(milliseconds: 100 * index),
                   child: ListTile(
                       title:
                           Text(listado.ListCategorias[index].nombreCategoria),

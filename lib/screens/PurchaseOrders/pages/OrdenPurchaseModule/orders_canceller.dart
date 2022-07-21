@@ -128,10 +128,10 @@ class _OrderCancellerScreenState extends State<OrderCancellerScreen> {
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
                         DataCell(
-                            SpinPerfect(child: Text(e.producto.toString()))),
+                            BounceInLeft(child: Text(e.producto.toString()))),
                         DataCell(
-                            SpinPerfect(child: Text(e.vendedor.toString()))),
-                        DataCell(SpinPerfect(
+                            BounceInLeft(child: Text(e.vendedor.toString()))),
+                        DataCell(BounceInLeft(
                           child: TextButton(
                             onPressed: () => {
                               Navigator.push(
