@@ -1,3 +1,4 @@
+export 'package:flutter_application_1/screens/PurchaseOrders/providers/get_critical.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/pages/OrdenPurchaseModule/orders_all.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/pages/OrdenPurchaseModule/orders_canceller.dart';
 export 'package:flutter_application_1/screens/PurchaseOrders/pages/OrdenPurchaseModule/orders_finalized.dart';

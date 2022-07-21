@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/router/app_routes.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/providers/get_critical_products.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/providers/get_order_all_providers.dart';
+import 'package:flutter_application_1/screens/screens.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
 import 'package:provider/provider.dart';
 import 'Provider/list_category_provider.dart';
@@ -25,7 +26,10 @@ class ProviderState extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => GetOrderAllProvider(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (_) => GetCriticalProvider(),
+        ),
       ],
       child: const MyApp(),
     );
