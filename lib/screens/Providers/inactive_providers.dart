@@ -107,8 +107,16 @@ class InactiveProvidersScreen extends StatelessWidget {
                             children: [
                             Text('Rut'),
                             Text(listado.providers[index].rut)
-                          ],)
-                          ,
+                          ],
+                          ),
+                          trailing: 
+                          Column(mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                            Text('Contacto'),
+                            Text(listado.providers[index].telefono)
+                          ],
+                          ),
+                          
                     )
                     )
                     ),

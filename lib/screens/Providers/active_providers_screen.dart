@@ -40,19 +40,7 @@ class ActiveProvidersScreen extends StatelessWidget {
                 'Proveedores Activos',
                 style: TextStyle(fontSize: 20, color: AppTheme.quaternary),
               ), //Define el titulo del appbar
-              elevation: 15.5,
-              actions: <Widget>[
-                IconButton(
-                  icon: const Icon(
-                    Icons.more_vert,
-                    color: AppTheme.quaternary,
-                    size: 30,
-                  ),
-                  onPressed: () {
-                    // do something
-                  },
-                )
-              ], //define la elevación es un valor float
+              elevation: 15.5, //define la elevación es un valor float
             ),
             backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             body: listadoAct.providersAct.isEmpty
@@ -118,10 +106,23 @@ class ActiveProvidersScreen extends StatelessWidget {
                           title: Text(listadoAct.providersAct[index].prov,
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
-                                fontSize: 20,
+                                fontSize: 18,
                               )),
                           subtitle:
                               Text(listadoAct.providersAct[index].direccion),
+                          leading: Column(mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                            Text('Rut'),
+                            Text(listadoAct.providersAct[index].rut)
+                          ],
+                          ),
+                          trailing: 
+                          Column(mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                            Text('Contacto'),
+                            Text(listadoAct.providersAct[index].telefono)
+                          ],
+                          ),
                         ))))));
   }
 }
