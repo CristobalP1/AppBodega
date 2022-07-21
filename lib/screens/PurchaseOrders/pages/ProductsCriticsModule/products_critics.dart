@@ -6,24 +6,23 @@ import 'package:provider/provider.dart';
 
 import '../../../../theme/app_theme.dart';
 
-class CreateOrderProductScreen extends StatefulWidget {
-  const CreateOrderProductScreen({
+class ProductsCritics23 extends StatefulWidget {
+  const ProductsCritics23({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<CreateOrderProductScreen> createState() =>
-      _CreateOrderProductScreenState();
+  State<ProductsCritics23> createState() => _ProductsCritics23State();
 }
 
-class _CreateOrderProductScreenState extends State<CreateOrderProductScreen> {
+class _ProductsCritics23State extends State<ProductsCritics23> {
   @override
   Widget build(BuildContext context) {
     final productProvider = Provider.of<GetCriticalProductsProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Listado De Productos'),
+        title: const Text('Productos'),
         elevation: 0,
         actions: [
           IconButton(
@@ -37,35 +36,15 @@ class _CreateOrderProductScreenState extends State<CreateOrderProductScreen> {
         ],
       ),
       body: Container(
-        margin: const EdgeInsets.fromLTRB(0, 20, 0, 00),
+        margin: const EdgeInsets.fromLTRB(0, 40, 0, 00),
         child: Column(
           children: [
-            Container(
-              margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-              child: Row(
-                children: [
-                  Flexible(
-                    flex: 1,
-                    child: TextField(
-                      cursorColor: Colors.grey,
-                      decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          hintText: 'buscar',
-                          hintStyle: TextStyle(
-                            color: Colors.grey,
-                          ),
-                          prefixIcon: Container(
-                            padding: EdgeInsets.all(13),
-                            child: Icon(Icons.search, color: AppTheme.primary),
-                            width: 18,
-                          )),
-                    ),
-                  ),
-                ],
+            const Text(
+              'Productos Con Stock Critico',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Color.fromARGB(255, 142, 0, 0),
               ),
             ),
             SizedBox(

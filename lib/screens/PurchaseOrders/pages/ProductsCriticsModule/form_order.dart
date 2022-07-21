@@ -19,9 +19,10 @@ class FormOrder23 extends StatefulWidget {
 class _FormOrder23State extends State<FormOrder23> {
   @override
   Widget build(BuildContext context) {
+    const sizedBoxSpace = SizedBox(height: 24);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Informacion de Orden'),
+        title: const Text('Crear Orden De Compra'),
         elevation: 0,
         actions: [
           IconButton(
@@ -34,44 +35,73 @@ class _FormOrder23State extends State<FormOrder23> {
           )
         ],
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            leading: Icon(Icons.toll),
-            title: Text("ID:"),
-            subtitle: Text(widget.nombre),
+      body: Container(
+        margin: const EdgeInsets.fromLTRB(23, 0, 23, 0),
+        child: Form(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              sizedBoxSpace,
+              ListTile(
+                leading: Icon(Icons.toll),
+                title: Text("Producto:"),
+                subtitle: Text(widget.nombre),
+              ),
+              ListTile(
+                leading: Icon(Icons.production_quantity_limits),
+                title: Text("Stock:"),
+                subtitle: Text(widget.stock),
+              ),
+              TextFormField(
+                textInputAction: TextInputAction.next,
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person),
+                  labelText: "Proveedor",
+                ),
+              ),
+              sizedBoxSpace,
+              TextFormField(
+                textInputAction: TextInputAction.next,
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person_outline),
+                  labelText: "Vendedor",
+                ),
+              ),
+              sizedBoxSpace,
+              TextFormField(
+                textInputAction: TextInputAction.next,
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.scatter_plot),
+                  labelText: "Cantidad",
+                ),
+              ),
+              sizedBoxSpace,
+              TextFormField(
+                textInputAction: TextInputAction.next,
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.attach_money),
+                  labelText: "Precio",
+                ),
+              ),
+              sizedBoxSpace,
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Crear'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Cancelar'),
+                    ),
+                  ])
+            ],
           ),
-          ListTile(
-            leading: Icon(Icons.scatter_plot),
-            title: Text("Numero Pedido:"),
-            subtitle: Text(widget.stock),
-          ),
-          ListTile(
-            leading: Icon(Icons.attach_money),
-            title: Text("Precio:"),
-            subtitle: Text("widget.precioOrden"),
-          ),
-          ListTile(
-            leading: Icon(Icons.production_quantity_limits),
-            title: Text("Cantidad:"),
-            subtitle: Text("widget.cantidadOrden"),
-          ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text("Proveedor:"),
-            subtitle: Text("widget.proveedor"),
-          ),
-          ListTile(
-            leading: Icon(Icons.person_outline),
-            title: Text("Vendedor:"),
-            subtitle: Text("widget.vendedor"),
-          ),
-          ListTile(
-            leading: Icon(Icons.donut_large),
-            title: Text("Estado del Pedido:"),
-            subtitle: Text("widget.estadoPedid"),
-          ),
-        ],
+        ),
       ),
     );
   }

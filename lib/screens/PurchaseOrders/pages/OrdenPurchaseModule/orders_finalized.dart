@@ -148,7 +148,7 @@ class _OrderFinalizedScreenState extends State<OrderFinalizedScreen> {
                                               e.estadoPedido.toString(),
                                         )))
                           },
-                          child: Text("Crear Orden"),
+                          child: Text("Ver Info"),
                         )),
                       ]))
                   .toList())
