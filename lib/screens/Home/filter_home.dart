@@ -9,7 +9,7 @@ class FilterHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Categorias'),
+          title: const Text('Categorias Filtradas'),
           elevation: 0,
           actions: [
             IconButton(
@@ -43,12 +43,10 @@ class Tarea24 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: AppTheme.primary, width: 2),
-        ),
-        margin: const EdgeInsets.only(left: 26, top: 35, right: 26),
-        padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+      child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        margin: const EdgeInsets.all(15),
+        elevation: 4,
         child: Column(
           children: [
             Card(
@@ -69,9 +67,24 @@ class Tarea24 extends StatelessWidget {
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
-                  Text('Leche'),
+                  Text('Productos', style: TextStyle(fontSize: 15)),
+                  Text('Stock', style: TextStyle(fontSize: 15)),
+                  Text('Info', style: TextStyle(fontSize: 15)),
+                ]),
+            const SizedBox(
+              height: 20,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Text(
+                    'Leche',
+                  ),
                   Text('23'),
-                  Text('Solicitar'),
+                  Text('Ver Más'),
                 ]),
             const SizedBox(
               height: 20,
@@ -81,7 +94,7 @@ class Tarea24 extends StatelessWidget {
                 children: const [
                   Text('Leche'),
                   Text('23'),
-                  Text('Solicitar'),
+                  Text('Ver Más'),
                 ]),
             const SizedBox(
               height: 10,
@@ -91,7 +104,7 @@ class Tarea24 extends StatelessWidget {
                 children: const [
                   Text('Leche'),
                   Text('23'),
-                  Text('Solicitar'),
+                  Text('Ver Más'),
                 ]),
             const SizedBox(
               height: 10,
