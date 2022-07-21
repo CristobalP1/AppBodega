@@ -5,6 +5,7 @@ import '../../../../theme/app_theme.dart';
 class FormOrder23 extends StatefulWidget {
   final nombre;
   final stock;
+  
 
   const FormOrder23({
     Key? key,
@@ -17,8 +18,10 @@ class FormOrder23 extends StatefulWidget {
 }
 
 class _FormOrder23State extends State<FormOrder23> {
+  
   @override
   Widget build(BuildContext context) {
+    const sizedBoxSpace = SizedBox(height: 24);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Informacion de Orden'),
@@ -34,45 +37,73 @@ class _FormOrder23State extends State<FormOrder23> {
           )
         ],
       ),
-      body: ListView(
-        children: [
-          ListTile(
+
+          body: Form(
+             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                     sizedBoxSpace,
+                     ListTile(
             leading: Icon(Icons.toll),
-            title: Text("ID:"),
+            title: Text("Producto:"),
             subtitle: Text(widget.nombre),
           ),
           ListTile(
-            leading: Icon(Icons.scatter_plot),
-            title: Text("Numero Pedido:"),
+            leading: Icon(Icons.production_quantity_limits),
+            title: Text("Stock:"),
             subtitle: Text(widget.stock),
           ),
-          ListTile(
-            leading: Icon(Icons.attach_money),
-            title: Text("Precio:"),
-            subtitle: Text("widget.precioOrden"),
-          ),
-          ListTile(
-            leading: Icon(Icons.production_quantity_limits),
-            title: Text("Cantidad:"),
-            subtitle: Text("widget.cantidadOrden"),
-          ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text("Proveedor:"),
-            subtitle: Text("widget.proveedor"),
-          ),
-          ListTile(
-            leading: Icon(Icons.person_outline),
-            title: Text("Vendedor:"),
-            subtitle: Text("widget.vendedor"),
-          ),
-          ListTile(
-            leading: Icon(Icons.donut_large),
-            title: Text("Estado del Pedido:"),
-            subtitle: Text("widget.estadoPedid"),
-          ),
+          TextFormField(
+              textInputAction: TextInputAction.next,
+              decoration: const InputDecoration(
+                
+                icon: Icon(Icons.person),
+                
+                labelText: "Proveedor",
+                
+                
+              ),
+              ),
+          sizedBoxSpace,
+          TextFormField(
+              textInputAction: TextInputAction.next,
+              decoration: const InputDecoration(
+                
+                icon: Icon(Icons.scatter_plot),
+                labelText: "Cantidad",
+              ),
+              ),
+          sizedBoxSpace,
+          TextFormField(
+              textInputAction: TextInputAction.next,
+              decoration: const InputDecoration(
+                
+                icon: Icon(Icons.attach_money),
+                labelText: "Precio",
+              ),
+              ),
+          sizedBoxSpace,
+    
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                ElevatedButton(
+                  onPressed: () {
+                  },
+                  child: const Text('Crear'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('Cancelar'),
+                ),
+              ])
         ],
       ),
+    ),
+
     );
   }
 }
