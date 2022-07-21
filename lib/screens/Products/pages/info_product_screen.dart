@@ -49,7 +49,8 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
               children: [
                 Text(
                   widget.nombre,
-                  style: TextStyle(fontSize: 105),
+                  style: const TextStyle(
+                      fontSize: 30, color: Color.fromRGBO(3, 4, 94, 1)),
                   textAlign: (TextAlign.center),
                 ),
                 const SizedBox(
@@ -76,11 +77,16 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
               ],
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30)),
+              margin: const EdgeInsets.all(15),
+              elevation: 8,
               child: Column(children: [
                 const ListTile(
                   title: Text(
                     "Información",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                        fontSize: 20, color: Color.fromRGBO(3, 4, 94, 1)),
                   ),
                 ),
                 Row(
@@ -88,17 +94,17 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       child: Text(
-                        'Nombre del producto',
+                        'Codigo Barra',
                         style: TextStyle(fontSize: 15),
                         textAlign: (TextAlign.center),
                       ),
                     ),
                     SizedBox(
                       child: Text(
-                        widget.nombre,
-                        style: TextStyle(fontSize: 15),
+                        widget.codigo,
+                        style: const TextStyle(fontSize: 15),
                         textAlign: (TextAlign.center),
                       ),
                     ),
@@ -108,8 +114,8 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
-                  children: const [
-                    SizedBox(
+                  children: [
+                    const SizedBox(
                       child: Text(
                         'Stock',
                         style: TextStyle(fontSize: 15),
@@ -118,8 +124,8 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
                     ),
                     SizedBox(
                       child: Text(
-                        '23',
-                        style: TextStyle(fontSize: 15),
+                        widget.stock,
+                        style: const TextStyle(fontSize: 15),
                         textAlign: (TextAlign.center),
                       ),
                     ),
@@ -129,29 +135,8 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
-                  children: const [
-                    SizedBox(
-                      child: Text(
-                        'Alert',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
-                      ),
-                    ),
-                    SizedBox(
-                      child: Text(
-                        '3',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: const [
-                    SizedBox(
+                  children: [
+                    const SizedBox(
                       child: Text(
                         'SKU         ',
                         style: TextStyle(fontSize: 15),
@@ -160,75 +145,38 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
                     ),
                     SizedBox(
                       child: Text(
-                        '  23231',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: const [
-                    SizedBox(
-                      child: Text(
-                        'Codigo de barra',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
-                      ),
-                    ),
-                    SizedBox(
-                      child: Text(
-                        '780231223',
-                        style: TextStyle(fontSize: 15),
+                        widget.sku,
+                        style: const TextStyle(fontSize: 15),
                         textAlign: (TextAlign.center),
                       ),
                     ),
                   ],
                 ),
                 const Text(
-                  '                                 ',
+                  ' ',
                   style: TextStyle(fontSize: 15),
                 ),
               ]),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30)),
+              margin: const EdgeInsets.all(15),
+              elevation: 8,
               child: Column(children: [
                 const ListTile(
                   title: Text(
                     "Finanzas",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                        fontSize: 20, color: Color.fromRGBO(3, 4, 94, 1)),
                   ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
-                  children: const [
-                    SizedBox(
-                      child: Text(
-                        'Costo',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
-                      ),
-                    ),
-                    SizedBox(
-                      child: Text(
-                        '300',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: const [
-                    SizedBox(
+                  children: [
+                    const SizedBox(
                       child: Text(
                         'Precio',
                         style: TextStyle(fontSize: 15),
@@ -237,8 +185,8 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
                     ),
                     SizedBox(
                       child: Text(
-                        '900',
-                        style: TextStyle(fontSize: 15),
+                        widget.precio,
+                        style: const TextStyle(fontSize: 15),
                         textAlign: (TextAlign.center),
                       ),
                     ),
@@ -248,60 +196,18 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
-                  children: const [
-                    SizedBox(
+                  children: [
+                    const SizedBox(
                       child: Text(
-                        'Utilidad',
+                        'Costo',
                         style: TextStyle(fontSize: 15),
                         textAlign: (TextAlign.center),
                       ),
                     ),
                     SizedBox(
                       child: Text(
-                        '600  ',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: const [
-                    SizedBox(
-                      child: Text(
-                        'Unidades Vendidas',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
-                      ),
-                    ),
-                    SizedBox(
-                      child: Text(
-                        '120                       ',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: const [
-                    SizedBox(
-                      child: Text(
-                        'Ganancias Totales',
-                        style: TextStyle(fontSize: 15),
-                        textAlign: (TextAlign.center),
-                      ),
-                    ),
-                    SizedBox(
-                      child: Text(
-                        '72000                      ',
-                        style: TextStyle(fontSize: 15),
+                        widget.costo,
+                        style: const TextStyle(fontSize: 15),
                         textAlign: (TextAlign.center),
                       ),
                     ),
@@ -312,36 +218,6 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
                   style: TextStyle(fontSize: 15),
                 ),
               ]),
-            ),
-            Text(
-              widget.nombre,
-              style: TextStyle(fontSize: 15),
-              textAlign: (TextAlign.center),
-            ),
-            Text(
-              widget.codigo,
-              style: TextStyle(fontSize: 15),
-              textAlign: (TextAlign.center),
-            ),
-            Text(
-              widget.costo,
-              style: TextStyle(fontSize: 15),
-              textAlign: (TextAlign.center),
-            ),
-            Text(
-              widget.precio,
-              style: TextStyle(fontSize: 15),
-              textAlign: (TextAlign.center),
-            ),
-            Text(
-              widget.stock,
-              style: TextStyle(fontSize: 15),
-              textAlign: (TextAlign.center),
-            ),
-            Text(
-              widget.sku,
-              style: TextStyle(fontSize: 15),
-              textAlign: (TextAlign.center),
             ),
           ],
         ),
