@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final productProvider = Provider.of<GetCriticalProductsProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AppBodega'),
+        title: const Text('Productos'),
         elevation: 0,
         actions: [
           IconButton(

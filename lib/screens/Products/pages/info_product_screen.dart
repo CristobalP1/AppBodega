@@ -28,7 +28,7 @@ class _InfoProductScreenState extends State<InfoProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Productos'),
+        title: const Text('Info Productos'),
         actions: [
           IconButton(
             icon: const Icon(Icons.more_vert),
