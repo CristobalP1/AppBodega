@@ -36,6 +36,8 @@ class ApppRoutes {
         const CreateOrderProductScreen(),
     constants.detailsOrder: (BuildContext context) =>
         const DetailsOrdersScreen(),
+    constants.productCritics23: (BuildContext context) =>
+        const ProductsCritics23(),
 
     //Providers Screen
     constants.activeProvider: (BuildContext context) =>

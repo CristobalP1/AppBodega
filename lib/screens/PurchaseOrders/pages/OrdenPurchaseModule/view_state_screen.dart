@@ -21,21 +21,38 @@ class _OrderPurchaseOpcionState extends State<OrderPurchaseOpcion> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(OrderPurchaseOpcion.titulo),
-        leading: const Icon(Icons.menu_outlined),
-        elevation: 15.5,
+        title: const Text('Estado Orden De Compra'),
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.more_vert,
+              color: AppTheme.quaternary,
+              size: 30,
+            ),
+            onPressed: () {},
+          )
+        ],
       ),
       body: Container(
           margin: const EdgeInsets.fromLTRB(0, 30, 0, 00),
           child: Column(children: [
-            Center(child: Text("Ordenes De Compra")),
+            Center(
+                child: Text(
+              'Listado de Ordenes',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Color.fromARGB(255, 39, 0, 102),
+              ),
+            )),
             SizedBox(height: 10),
             Flexible(
               child: ListView(
                 padding: const EdgeInsets.all(8),
                 children: <Widget>[
                   FadeInRightBig(
-                    duration: Duration(milliseconds: 200),
+                    duration: Duration(milliseconds: 400),
                     child: Card(
                       margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
                       elevation: 0,
@@ -55,8 +72,8 @@ class _OrderPurchaseOpcionState extends State<OrderPurchaseOpcion> {
                       ),
                     ),
                   ),
-                  FadeInLeft(
-                    duration: Duration(milliseconds: 1200),
+                  FadeInLeftBig(
+                    duration: Duration(milliseconds: 700),
                     child: Card(
                       margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
                       elevation: 0,
@@ -69,8 +86,7 @@ class _OrderPurchaseOpcionState extends State<OrderPurchaseOpcion> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        OrderCancellerScreen()))
+                                    builder: (context) => OrderPendingScreen()))
                           },
                           child: Text("Ordendes Pendientes"),
                         )),
@@ -78,7 +94,7 @@ class _OrderPurchaseOpcionState extends State<OrderPurchaseOpcion> {
                     ),
                   ),
                   FadeInRightBig(
-                    duration: Duration(milliseconds: 2200),
+                    duration: Duration(milliseconds: 1000),
                     child: Card(
                       margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
                       elevation: 0,
@@ -98,40 +114,48 @@ class _OrderPurchaseOpcionState extends State<OrderPurchaseOpcion> {
                       ),
                     ),
                   ),
-                  Card(
-                    margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
-                    elevation: 0,
-                    color: AppTheme.quaternary,
-                    child: SizedBox(
-                      height: 80,
-                      child: Center(
-                          child: TextButton(
-                        onPressed: () => {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => OrderFinalizedScreen()))
-                        },
-                        child: Text("Ordendes Finalizadas"),
-                      )),
+                  FadeInLeftBig(
+                    duration: Duration(milliseconds: 1300),
+                    child: Card(
+                      margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
+                      elevation: 0,
+                      color: AppTheme.quaternary,
+                      child: SizedBox(
+                        height: 80,
+                        child: Center(
+                            child: TextButton(
+                          onPressed: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        OrderFinalizedScreen()))
+                          },
+                          child: Text("Ordendes Finalizadas"),
+                        )),
+                      ),
                     ),
                   ),
-                  Card(
-                    margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
-                    elevation: 0,
-                    color: AppTheme.quaternary,
-                    child: SizedBox(
-                      height: 80,
-                      child: Center(
-                          child: TextButton(
-                        onPressed: () => {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => OrderCancellerScreen()))
-                        },
-                        child: Text("Ordenes Canceladas"),
-                      )),
+                  FadeInRightBig(
+                    duration: Duration(milliseconds: 1600),
+                    child: Card(
+                      margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
+                      elevation: 0,
+                      color: AppTheme.quaternary,
+                      child: SizedBox(
+                        height: 80,
+                        child: Center(
+                            child: TextButton(
+                          onPressed: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        OrderCancellerScreen()))
+                          },
+                          child: Text("Ordenes Canceladas"),
+                        )),
+                      ),
                     ),
                   )
                 ],

@@ -148,7 +148,7 @@ class _OrderSentScreenState extends State<OrderSentScreen> {
                                               e.estadoPedido.toString(),
                                         )))
                           },
-                          child: Text("Crear Orden"),
+                          child: Text("Ver Info"),
                         )),
                       ]))
                   .toList())

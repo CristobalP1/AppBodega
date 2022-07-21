@@ -17,6 +17,7 @@ const String viewState = "view_state";
 const String createOrderFinish = "create_order_finish";
 const String criticalProducts = "critical_products";
 const String detailsOrder = "details_orders";
+const String productCritics23 = "product_critics23";
 //Providers Screen
 const String activeProvider = "active_providers_screen";
 const String inactiveProviders = "inactive_providers";
