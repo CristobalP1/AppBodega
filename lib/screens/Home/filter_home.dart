@@ -47,9 +47,9 @@ class Tarea24 extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
         margin: const EdgeInsets.all(15),
-        elevation: 4,
+        elevation: 6,
         child: Column(
           children: [
             Card(
@@ -61,7 +61,7 @@ class Tarea24 extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 19, fontWeight: FontWeight.w500),
                     ),
-                    const Icon(Icons.accessibility_new_outlined)
+                    const Icon(Icons.more_vert)
                   ]),
             ),
             const SizedBox(
@@ -69,10 +69,17 @@ class Tarea24 extends StatelessWidget {
             ),
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  Text('Productos', style: TextStyle(fontSize: 15)),
-                  Text('Stock', style: TextStyle(fontSize: 15)),
-                  Text('Info', style: TextStyle(fontSize: 15)),
+                  Text('Productos',
+                      style: TextStyle(fontSize: 15),
+                      textAlign: TextAlign.center),
+                  Text('Stock',
+                      style: TextStyle(fontSize: 15),
+                      textAlign: TextAlign.left),
+                  Text('Info',
+                      style: TextStyle(fontSize: 15),
+                      textAlign: TextAlign.center),
                 ]),
             const SizedBox(
               height: 20,
