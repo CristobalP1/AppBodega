@@ -40,9 +40,8 @@ class FilterSearchHome extends StatelessWidget {
 
   get selectedUserList => 0;
 
-  List<String> defaultList = [];
-
   void openFilterDialog(context) async {
+    List<String> defaultList = [];
     defaultList.add(n1);
     defaultList.add(n2);
     defaultList.add(n3);
