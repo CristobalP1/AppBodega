@@ -27,10 +27,15 @@ class FloatingButton extends StatelessWidget {
             backgroundColor: AppTheme.secondary,
             onTap: () => {Navigator.pushNamed(context, 'create_product')}),
         SpeedDialChild(
-            child: Icon(Icons.create),
+            child: const Icon(Icons.create),
             label: 'Crear Categoria',
             backgroundColor: AppTheme.secondary,
             onTap: () => {Navigator.pushNamed(context, 'create_category')}),
+        SpeedDialChild(
+            child: const Icon(Icons.disabled_visible),
+            label: 'Productos Bloqueados',
+            backgroundColor: AppTheme.secondary,
+            onTap: () => {Navigator.pushNamed(context, 'products_locked')}),
       ],
     );
   }

@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 
@@ -9,7 +10,7 @@ class FilterHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Categorias'),
+          title: const Text('Categorias Filtradas'),
           elevation: 0,
           actions: [
             IconButton(
@@ -26,7 +27,9 @@ class FilterHomeScreen extends StatelessWidget {
               child: ListView.builder(
                 itemCount: list.length,
                 itemBuilder: (context, position) {
-                  return Tarea24(list[position]);
+                  return FadeInLeftBig(
+                      duration: Duration(milliseconds: 700 * position),
+                      child: Tarea24(list[position]));
                 },
                 //children: listas.map((elem) => Tarea(elem)).toList(),
               ),
@@ -43,12 +46,10 @@ class Tarea24 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: AppTheme.primary, width: 2),
-        ),
-        margin: const EdgeInsets.only(left: 26, top: 35, right: 26),
-        padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+      child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
+        margin: const EdgeInsets.all(15),
+        elevation: 6,
         child: Column(
           children: [
             Card(
@@ -60,7 +61,7 @@ class Tarea24 extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 19, fontWeight: FontWeight.w500),
                     ),
-                    const Icon(Icons.accessibility_new_outlined)
+                    const Icon(Icons.more_vert)
                   ]),
             ),
             const SizedBox(
@@ -68,10 +69,32 @@ class Tarea24 extends StatelessWidget {
             ),
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  Text('Leche'),
+                  Text('Productos',
+                      style: TextStyle(fontSize: 15),
+                      textAlign: TextAlign.center),
+                  Text('Stock',
+                      style: TextStyle(fontSize: 15),
+                      textAlign: TextAlign.left),
+                  Text('Info',
+                      style: TextStyle(fontSize: 15),
+                      textAlign: TextAlign.center),
+                ]),
+            const SizedBox(
+              height: 20,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Text(
+                    'Leche',
+                  ),
                   Text('23'),
-                  Text('Solicitar'),
+                  Text('Ver Más'),
                 ]),
             const SizedBox(
               height: 20,
@@ -81,7 +104,7 @@ class Tarea24 extends StatelessWidget {
                 children: const [
                   Text('Leche'),
                   Text('23'),
-                  Text('Solicitar'),
+                  Text('Ver Más'),
                 ]),
             const SizedBox(
               height: 10,
@@ -91,7 +114,7 @@ class Tarea24 extends StatelessWidget {
                 children: const [
                   Text('Leche'),
                   Text('23'),
-                  Text('Solicitar'),
+                  Text('Ver Más'),
                 ]),
             const SizedBox(
               height: 10,

@@ -4,25 +4,55 @@ import 'package:flutter_application_1/screens/Home/filter_home.dart';
 import 'package:flutter_application_1/screens/Home/select_list_controller.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+
+import '../../Provider/list_category_provider.dart';
 
 class FilterSearchHome extends StatelessWidget {
   var controller = Get.put(SelectedListController());
+  final n1;
+  final n2;
+  final n3;
+  final n4;
+  final n5;
+  final n6;
+  final n7;
+  final n8;
+  final n9;
+  final n10;
+  final n11;
+  final n12;
   FilterSearchHome({
     Key? key,
+    this.n1,
+    this.n2,
+    this.n3,
+    this.n4,
+    this.n5,
+    this.n6,
+    this.n7,
+    this.n8,
+    this.n9,
+    this.n10,
+    this.n11,
+    this.n12,
   }) : super(key: key);
 
   get selectedUserList => 0;
-  List<String> defaultList = [
-    'Lacteos',
-    'carnes',
-    'limpieza',
-    'Jardin',
-    'Congelados',
-    'Juguetes',
-    'Computacion',
-    'Optica',
-  ];
+
   void openFilterDialog(context) async {
+    List<String> defaultList = [];
+    defaultList.add(n1);
+    defaultList.add(n2);
+    defaultList.add(n3);
+    defaultList.add(n4);
+    defaultList.add(n5);
+    defaultList.add(n6);
+    defaultList.add(n7);
+    defaultList.add(n8);
+    defaultList.add(n9);
+    defaultList.add(n10);
+    defaultList.add(n11);
     await FilterListDialog.display<String>(
       context,
       listData: defaultList,

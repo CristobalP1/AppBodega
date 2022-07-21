@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/models/order_all_list.dart';
 import 'package:flutter_application_1/screens/PurchaseOrders/pages/ProductsCriticsModule/info_orders.dart';
@@ -126,29 +127,37 @@ class _OrderAllScreenState extends State<OrderAllScreen> {
               ],
               rows: data
                   .map<DataRow>((e) => DataRow(cells: [
-                        DataCell(Text(e.producto.toString())),
-                        DataCell(Text(e.vendedor.toString())),
-                        DataCell(TextButton(
-                          onPressed: () => {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        CreateOrderProductScreen2(
-                                          id: e.id.toString(),
-                                          numeroPedido:
-                                              e.numeroPedido.toString(),
-                                          precioOrden: e.precioOrden.toString(),
-                                          cantidadOrden:
-                                              e.cantidadOrden.toString(),
-                                          proveedor: e.proveedor.toString(),
-                                          vendedor: e.vendedor.toString(),
-                                          producto: e.producto.toString(),
-                                          estadoPedido:
-                                              e.estadoPedido.toString(),
-                                        )))
-                          },
-                          child: Text("Crear Orden"),
+                        DataCell(JelloIn(
+                            duration: Duration(milliseconds: 600),
+                            child: Text(e.producto.toString()))),
+                        DataCell(JelloIn(
+                            duration: Duration(milliseconds: 1200),
+                            child: Text(e.vendedor.toString()))),
+                        DataCell(JelloIn(
+                          duration: Duration(milliseconds: 1800),
+                          child: TextButton(
+                            onPressed: () => {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          CreateOrderProductScreen2(
+                                            id: e.id.toString(),
+                                            numeroPedido:
+                                                e.numeroPedido.toString(),
+                                            precioOrden:
+                                                e.precioOrden.toString(),
+                                            cantidadOrden:
+                                                e.cantidadOrden.toString(),
+                                            proveedor: e.proveedor.toString(),
+                                            vendedor: e.vendedor.toString(),
+                                            producto: e.producto.toString(),
+                                            estadoPedido:
+                                                e.estadoPedido.toString(),
+                                          )))
+                            },
+                            child: Text("Ver Info"),
+                          ),
                         )),
                       ]))
                   .toList())

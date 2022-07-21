@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
 import 'package:flutter_application_1/widget/Txt.dart';
@@ -230,20 +231,23 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
   }
 
   Widget accountButton({bool usePadding = true}) {
-    return Padding(
-      padding: EdgeInsets.all(usePadding ? 8 : 0),
-      child: AnimatedContainer(
-        duration: const Duration(seconds: 1),
-        height: 45,
-        width: 45,
-        decoration: BoxDecoration(
-          color: Colors.white70,
-          image: const DecorationImage(
-            image: NetworkImage(
-                "https://cdn.discordapp.com/attachments/502691312261136384/980655098474668103/unknown.png"),
-            fit: BoxFit.cover,
+    return Roulette(
+      infinite: true,
+      child: Padding(
+        padding: EdgeInsets.all(usePadding ? 8 : 0),
+        child: AnimatedContainer(
+          duration: const Duration(seconds: 1),
+          height: 45,
+          width: 45,
+          decoration: BoxDecoration(
+            color: Colors.white70,
+            image: const DecorationImage(
+              image: NetworkImage(
+                  "https://cdn.discordapp.com/attachments/502691312261136384/980655098474668103/unknown.png"),
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadius.circular(6),
           ),
-          borderRadius: BorderRadius.circular(6),
         ),
       ),
     );
@@ -270,7 +274,8 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
     CDM(Icons.account_circle_sharp, Route("Login", ""), [
       Route("Cerrar Sesion", loginUser),
     ]),
-    CDM(Icons.warehouse, Route("Bodega", ""), [Route("Productos", homePage)]),
+    CDM(Icons.warehouse, Route("Productos", ""),
+        [Route("Listado", homePage), Route("", homePage)]),
     CDM(Icons.local_shipping, Route("Proveedores", ""), [
       Route("Activos", activeProvider),
       Route("Inactivos", inactiveProviders),
@@ -279,8 +284,8 @@ class _ComplexDrawerState extends State<ComplexDrawer> {
     CDM(Icons.badge, Route("Vendedores", ""), [Route("vendedores", vendor)]),
     CDM(Icons.assignment_rounded, Route("Ordenes", ""), [
       Route("Crear orden", criticalProducts),
-      Route("Ordenes De Compra", viewState),
-      Route("Test", detailsOrder),
+      Route("Estado Orden", viewState),
+      Route("Productos Criticos", productCritics23),
     ]),
   ];
 

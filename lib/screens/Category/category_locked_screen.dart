@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/Category/create_category_screen.dart';
 import 'package:provider/provider.dart';
@@ -39,7 +40,7 @@ class CategoryLockedScreen extends StatelessWidget {
             ),
             const Text(
               'Lista de categorias bloqueadas: ',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
             SizedBox(
               height: 40,
@@ -47,13 +48,16 @@ class CategoryLockedScreen extends StatelessWidget {
             Flexible(
               child: ListView.builder(
                 itemCount: listado.ListCategorias.length,
-                itemBuilder: (context, index) => ListTile(
-                  leading: const Icon(Icons.archive_outlined),
-                  title: Text(listado.ListCategorias[index].nombreCategoria),
-                  trailing: const Icon(Icons.content_paste_off),
-                  onTap: () {
-                    const Icon(Icons.archive_outlined);
-                  },
+                itemBuilder: (context, index) => FadeInRightBig(
+                  duration: Duration(milliseconds: 100 * index),
+                  child: ListTile(
+                    leading: const Icon(Icons.archive_outlined),
+                    title: Text(listado.ListCategorias[index].nombreCategoria),
+                    trailing: const Icon(Icons.content_paste_off),
+                    onTap: () {
+                      const Icon(Icons.archive_outlined);
+                    },
+                  ),
                 ),
               ),
             ),

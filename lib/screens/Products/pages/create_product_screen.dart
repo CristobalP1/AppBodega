@@ -17,7 +17,7 @@ class _CreateProductScreenState extends State<CreateProductScreen> {
         title: const Text('Productos'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.attach_file_rounded),
+            icon: const Icon(Icons.more_vert),
             onPressed: () {},
           )
         ],
@@ -38,8 +38,8 @@ class _CreateProductScreenState extends State<CreateProductScreen> {
               height: 20,
             ),
             InputForm(
-              labelText: "nombre",
-              hintText: "leche",
+              labelText: "Nombre",
+              hintText: "Leche",
             ),
             SizedBox(
               height: 10,

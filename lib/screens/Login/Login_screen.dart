@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/Constants.dart';
 import 'package:flutter_application_1/widget/Inputs/input_form.dart';
@@ -22,21 +23,30 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
-                  'Iniciar Sesion',
-                  style: TextStyle(fontSize: 20),
+                FadeInLeft(
+                  duration: Duration(milliseconds: 400),
+                  child: const Text(
+                    'Iniciar Sesion',
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                InputField(
-                  hint: 'Usuario',
+                FadeInLeft(
+                  duration: Duration(milliseconds: 500),
+                  child: InputField(
+                    hint: 'Usuario',
+                  ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                InputField(
-                  hint: 'Contraseña',
+                FadeInLeft(
+                  duration: Duration(milliseconds: 600),
+                  child: InputField(
+                    hint: 'Contraseña',
+                  ),
                 ),
                 const SizedBox(height: 30),
                 Row(

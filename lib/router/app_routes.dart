@@ -3,6 +3,7 @@ import 'package:flutter_application_1/screens/Providers/inactive_providers.dart'
 import 'package:flutter_application_1/screens/PurchaseOrders/pages/critical_products.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
+import '../screens/Products/pages/products_blocked.dart';
 import '../utils/Constants.dart' as constants;
 
 class ApppRoutes {
@@ -16,6 +17,7 @@ class ApppRoutes {
         const CreateProductScreen(),
     constants.editProduct: (BuildContext context) => const EditProductScreen(),
     constants.infoProduct: (BuildContext context) => const InfoProductScreen(),
+    constants.productsLocked: (BuildContext context) => const ProductsBlocked(),
 
     //Category Screen
     constants.createCategory: (BuildContext context) =>
@@ -34,6 +36,8 @@ class ApppRoutes {
         const CreateOrderProductScreen(),
     constants.detailsOrder: (BuildContext context) =>
         const DetailsOrdersScreen(),
+    constants.productCritics23: (BuildContext context) =>
+        const ProductsCritics23(),
 
     //Providers Screen
     constants.activeProvider: (BuildContext context) =>

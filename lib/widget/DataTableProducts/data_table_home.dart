@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Products/info_product_screen.dart';
+import 'package:flutter_application_1/screens/Products/pages/info_product_screen.dart';
+import 'package:flutter_application_1/screens/screens.dart';
 import 'package:flutter_application_1/widget/DataTableProducts/products.dart';
 
 class CreateTableProductsHome extends StatefulWidget {
@@ -31,40 +32,50 @@ class _CreateTableProductsHomeState extends State<CreateTableProductsHome> {
               dataRowHeight: 50,
               headingRowHeight: 50,
               sortColumnIndex: 0,
+              showCheckboxColumn: false,
               columns: const [
                 DataColumn(
-                  label: Text('Descripcion'),
+                  label: Center(
+                    child: Text('Descripción'),
+                  ),
                   numeric: false,
                 ),
                 DataColumn(
-                  label: Text('Stock'),
-                  numeric: true,
+                  label: Center(
+                    child: Text('Stock'),
+                  ),
+                  numeric: false,
                 ),
-                DataColumn(label: Text('Info'), numeric: false),
+                DataColumn(
+                    label: Center(
+                      child: Text('Info'),
+                    ),
+                    numeric: false),
               ],
               rows: productos
                   .map(
                     (products) => DataRow(
-                      selected: products.selected,
-                      onSelectChanged: (s) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const InfoProductScreen()));
-                        setState(() {
-                          products.selected = s!;
-                        });
-                      },
                       cells: [
-                        DataCell(
-                          Text(
+                        DataCell(GestureDetector(
+                          child: Text(
                             products.descripcion,
+                            textAlign: TextAlign.center,
                           ),
-                        ),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        const InfoProductScreen()));
+                          },
+                          onLongPressEnd: (LongPressEndDetails details) {
+                            null;
+                          },
+                        )),
                         DataCell(
                           Text(
                             products.stock,
+                            textAlign: TextAlign.center,
                           ),
                         ),
                         DataCell(
@@ -94,7 +105,7 @@ class _CreateTableProductsHomeState extends State<CreateTableProductsHome> {
                                               '¿Estas seguro que deseas solicitar mas unidades de este producto?'),
                                         ));
                               },
-                              child: Text('Solicitar')),
+                              child: const Text('Solicitar')),
                         ),
                       ],
                     ),
@@ -105,6 +116,5 @@ class _CreateTableProductsHomeState extends State<CreateTableProductsHome> {
         ),
       ),
     );
-    ;
   }
 }

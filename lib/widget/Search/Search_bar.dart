@@ -24,7 +24,7 @@ class _SearchInputState extends State<SearchInput> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      hintText: 'buscar',
+                      hintText: 'Buscar',
                       hintStyle: TextStyle(
                         color: Colors.grey,
                       ),
