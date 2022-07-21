@@ -65,34 +65,48 @@ class _ProductsBlockedState extends State<ProductsBlocked> {
       ),
     );
   }
-}
 
-List<Widget> _listDetails(data) {
-  List<Widget> details = [];
+  List<Widget> _listDetails(data) {
+    List<Widget> details = [];
 
-  details.add(Padding(
-    padding: const EdgeInsets.all(9.0),
-    child: Column(
-      children: [
-        DataTable(
-            columns: const [
-              DataColumn(label: Text('Producto')),
-              DataColumn(label: Text('Stock')),
-              DataColumn(label: Text('ProveedorR')),
-            ],
-            rows: data
-                .map<DataRow>((e) => DataRow(cells: [
-                      DataCell(Text(e.nombre.toString())),
-                      DataCell(Text(e.sku.toString())),
-                      DataCell(TextButton(
-                        onPressed: () => {},
-                        child: Text("Crear Orden"),
-                      )),
-                    ]))
-                .toList())
-      ],
-    ),
-  ));
+    details.add(Padding(
+      padding: const EdgeInsets.all(9.0),
+      child: Column(
+        children: [
+          DataTable(
+              columns: const [
+                DataColumn(label: Text('Producto')),
+                DataColumn(label: Text('Stock')),
+                DataColumn(label: Text('ProveedorR')),
+              ],
+              rows: data
+                  .map<DataRow>((e) => DataRow(cells: [
+                        DataCell(Text(e.nombre.toString())),
+                        DataCell(Text(e.sku.toString())),
+                        DataCell(TextButton(
+                          onPressed: () => {
+                            {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => InfoProductScreen(
+                                            nombre: e.nombre.toString(),
+                                            sku: e.sku.toString(),
+                                            codigo: e.codigo.toString(),
+                                            precio: e.precio.toString(),
+                                            costo: e.costo.toString(),
+                                            stock: e.stock.toString(),
+                                          )))
+                            }
+                          },
+                          child: Text("Crear Orden"),
+                        )),
+                      ]))
+                  .toList())
+        ],
+      ),
+    ));
 
-  return details;
+    return details;
+  }
 }

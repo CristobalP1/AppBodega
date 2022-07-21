@@ -34,8 +34,8 @@ class _OrderPurchaseOpcionState extends State<OrderPurchaseOpcion> {
               child: ListView(
                 padding: const EdgeInsets.all(8),
                 children: <Widget>[
-                  FadeInLeft(
-                    duration: Duration(milliseconds: 100),
+                  FadeInRightBig(
+                    duration: Duration(milliseconds: 200),
                     child: Card(
                       margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
                       elevation: 0,
@@ -56,7 +56,7 @@ class _OrderPurchaseOpcionState extends State<OrderPurchaseOpcion> {
                     ),
                   ),
                   FadeInLeft(
-                    duration: Duration(milliseconds: 200),
+                    duration: Duration(milliseconds: 1200),
                     child: Card(
                       margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
                       elevation: 0,
@@ -77,22 +77,25 @@ class _OrderPurchaseOpcionState extends State<OrderPurchaseOpcion> {
                       ),
                     ),
                   ),
-                  Card(
-                    margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
-                    elevation: 0,
-                    color: AppTheme.quaternary,
-                    child: SizedBox(
-                      height: 80,
-                      child: Center(
-                          child: TextButton(
-                        onPressed: () => {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => OrderSentScreen()))
-                        },
-                        child: Text("Ordendes Enviadas"),
-                      )),
+                  FadeInRightBig(
+                    duration: Duration(milliseconds: 2200),
+                    child: Card(
+                      margin: EdgeInsets.fromLTRB(30, 20, 30, 12),
+                      elevation: 0,
+                      color: AppTheme.quaternary,
+                      child: SizedBox(
+                        height: 80,
+                        child: Center(
+                            child: TextButton(
+                          onPressed: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => OrderSentScreen()))
+                          },
+                          child: Text("Ordendes Enviadas"),
+                        )),
+                      ),
                     ),
                   ),
                   Card(
