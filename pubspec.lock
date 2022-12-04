@@ -172,8 +172,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.1"
-<<<<<<< HEAD
-=======
   provider:
     dependency: "direct main"
     description:
@@ -181,7 +179,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.3"
->>>>>>> developer
   sky_engine:
     dependency: transitive
     description: flutter
@@ -229,8 +226,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.9"
-<<<<<<< HEAD
-=======
   typed_data:
     dependency: transitive
     description:
@@ -238,7 +233,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.1"
->>>>>>> developer
   vector_math:
     dependency: transitive
     description:
@@ -247,9 +241,5 @@ packages:
     source: hosted
     version: "2.1.2"
 sdks:
-<<<<<<< HEAD
-  dart: ">=2.17.0-0 <3.0.0"
-=======
   dart: ">=2.17.1 <3.0.0"
->>>>>>> developer
   flutter: ">=2.5.0"
