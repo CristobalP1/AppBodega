@@ -121,7 +121,7 @@ class _OrderPendingScreenState extends State<OrderPendingScreen> {
         children: [
           DataTable(
               columns: const [
-                DataColumn(label: Text('Producto')),
+                DataColumn(label: Text('Productos')),
                 DataColumn(label: Text('Proveedor')),
                 DataColumn(label: Text('Accion')),
               ],
