@@ -12,7 +12,7 @@ class ActiveProvidersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Proveedores',
+        title: 'Proveedores 1',
         home: Scaffold(
             appBar: AppBar(
               backgroundColor: AppTheme.primary,
